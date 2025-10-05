@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "zoriapi/*": ["./dist/src/*"],
-      "zoriapi": ["./dist/src/index.ts"]
+      "zorihq/*": ["./dist/src/*"],
+      "zorihq": ["./dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

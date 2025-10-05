@@ -7,8 +7,8 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^zoriapi$': '<rootDir>/src/index.ts',
-    '^zoriapi/(.*)$': '<rootDir>/src/$1',
+    '^zorihq$': '<rootDir>/src/index.ts',
+    '^zorihq/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: [
     '<rootDir>/ecosystem-tests/',

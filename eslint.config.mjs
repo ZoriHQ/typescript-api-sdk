@@ -25,7 +25,7 @@ export default tseslint.config(
         {
           patterns: [
             {
-              regex: '^zoriapi(/.*)?',
+              regex: '^zorihq(/.*)?',
               message: 'Use a relative import, not a package import.',
             },
           ],

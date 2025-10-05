@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'zoriapi/internal/uploads';
-import { toFile } from 'zoriapi/core/uploads';
+import { multipartFormRequestOptions, createForm } from 'zorihq/internal/uploads';
+import { toFile } from 'zorihq/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

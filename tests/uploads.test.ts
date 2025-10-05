@@ -1,6 +1,6 @@
 import fs from 'fs';
-import type { ResponseLike } from 'zoriapi/internal/to-file';
-import { toFile } from 'zoriapi/core/uploads';
+import type { ResponseLike } from 'zorihq/internal/to-file';
+import { toFile } from 'zorihq/core/uploads';
 import { File } from 'node:buffer';
 
 class MyClass {
@@ -97,7 +97,7 @@ describe('missing File error message', () => {
   });
 
   test('is thrown', async () => {
-    const uploads = await import('zoriapi/core/uploads');
+    const uploads = await import('zorihq/core/uploads');
     await expect(
       uploads.toFile(mockResponse({ url: 'https://example.com/my/audio.mp3' })),
     ).rejects.toMatchInlineSnapshot(
