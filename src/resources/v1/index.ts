@@ -13,4 +13,12 @@ export {
   type AuthRegisterAccountParams,
   type AuthRequestPasswordRecoveryParams,
 } from './auth';
+export {
+  Projects,
+  type CreateProjectRequest,
+  type ListProjectsResponse,
+  type Project,
+  type ProjectResponse,
+  type UpdateProjectRequest,
+} from './projects';
 export { V1 } from './v1';

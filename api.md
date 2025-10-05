@@ -1,5 +1,15 @@
 # V1
 
+## Projects
+
+Types:
+
+- <code><a href="./src/resources/v1/projects.ts">CreateProjectRequest</a></code>
+- <code><a href="./src/resources/v1/projects.ts">ListProjectsResponse</a></code>
+- <code><a href="./src/resources/v1/projects.ts">Project</a></code>
+- <code><a href="./src/resources/v1/projects.ts">ProjectResponse</a></code>
+- <code><a href="./src/resources/v1/projects.ts">UpdateProjectRequest</a></code>
+
 ## Auth
 
 Types:
