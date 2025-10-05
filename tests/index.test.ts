@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from 'zoriapi/core/api-promise';
+import { APIPromise } from 'zorihq/core/api-promise';
 
 import util from 'node:util';
-import Zoriapi from 'zoriapi';
-import { APIUserAbortError } from 'zoriapi';
+import Zoriapi from 'zorihq';
+import { APIUserAbortError } from 'zorihq';
 const defaultFetch = fetch;
 
 describe('instantiate client', () => {

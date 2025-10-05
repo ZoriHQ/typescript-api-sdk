@@ -1,4 +1,4 @@
-import { createPathTagFunction, encodeURIPath } from 'zoriapi/internal/utils/path';
+import { createPathTagFunction, encodeURIPath } from 'zorihq/internal/utils/path';
 import { inspect } from 'node:util';
 import { runInNewContext } from 'node:vm';
 

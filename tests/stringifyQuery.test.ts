@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Zoriapi } from 'zoriapi';
+import { Zoriapi } from 'zorihq';
 
 const { stringifyQuery } = Zoriapi.prototype as any;
 
