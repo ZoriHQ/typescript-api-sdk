@@ -20,7 +20,10 @@ import {
   CreateProjectRequest,
   ListProjectsResponse,
   Project,
+  ProjectCreateParams,
+  ProjectDeleteResponse,
   ProjectResponse,
+  ProjectUpdateParams,
   Projects,
   UpdateProjectRequest,
 } from './projects';
@@ -41,6 +44,9 @@ export declare namespace V1 {
     type Project as Project,
     type ProjectResponse as ProjectResponse,
     type UpdateProjectRequest as UpdateProjectRequest,
+    type ProjectDeleteResponse as ProjectDeleteResponse,
+    type ProjectCreateParams as ProjectCreateParams,
+    type ProjectUpdateParams as ProjectUpdateParams,
   };
 
   export {

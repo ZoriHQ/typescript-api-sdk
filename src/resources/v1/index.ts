@@ -20,5 +20,8 @@ export {
   type Project,
   type ProjectResponse,
   type UpdateProjectRequest,
+  type ProjectDeleteResponse,
+  type ProjectCreateParams,
+  type ProjectUpdateParams,
 } from './projects';
 export { V1 } from './v1';
