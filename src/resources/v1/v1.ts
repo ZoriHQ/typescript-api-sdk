@@ -15,14 +15,40 @@ import {
   MessageResponse,
   Organization,
 } from './auth';
+import * as ProjectsAPI from './projects';
+import {
+  CreateProjectRequest,
+  ListProjectsResponse,
+  Project,
+  ProjectCreateParams,
+  ProjectDeleteResponse,
+  ProjectResponse,
+  ProjectUpdateParams,
+  Projects,
+  UpdateProjectRequest,
+} from './projects';
 
 export class V1 extends APIResource {
+  projects: ProjectsAPI.Projects = new ProjectsAPI.Projects(this._client);
   auth: AuthAPI.Auth = new AuthAPI.Auth(this._client);
 }
 
+V1.Projects = Projects;
 V1.Auth = Auth;
 
 export declare namespace V1 {
+  export {
+    Projects as Projects,
+    type CreateProjectRequest as CreateProjectRequest,
+    type ListProjectsResponse as ListProjectsResponse,
+    type Project as Project,
+    type ProjectResponse as ProjectResponse,
+    type UpdateProjectRequest as UpdateProjectRequest,
+    type ProjectDeleteResponse as ProjectDeleteResponse,
+    type ProjectCreateParams as ProjectCreateParams,
+    type ProjectUpdateParams as ProjectUpdateParams,
+  };
+
   export {
     Auth as Auth,
     type Account as Account,
