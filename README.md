@@ -1,0 +1,1 @@
+# zoriapi-typescript
