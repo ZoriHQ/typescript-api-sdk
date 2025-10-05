@@ -8,8 +8,8 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "paths": {
-      "zoriapi/*": ["./src/*"],
-      "zoriapi": ["./src/index.ts"]
+      "zorihq/*": ["./src/*"],
+      "zorihq": ["./src/index.ts"]
     },
     "noEmit": true,
 
