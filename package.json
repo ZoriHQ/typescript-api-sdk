@@ -1,6 +1,6 @@
 {
   "name": "zorihq",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The official TypeScript library for the Zoriapi API",
   "author": "Zoriapi <support@zorihq.com>",
   "types": "dist/index.d.ts",
