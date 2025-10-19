@@ -93,6 +93,8 @@ export interface Project {
 
   allow_local_host?: boolean;
 
+  created_at?: string;
+
   domain?: string;
 
   first_event_received_at?: string;
@@ -102,6 +104,10 @@ export interface Project {
   organization?: AuthAPI.Organization;
 
   organization_id?: string;
+
+  project_token?: string;
+
+  updated_at?: string;
 }
 
 export interface ProjectResponse {
@@ -109,6 +115,8 @@ export interface ProjectResponse {
 
   allow_local_host?: boolean;
 
+  created_at?: string;
+
   domain?: string;
 
   first_event_received_at?: string;
@@ -118,6 +126,10 @@ export interface ProjectResponse {
   organization?: AuthAPI.Organization;
 
   organization_id?: string;
+
+  project_token?: string;
+
+  updated_at?: string;
 }
 
 export interface UpdateProjectRequest {

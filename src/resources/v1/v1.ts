@@ -27,16 +27,42 @@ import {
   Projects,
   UpdateProjectRequest,
 } from './projects';
+import * as AnalyticsAPI from './analytics/analytics';
+import {
+  Analytics,
+  CountryDataPoint,
+  OriginDataPoint,
+  RecentEvent,
+  RecentEventsResponse,
+  VisitorDataPoint,
+  VisitorsByCountryResponse,
+  VisitorsByDeviceResponse,
+  VisitorsByOriginResponse,
+} from './analytics/analytics';
 
 export class V1 extends APIResource {
+  analytics: AnalyticsAPI.Analytics = new AnalyticsAPI.Analytics(this._client);
   projects: ProjectsAPI.Projects = new ProjectsAPI.Projects(this._client);
   auth: AuthAPI.Auth = new AuthAPI.Auth(this._client);
 }
 
+V1.Analytics = Analytics;
 V1.Projects = Projects;
 V1.Auth = Auth;
 
 export declare namespace V1 {
+  export {
+    Analytics as Analytics,
+    type CountryDataPoint as CountryDataPoint,
+    type OriginDataPoint as OriginDataPoint,
+    type RecentEvent as RecentEvent,
+    type RecentEventsResponse as RecentEventsResponse,
+    type VisitorDataPoint as VisitorDataPoint,
+    type VisitorsByCountryResponse as VisitorsByCountryResponse,
+    type VisitorsByDeviceResponse as VisitorsByDeviceResponse,
+    type VisitorsByOriginResponse as VisitorsByOriginResponse,
+  };
+
   export {
     Projects as Projects,
     type CreateProjectRequest as CreateProjectRequest,

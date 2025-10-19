@@ -1,5 +1,32 @@
 # V1
 
+## Analytics
+
+Types:
+
+- <code><a href="./src/resources/v1/analytics/analytics.ts">CountryDataPoint</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">OriginDataPoint</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEvent</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEventsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorDataPoint</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByCountryResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByDeviceResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByOriginResponse</a></code>
+
+### Visitors
+
+Methods:
+
+- <code title="get /api/v1/analytics/visitors/country">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">byCountry</a>({ ...params }) -> VisitorsByCountryResponse</code>
+- <code title="get /api/v1/analytics/visitors/device">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">byDevice</a>({ ...params }) -> VisitorsByDeviceResponse</code>
+- <code title="get /api/v1/analytics/visitors/origin">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">byOrigin</a>({ ...params }) -> VisitorsByOriginResponse</code>
+
+### Events
+
+Methods:
+
+- <code title="get /api/v1/analytics/events/recent">client.v1.analytics.events.<a href="./src/resources/v1/analytics/events.ts">recent</a>({ ...params }) -> RecentEventsResponse</code>
+
 ## Projects
 
 Types:
