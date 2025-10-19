@@ -63,6 +63,62 @@ export class Visitors extends APIResource {
   ): APIPromise<AnalyticsAPI.VisitorsByOriginResponse> {
     return this._client.get('/api/v1/analytics/visitors/origin', { query, ...options });
   }
+
+  /**
+   * Get detailed information about a specific visitor including their event history
+   * and aggregated statistics
+   *
+   * @example
+   * ```ts
+   * const visitorProfileResponse =
+   *   await client.v1.analytics.visitors.profile({
+   *     project_id: 'project_id',
+   *     visitor_id: 'visitor_id',
+   *   });
+   * ```
+   */
+  profile(
+    query: VisitorProfileParams,
+    options?: RequestOptions,
+  ): APIPromise<AnalyticsAPI.VisitorProfileResponse> {
+    return this._client.get('/api/v1/analytics/visitors/profile', { query, ...options });
+  }
+
+  /**
+   * Get unique visitor counts over time, split by mobile and desktop devices for
+   * chart visualization
+   *
+   * @example
+   * ```ts
+   * const uniqueVisitorsTimelineResponse =
+   *   await client.v1.analytics.visitors.timeline({
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
+   *   });
+   * ```
+   */
+  timeline(
+    query: VisitorTimelineParams,
+    options?: RequestOptions,
+  ): APIPromise<AnalyticsAPI.UniqueVisitorsTimelineResponse> {
+    return this._client.get('/api/v1/analytics/visitors/timeline', { query, ...options });
+  }
+
+  /**
+   * Get a list of the most active visitors ranked by event count
+   *
+   * @example
+   * ```ts
+   * const topVisitorsResponse =
+   *   await client.v1.analytics.visitors.top({
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
+   *   });
+   * ```
+   */
+  top(query: VisitorTopParams, options?: RequestOptions): APIPromise<AnalyticsAPI.TopVisitorsResponse> {
+    return this._client.get('/api/v1/analytics/visitors/top', { query, ...options });
+  }
 }
 
 export interface VisitorByCountryParams {
@@ -101,10 +157,54 @@ export interface VisitorByOriginParams {
   time_range: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
 }
 
+export interface VisitorProfileParams {
+  /**
+   * Project ID
+   */
+  project_id: string;
+
+  /**
+   * Visitor ID
+   */
+  visitor_id: string;
+}
+
+export interface VisitorTimelineParams {
+  /**
+   * Project ID
+   */
+  project_id: string;
+
+  /**
+   * Time range
+   */
+  time_range: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+}
+
+export interface VisitorTopParams {
+  /**
+   * Project ID
+   */
+  project_id: string;
+
+  /**
+   * Time range
+   */
+  time_range: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  /**
+   * Maximum number of visitors to return (default: 50)
+   */
+  limit?: number;
+}
+
 export declare namespace Visitors {
   export {
     type VisitorByCountryParams as VisitorByCountryParams,
     type VisitorByDeviceParams as VisitorByDeviceParams,
     type VisitorByOriginParams as VisitorByOriginParams,
+    type VisitorProfileParams as VisitorProfileParams,
+    type VisitorTimelineParams as VisitorTimelineParams,
+    type VisitorTopParams as VisitorTopParams,
   };
 }
