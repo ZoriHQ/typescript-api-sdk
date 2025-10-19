@@ -22,6 +22,8 @@ export class Analytics extends APIResource {
 export interface CountryDataPoint {
   country_code?: string;
 
+  percentage?: number;
+
   unique_visitors?: number;
 }
 
@@ -33,6 +35,8 @@ export interface EventsOverTimeDataPoint {
 
 export interface OriginDataPoint {
   origin?: string;
+
+  percentage?: number;
 
   unique_visitors?: number;
 }
@@ -105,8 +109,6 @@ export interface VisitorDataPoint {
   desktop?: number;
 
   mobile?: number;
-
-  tablet?: number;
 
   timestamp?: string;
 
