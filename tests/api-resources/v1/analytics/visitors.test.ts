@@ -76,4 +76,74 @@ describe('resource visitors', () => {
       time_range: 'last_hour',
     });
   });
+
+  // Prism tests are disabled
+  test.skip('profile: only required params', async () => {
+    const responsePromise = client.v1.analytics.visitors.profile({
+      project_id: 'project_id',
+      visitor_id: 'visitor_id',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('profile: required and optional params', async () => {
+    const response = await client.v1.analytics.visitors.profile({
+      project_id: 'project_id',
+      visitor_id: 'visitor_id',
+    });
+  });
+
+  // Prism tests are disabled
+  test.skip('timeline: only required params', async () => {
+    const responsePromise = client.v1.analytics.visitors.timeline({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('timeline: required and optional params', async () => {
+    const response = await client.v1.analytics.visitors.timeline({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+    });
+  });
+
+  // Prism tests are disabled
+  test.skip('top: only required params', async () => {
+    const responsePromise = client.v1.analytics.visitors.top({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('top: required and optional params', async () => {
+    const response = await client.v1.analytics.visitors.top({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+      limit: 0,
+    });
+  });
 });
