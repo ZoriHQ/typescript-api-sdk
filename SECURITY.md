@@ -20,7 +20,7 @@ or products provided by Zoriapi, please follow the respective company's security
 
 ### Zoriapi Terms and Policies
 
-Please contact support@zorihq.com for any questions or concerns regarding the security of our services.
+Please contact supportsdk@zorihq.com for any questions or concerns regarding the security of our services.
 
 ---
 
