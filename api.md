@@ -5,10 +5,17 @@
 Types:
 
 - <code><a href="./src/resources/v1/analytics/analytics.ts">CountryDataPoint</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">EventsOverTimeDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">OriginDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEvent</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEventsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">TopVisitor</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">TopVisitorsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">UniqueVisitorsDataPoint</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">UniqueVisitorsTimelineResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorDataPoint</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorEvent</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorProfileResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByCountryResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByDeviceResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByOriginResponse</a></code>
@@ -20,6 +27,9 @@ Methods:
 - <code title="get /api/v1/analytics/visitors/country">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">byCountry</a>({ ...params }) -> VisitorsByCountryResponse</code>
 - <code title="get /api/v1/analytics/visitors/device">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">byDevice</a>({ ...params }) -> VisitorsByDeviceResponse</code>
 - <code title="get /api/v1/analytics/visitors/origin">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">byOrigin</a>({ ...params }) -> VisitorsByOriginResponse</code>
+- <code title="get /api/v1/analytics/visitors/profile">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">profile</a>({ ...params }) -> VisitorProfileResponse</code>
+- <code title="get /api/v1/analytics/visitors/timeline">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">timeline</a>({ ...params }) -> UniqueVisitorsTimelineResponse</code>
+- <code title="get /api/v1/analytics/visitors/top">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">top</a>({ ...params }) -> TopVisitorsResponse</code>
 
 ### Events
 
