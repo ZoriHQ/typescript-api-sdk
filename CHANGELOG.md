@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.1 (2025-10-19)
+
+Full Changelog: [v0.4.0...v0.4.1](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.4.0...v0.4.1)
+
+### Bug Fixes
+
+* **api/analytics:** added % to responses ([a1ee8a4](https://github.com/ZoriHQ/typescript-api-sdk/commit/a1ee8a4417ca0057efd528a0c1731d45aa6ca879))
+
 ## 0.4.0 (2025-10-19)
 
 Full Changelog: [v0.3.0...v0.4.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.3.0...v0.4.0)
