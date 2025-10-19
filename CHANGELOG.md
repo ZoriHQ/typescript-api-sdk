@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.2.0 (2025-10-19)
+
+Full Changelog: [v0.1.0...v0.2.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.1.0...v0.2.0)
+
+### Features
+
+* **api:** manual updates ([175a417](https://github.com/ZoriHQ/typescript-api-sdk/commit/175a41746a5a0f6d2bbc5b131fb87c6e150ea8e0))
+
+
+### Chores
+
+* **internal:** use npm pack for build uploads ([78f373a](https://github.com/ZoriHQ/typescript-api-sdk/commit/78f373a8e9d8193148c52c1d45a88f752478509a))
+
 ## 0.1.0 (2025-10-05)
 
 Full Changelog: [v0.0.3...v0.1.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.0.3...v0.1.0)
