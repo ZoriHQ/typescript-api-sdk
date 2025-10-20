@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0 (2025-10-20)
+
+Full Changelog: [v0.4.1...v0.5.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.4.1...v0.5.0)
+
+### Features
+
+* **api/analytics:** added bounce,churn,etc. ([9dffd54](https://github.com/ZoriHQ/typescript-api-sdk/commit/9dffd54ca1fef42615b7d69da3050c65f387883c))
+
 ## 0.4.1 (2025-10-19)
 
 Full Changelog: [v0.4.0...v0.4.1](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.4.0...v0.4.1)
