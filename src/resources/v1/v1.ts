@@ -29,12 +29,22 @@ import {
 } from './projects';
 import * as AnalyticsAPI from './analytics/analytics';
 import {
+  ActiveUsersResponse,
   Analytics,
+  AnalyticsDashboardParams,
+  BounceRateByPageMetric,
+  BounceRateResponse,
+  ChurnRateResponse,
+  CohortAnalysisResponse,
+  CohortData,
   CountryDataPoint,
+  DashboardMetricsResponse,
   EventsOverTimeDataPoint,
   OriginDataPoint,
   RecentEvent,
   RecentEventsResponse,
+  ReturnRateResponse,
+  SessionMetricsResponse,
   TopVisitor,
   TopVisitorsResponse,
   UniqueVisitorsDataPoint,
@@ -60,11 +70,20 @@ V1.Auth = Auth;
 export declare namespace V1 {
   export {
     Analytics as Analytics,
+    type ActiveUsersResponse as ActiveUsersResponse,
+    type BounceRateByPageMetric as BounceRateByPageMetric,
+    type BounceRateResponse as BounceRateResponse,
+    type ChurnRateResponse as ChurnRateResponse,
+    type CohortAnalysisResponse as CohortAnalysisResponse,
+    type CohortData as CohortData,
     type CountryDataPoint as CountryDataPoint,
+    type DashboardMetricsResponse as DashboardMetricsResponse,
     type EventsOverTimeDataPoint as EventsOverTimeDataPoint,
     type OriginDataPoint as OriginDataPoint,
     type RecentEvent as RecentEvent,
     type RecentEventsResponse as RecentEventsResponse,
+    type ReturnRateResponse as ReturnRateResponse,
+    type SessionMetricsResponse as SessionMetricsResponse,
     type TopVisitor as TopVisitor,
     type TopVisitorsResponse as TopVisitorsResponse,
     type UniqueVisitorsDataPoint as UniqueVisitorsDataPoint,
@@ -75,6 +94,7 @@ export declare namespace V1 {
     type VisitorsByCountryResponse as VisitorsByCountryResponse,
     type VisitorsByDeviceResponse as VisitorsByDeviceResponse,
     type VisitorsByOriginResponse as VisitorsByOriginResponse,
+    type AnalyticsDashboardParams as AnalyticsDashboardParams,
   };
 
   export {

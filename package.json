@@ -1,8 +1,8 @@
 {
   "name": "zorihq",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "The official TypeScript library for the Zoriapi API",
-  "author": "Zoriapi <supportsdk@zorihq.com>",
+  "author": "Zoriapi <support@zorihq.com>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",

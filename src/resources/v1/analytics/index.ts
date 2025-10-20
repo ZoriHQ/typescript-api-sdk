@@ -2,11 +2,20 @@
 
 export {
   Analytics,
+  type ActiveUsersResponse,
+  type BounceRateByPageMetric,
+  type BounceRateResponse,
+  type ChurnRateResponse,
+  type CohortAnalysisResponse,
+  type CohortData,
   type CountryDataPoint,
+  type DashboardMetricsResponse,
   type EventsOverTimeDataPoint,
   type OriginDataPoint,
   type RecentEvent,
   type RecentEventsResponse,
+  type ReturnRateResponse,
+  type SessionMetricsResponse,
   type TopVisitor,
   type TopVisitorsResponse,
   type UniqueVisitorsDataPoint,
@@ -17,8 +26,17 @@ export {
   type VisitorsByCountryResponse,
   type VisitorsByDeviceResponse,
   type VisitorsByOriginResponse,
+  type AnalyticsDashboardParams,
 } from './analytics';
 export { Events, type EventRecentParams } from './events';
+export {
+  Retention,
+  type RetentionChurnRateParams,
+  type RetentionCohortsParams,
+  type RetentionReturnRateParams,
+} from './retention';
+export { Sessions, type SessionBounceRateParams, type SessionMetricsParams } from './sessions';
+export { Users, type UserActiveParams } from './users';
 export {
   Visitors,
   type VisitorByCountryParams,
