@@ -2,11 +2,20 @@
 
 export {
   Analytics,
+  type ActiveUsersResponse,
+  type BounceRateByPageMetric,
+  type BounceRateResponse,
+  type ChurnRateResponse,
+  type CohortAnalysisResponse,
+  type CohortData,
   type CountryDataPoint,
+  type DashboardMetricsResponse,
   type EventsOverTimeDataPoint,
   type OriginDataPoint,
   type RecentEvent,
   type RecentEventsResponse,
+  type ReturnRateResponse,
+  type SessionMetricsResponse,
   type TopVisitor,
   type TopVisitorsResponse,
   type UniqueVisitorsDataPoint,
@@ -17,6 +26,7 @@ export {
   type VisitorsByCountryResponse,
   type VisitorsByDeviceResponse,
   type VisitorsByOriginResponse,
+  type AnalyticsDashboardParams,
 } from './analytics/index';
 export {
   Auth,
