@@ -4,11 +4,20 @@
 
 Types:
 
+- <code><a href="./src/resources/v1/analytics/analytics.ts">ActiveUsersResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">BounceRateByPageMetric</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">BounceRateResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">ChurnRateResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">CohortAnalysisResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">CohortData</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">CountryDataPoint</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">DashboardMetricsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">EventsOverTimeDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">OriginDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEvent</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEventsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">ReturnRateResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">SessionMetricsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">TopVisitor</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">TopVisitorsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">UniqueVisitorsDataPoint</a></code>
@@ -19,6 +28,10 @@ Types:
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByCountryResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByDeviceResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByOriginResponse</a></code>
+
+Methods:
+
+- <code title="get /api/v1/analytics/dashboard">client.v1.analytics.<a href="./src/resources/v1/analytics/analytics.ts">dashboard</a>({ ...params }) -> DashboardMetricsResponse</code>
 
 ### Visitors
 
@@ -36,6 +49,27 @@ Methods:
 Methods:
 
 - <code title="get /api/v1/analytics/events/recent">client.v1.analytics.events.<a href="./src/resources/v1/analytics/events.ts">recent</a>({ ...params }) -> RecentEventsResponse</code>
+
+### Sessions
+
+Methods:
+
+- <code title="get /api/v1/analytics/sessions/bounce-rate">client.v1.analytics.sessions.<a href="./src/resources/v1/analytics/sessions.ts">bounceRate</a>({ ...params }) -> BounceRateResponse</code>
+- <code title="get /api/v1/analytics/sessions/metrics">client.v1.analytics.sessions.<a href="./src/resources/v1/analytics/sessions.ts">metrics</a>({ ...params }) -> SessionMetricsResponse</code>
+
+### Users
+
+Methods:
+
+- <code title="get /api/v1/analytics/users/active">client.v1.analytics.users.<a href="./src/resources/v1/analytics/users.ts">active</a>({ ...params }) -> ActiveUsersResponse</code>
+
+### Retention
+
+Methods:
+
+- <code title="get /api/v1/analytics/retention/churn-rate">client.v1.analytics.retention.<a href="./src/resources/v1/analytics/retention.ts">churnRate</a>({ ...params }) -> ChurnRateResponse</code>
+- <code title="get /api/v1/analytics/retention/cohorts">client.v1.analytics.retention.<a href="./src/resources/v1/analytics/retention.ts">cohorts</a>({ ...params }) -> CohortAnalysisResponse</code>
+- <code title="get /api/v1/analytics/retention/return-rate">client.v1.analytics.retention.<a href="./src/resources/v1/analytics/retention.ts">returnRate</a>({ ...params }) -> ReturnRateResponse</code>
 
 ## Projects
 
