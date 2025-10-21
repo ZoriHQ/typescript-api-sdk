@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.0 (2025-10-21)
+
+Full Changelog: [v0.5.0...v0.6.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.5.0...v0.6.0)
+
+### Features
+
+* **api:** added payment provider endpoints ([7d684f2](https://github.com/ZoriHQ/typescript-api-sdk/commit/7d684f286b138ece1dfa7e5d401d0c5b11a9ed6d))
+
 ## 0.5.0 (2025-10-20)
 
 Full Changelog: [v0.4.1...v0.5.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.4.1...v0.5.0)
