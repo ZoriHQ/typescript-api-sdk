@@ -42,6 +42,17 @@ export {
   type AuthRequestPasswordRecoveryParams,
 } from './auth';
 export {
+  PaymentProviders,
+  type CreatePaymentProviderRequest,
+  type ListPaymentProvidersResponse,
+  type PaymentProviderResponse,
+  type UpdatePaymentProviderRequest,
+  type PaymentProviderDeleteResponse,
+  type PaymentProviderCreateParams,
+  type PaymentProviderUpdateParams,
+  type PaymentProviderListParams,
+} from './payment-providers';
+export {
   Projects,
   type CreateProjectRequest,
   type ListProjectsResponse,
