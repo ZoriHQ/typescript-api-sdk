@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0 (2025-10-21)
+
+Full Changelog: [v0.6.0...v0.7.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.6.0...v0.7.0)
+
+### Features
+
+* **api:** manual user identification endpoints ([f8c14f6](https://github.com/ZoriHQ/typescript-api-sdk/commit/f8c14f62297adbdf1118706706c34619538378f0))
+
 ## 0.6.0 (2025-10-21)
 
 Full Changelog: [v0.5.0...v0.6.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.5.0...v0.6.0)
