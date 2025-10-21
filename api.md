@@ -13,6 +13,8 @@ Types:
 - <code><a href="./src/resources/v1/analytics/analytics.ts">CountryDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">DashboardMetricsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">EventsOverTimeDataPoint</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">ManualIdentifyRequest</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">ManualIdentifyResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">OriginDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEvent</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEventsResponse</a></code>
@@ -40,6 +42,7 @@ Methods:
 - <code title="get /api/v1/analytics/visitors/country">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">byCountry</a>({ ...params }) -> VisitorsByCountryResponse</code>
 - <code title="get /api/v1/analytics/visitors/device">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">byDevice</a>({ ...params }) -> VisitorsByDeviceResponse</code>
 - <code title="get /api/v1/analytics/visitors/origin">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">byOrigin</a>({ ...params }) -> VisitorsByOriginResponse</code>
+- <code title="post /api/v1/analytics/visitors/identify">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">identify</a>({ ...params }) -> ManualIdentifyResponse</code>
 - <code title="get /api/v1/analytics/visitors/profile">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">profile</a>({ ...params }) -> VisitorProfileResponse</code>
 - <code title="get /api/v1/analytics/visitors/timeline">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">timeline</a>({ ...params }) -> UniqueVisitorsTimelineResponse</code>
 - <code title="get /api/v1/analytics/visitors/top">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">top</a>({ ...params }) -> TopVisitorsResponse</code>

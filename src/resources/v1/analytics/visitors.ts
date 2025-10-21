@@ -65,6 +65,26 @@ export class Visitors extends APIResource {
   }
 
   /**
+   * Manually identify a visitor by updating their profile information from the
+   * dashboard
+   *
+   * @example
+   * ```ts
+   * const manualIdentifyResponse =
+   *   await client.v1.analytics.visitors.identify({
+   *     project_id: 'project_id',
+   *     visitor_id: 'visitor_id',
+   *   });
+   * ```
+   */
+  identify(
+    body: VisitorIdentifyParams,
+    options?: RequestOptions,
+  ): APIPromise<AnalyticsAPI.ManualIdentifyResponse> {
+    return this._client.post('/api/v1/analytics/visitors/identify', { body, ...options });
+  }
+
+  /**
    * Get detailed information about a specific visitor including their event history
    * and aggregated statistics
    *
@@ -157,6 +177,24 @@ export interface VisitorByOriginParams {
   time_range: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
 }
 
+export interface VisitorIdentifyParams {
+  project_id: string;
+
+  visitor_id: string;
+
+  additional_properties?: { [key: string]: unknown };
+
+  email?: string;
+
+  external_id?: string;
+
+  name?: string;
+
+  phone?: string;
+
+  user_id?: string;
+}
+
 export interface VisitorProfileParams {
   /**
    * Project ID
@@ -203,6 +241,7 @@ export declare namespace Visitors {
     type VisitorByCountryParams as VisitorByCountryParams,
     type VisitorByDeviceParams as VisitorByDeviceParams,
     type VisitorByOriginParams as VisitorByOriginParams,
+    type VisitorIdentifyParams as VisitorIdentifyParams,
     type VisitorProfileParams as VisitorProfileParams,
     type VisitorTimelineParams as VisitorTimelineParams,
     type VisitorTopParams as VisitorTopParams,
