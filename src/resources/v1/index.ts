@@ -11,6 +11,8 @@ export {
   type CountryDataPoint,
   type DashboardMetricsResponse,
   type EventsOverTimeDataPoint,
+  type ManualIdentifyRequest,
+  type ManualIdentifyResponse,
   type OriginDataPoint,
   type RecentEvent,
   type RecentEventsResponse,
