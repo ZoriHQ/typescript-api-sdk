@@ -19,6 +19,7 @@ import {
   VisitorByCountryParams,
   VisitorByDeviceParams,
   VisitorByOriginParams,
+  VisitorIdentifyParams,
   VisitorProfileParams,
   VisitorTimelineParams,
   VisitorTopParams,
@@ -156,6 +157,32 @@ export interface EventsOverTimeDataPoint {
   timestamp?: string;
 }
 
+export interface ManualIdentifyRequest {
+  project_id: string;
+
+  visitor_id: string;
+
+  additional_properties?: { [key: string]: unknown };
+
+  email?: string;
+
+  external_id?: string;
+
+  name?: string;
+
+  phone?: string;
+
+  user_id?: string;
+}
+
+export interface ManualIdentifyResponse {
+  message?: string;
+
+  success?: boolean;
+
+  visitor_id?: string;
+}
+
 export interface OriginDataPoint {
   origin?: string;
 
@@ -173,6 +200,8 @@ export interface RecentEvent {
 
   event_name?: string;
 
+  external_id?: string;
+
   location_city?: string;
 
   location_country_iso?: string;
@@ -182,6 +211,8 @@ export interface RecentEvent {
   page_url?: string;
 
   referrer_url?: string;
+
+  user_id?: string;
 
   visitor_id?: string;
 }
@@ -217,6 +248,8 @@ export interface TopVisitor {
 
   event_count?: number;
 
+  external_id?: string;
+
   first_seen?: string;
 
   last_seen?: string;
@@ -224,6 +257,8 @@ export interface TopVisitor {
   location_city?: string;
 
   location_country_iso?: string;
+
+  user_id?: string;
 
   visitor_id?: string;
 }
@@ -273,9 +308,17 @@ export interface VisitorEvent {
 }
 
 export interface VisitorProfileResponse {
+  custom_traits?: { [key: string]: unknown };
+
+  email?: string;
+
   events?: Array<VisitorEvent>;
 
   events_over_time?: Array<EventsOverTimeDataPoint>;
+
+  external_id?: string;
+
+  first_identified_at?: string;
 
   first_referrer_url?: string;
 
@@ -283,13 +326,23 @@ export interface VisitorProfileResponse {
 
   first_traffic_origin?: string;
 
+  is_identified?: boolean;
+
+  last_identified_at?: string;
+
   last_seen?: string;
 
   location_city?: string;
 
   location_country_iso?: string;
 
+  name?: string;
+
+  phone?: string;
+
   total_events?: number;
+
+  user_id?: string;
 
   visitor_id?: string;
 }
@@ -335,6 +388,8 @@ export declare namespace Analytics {
     type CountryDataPoint as CountryDataPoint,
     type DashboardMetricsResponse as DashboardMetricsResponse,
     type EventsOverTimeDataPoint as EventsOverTimeDataPoint,
+    type ManualIdentifyRequest as ManualIdentifyRequest,
+    type ManualIdentifyResponse as ManualIdentifyResponse,
     type OriginDataPoint as OriginDataPoint,
     type RecentEvent as RecentEvent,
     type RecentEventsResponse as RecentEventsResponse,
@@ -358,6 +413,7 @@ export declare namespace Analytics {
     type VisitorByCountryParams as VisitorByCountryParams,
     type VisitorByDeviceParams as VisitorByDeviceParams,
     type VisitorByOriginParams as VisitorByOriginParams,
+    type VisitorIdentifyParams as VisitorIdentifyParams,
     type VisitorProfileParams as VisitorProfileParams,
     type VisitorTimelineParams as VisitorTimelineParams,
     type VisitorTopParams as VisitorTopParams,
