@@ -12,6 +12,7 @@ Types:
 - <code><a href="./src/resources/v1/analytics/analytics.ts">CohortData</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">CountryDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">DashboardMetricsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">EventFilterOptionsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">EventsOverTimeDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ManualIdentifyRequest</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ManualIdentifyResponse</a></code>
@@ -19,13 +20,18 @@ Types:
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEvent</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEventsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ReturnRateResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">RevenueByUtmResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">RevenueTimelineDataPoint</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">RevenueTimelineResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">SessionMetricsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">TopVisitor</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">TopVisitorsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">UniqueVisitorsDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">UniqueVisitorsTimelineResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">UtmRevenueDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorEvent</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorPayment</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorProfileResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByCountryResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByDeviceResponse</a></code>
@@ -51,7 +57,15 @@ Methods:
 
 Methods:
 
+- <code title="get /api/v1/analytics/events/filter-options">client.v1.analytics.events.<a href="./src/resources/v1/analytics/events.ts">filterOptions</a>({ ...params }) -> EventFilterOptionsResponse</code>
 - <code title="get /api/v1/analytics/events/recent">client.v1.analytics.events.<a href="./src/resources/v1/analytics/events.ts">recent</a>({ ...params }) -> RecentEventsResponse</code>
+
+### Revenue
+
+Methods:
+
+- <code title="get /api/v1/analytics/revenue/by-utm">client.v1.analytics.revenue.<a href="./src/resources/v1/analytics/revenue.ts">byUtm</a>({ ...params }) -> RevenueByUtmResponse</code>
+- <code title="get /api/v1/analytics/revenue/timeline">client.v1.analytics.revenue.<a href="./src/resources/v1/analytics/revenue.ts">timeline</a>({ ...params }) -> RevenueTimelineResponse</code>
 
 ### Sessions
 
