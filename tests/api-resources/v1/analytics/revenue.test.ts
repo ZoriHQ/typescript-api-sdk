@@ -7,10 +7,13 @@ const client = new Zoriapi({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource events', () => {
+describe('resource revenue', () => {
   // Prism tests are disabled
-  test.skip('filterOptions: only required params', async () => {
-    const responsePromise = client.v1.analytics.events.filterOptions({ project_id: 'project_id' });
+  test.skip('byUtm: only required params', async () => {
+    const responsePromise = client.v1.analytics.revenue.byUtm({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,16 +24,20 @@ describe('resource events', () => {
   });
 
   // Prism tests are disabled
-  test.skip('filterOptions: required and optional params', async () => {
-    const response = await client.v1.analytics.events.filterOptions({
+  test.skip('byUtm: required and optional params', async () => {
+    const response = await client.v1.analytics.revenue.byUtm({
       project_id: 'project_id',
       time_range: 'last_hour',
+      utm_type: 'utm_type',
     });
   });
 
   // Prism tests are disabled
-  test.skip('recent: only required params', async () => {
-    const responsePromise = client.v1.analytics.events.recent({ project_id: 'project_id' });
+  test.skip('timeline: only required params', async () => {
+    const responsePromise = client.v1.analytics.revenue.timeline({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -41,16 +48,10 @@ describe('resource events', () => {
   });
 
   // Prism tests are disabled
-  test.skip('recent: required and optional params', async () => {
-    const response = await client.v1.analytics.events.recent({
+  test.skip('timeline: required and optional params', async () => {
+    const response = await client.v1.analytics.revenue.timeline({
       project_id: 'project_id',
-      external_id: 'external_id',
-      limit: 0,
-      offset: 0,
-      page_path: 'page_path',
-      traffic_origin: 'traffic_origin',
-      user_id: 'user_id',
-      visitor_id: 'visitor_id',
+      time_range: 'last_hour',
     });
   });
 });
