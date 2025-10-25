@@ -18,18 +18,13 @@ export {
   type RecentEvent,
   type RecentEventsResponse,
   type ReturnRateResponse,
-  type RevenueByUtmResponse,
-  type RevenueTimelineDataPoint,
-  type RevenueTimelineResponse,
   type SessionMetricsResponse,
   type TopVisitor,
   type TopVisitorsResponse,
   type UniqueVisitorsDataPoint,
   type UniqueVisitorsTimelineResponse,
-  type UtmRevenueDataPoint,
   type VisitorDataPoint,
   type VisitorEvent,
-  type VisitorPayment,
   type VisitorProfileResponse,
   type VisitorsByCountryResponse,
   type VisitorsByDeviceResponse,
@@ -43,7 +38,6 @@ export {
   type RetentionCohortsParams,
   type RetentionReturnRateParams,
 } from './retention';
-export { Revenue, type RevenueByUtmParams, type RevenueTimelineParams } from './revenue';
 export { Sessions, type SessionBounceRateParams, type SessionMetricsParams } from './sessions';
 export { Users, type UserActiveParams } from './users';
 export {

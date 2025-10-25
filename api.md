@@ -20,18 +20,13 @@ Types:
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEvent</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEventsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ReturnRateResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">RevenueByUtmResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">RevenueTimelineDataPoint</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">RevenueTimelineResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">SessionMetricsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">TopVisitor</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">TopVisitorsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">UniqueVisitorsDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">UniqueVisitorsTimelineResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">UtmRevenueDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorEvent</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorPayment</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorProfileResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByCountryResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByDeviceResponse</a></code>
@@ -60,13 +55,6 @@ Methods:
 - <code title="get /api/v1/analytics/events/filter-options">client.v1.analytics.events.<a href="./src/resources/v1/analytics/events.ts">filterOptions</a>({ ...params }) -> EventFilterOptionsResponse</code>
 - <code title="get /api/v1/analytics/events/recent">client.v1.analytics.events.<a href="./src/resources/v1/analytics/events.ts">recent</a>({ ...params }) -> RecentEventsResponse</code>
 
-### Revenue
-
-Methods:
-
-- <code title="get /api/v1/analytics/revenue/by-utm">client.v1.analytics.revenue.<a href="./src/resources/v1/analytics/revenue.ts">byUtm</a>({ ...params }) -> RevenueByUtmResponse</code>
-- <code title="get /api/v1/analytics/revenue/timeline">client.v1.analytics.revenue.<a href="./src/resources/v1/analytics/revenue.ts">timeline</a>({ ...params }) -> RevenueTimelineResponse</code>
-
 ### Sessions
 
 Methods:
@@ -87,6 +75,49 @@ Methods:
 - <code title="get /api/v1/analytics/retention/churn-rate">client.v1.analytics.retention.<a href="./src/resources/v1/analytics/retention.ts">churnRate</a>({ ...params }) -> ChurnRateResponse</code>
 - <code title="get /api/v1/analytics/retention/cohorts">client.v1.analytics.retention.<a href="./src/resources/v1/analytics/retention.ts">cohorts</a>({ ...params }) -> CohortAnalysisResponse</code>
 - <code title="get /api/v1/analytics/retention/return-rate">client.v1.analytics.retention.<a href="./src/resources/v1/analytics/retention.ts">returnRate</a>({ ...params }) -> ReturnRateResponse</code>
+
+## Revenue
+
+Types:
+
+- <code><a href="./src/resources/v1/revenue/revenue.ts">AttributionByOriginResponse</a></code>
+- <code><a href="./src/resources/v1/revenue/revenue.ts">AttributionByUtmResponse</a></code>
+- <code><a href="./src/resources/v1/revenue/revenue.ts">ConversionMetricsResponse</a></code>
+- <code><a href="./src/resources/v1/revenue/revenue.ts">CustomerProfileResponse</a></code>
+- <code><a href="./src/resources/v1/revenue/revenue.ts">DashboardResponse</a></code>
+- <code><a href="./src/resources/v1/revenue/revenue.ts">OriginAttributionDataPoint</a></code>
+- <code><a href="./src/resources/v1/revenue/revenue.ts">Payment</a></code>
+- <code><a href="./src/resources/v1/revenue/revenue.ts">RevenueOverTimeDataPoint</a></code>
+- <code><a href="./src/resources/v1/revenue/revenue.ts">TimelineDataPoint</a></code>
+- <code><a href="./src/resources/v1/revenue/revenue.ts">TimelineResponse</a></code>
+- <code><a href="./src/resources/v1/revenue/revenue.ts">TopCustomer</a></code>
+- <code><a href="./src/resources/v1/revenue/revenue.ts">TopCustomersResponse</a></code>
+- <code><a href="./src/resources/v1/revenue/revenue.ts">UtmAttributionDataPoint</a></code>
+
+Methods:
+
+- <code title="get /api/v1/revenue/dashboard">client.v1.revenue.<a href="./src/resources/v1/revenue/revenue.ts">dashboard</a>({ ...params }) -> DashboardResponse</code>
+- <code title="get /api/v1/revenue/timeline">client.v1.revenue.<a href="./src/resources/v1/revenue/revenue.ts">timeline</a>({ ...params }) -> TimelineResponse</code>
+
+### Attribution
+
+Methods:
+
+- <code title="get /api/v1/revenue/attribution/origin">client.v1.revenue.attribution.<a href="./src/resources/v1/revenue/attribution.ts">byOrigin</a>({ ...params }) -> AttributionByOriginResponse</code>
+- <code title="get /api/v1/revenue/attribution/utm">client.v1.revenue.attribution.<a href="./src/resources/v1/revenue/attribution.ts">byUtm</a>({ ...params }) -> AttributionByUtmResponse</code>
+
+### Customers
+
+Methods:
+
+- <code title="get /api/v1/revenue/customers/profile">client.v1.revenue.customers.<a href="./src/resources/v1/revenue/customers.ts">profile</a>({ ...params }) -> CustomerProfileResponse</code>
+- <code title="get /api/v1/revenue/customers/top">client.v1.revenue.customers.<a href="./src/resources/v1/revenue/customers.ts">top</a>({ ...params }) -> TopCustomersResponse</code>
+
+### Conversion
+
+Methods:
+
+- <code title="get /api/v1/revenue/conversion/metrics">client.v1.revenue.conversion.<a href="./src/resources/v1/revenue/conversion.ts">metrics</a>({ ...params }) -> ConversionMetricsResponse</code>
 
 ## Projects
 
