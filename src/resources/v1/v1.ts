@@ -59,26 +59,41 @@ import {
   RecentEvent,
   RecentEventsResponse,
   ReturnRateResponse,
-  RevenueByUtmResponse,
-  RevenueTimelineDataPoint,
-  RevenueTimelineResponse,
   SessionMetricsResponse,
   TopVisitor,
   TopVisitorsResponse,
   UniqueVisitorsDataPoint,
   UniqueVisitorsTimelineResponse,
-  UtmRevenueDataPoint,
   VisitorDataPoint,
   VisitorEvent,
-  VisitorPayment,
   VisitorProfileResponse,
   VisitorsByCountryResponse,
   VisitorsByDeviceResponse,
   VisitorsByOriginResponse,
 } from './analytics/analytics';
+import * as RevenueAPI from './revenue/revenue';
+import {
+  AttributionByOriginResponse,
+  AttributionByUtmResponse,
+  ConversionMetricsResponse,
+  CustomerProfileResponse,
+  DashboardResponse,
+  OriginAttributionDataPoint,
+  Payment,
+  Revenue,
+  RevenueDashboardParams,
+  RevenueOverTimeDataPoint,
+  RevenueTimelineParams,
+  TimelineDataPoint,
+  TimelineResponse,
+  TopCustomer,
+  TopCustomersResponse,
+  UtmAttributionDataPoint,
+} from './revenue/revenue';
 
 export class V1 extends APIResource {
   analytics: AnalyticsAPI.Analytics = new AnalyticsAPI.Analytics(this._client);
+  revenue: RevenueAPI.Revenue = new RevenueAPI.Revenue(this._client);
   projects: ProjectsAPI.Projects = new ProjectsAPI.Projects(this._client);
   auth: AuthAPI.Auth = new AuthAPI.Auth(this._client);
   paymentProviders: PaymentProvidersAPI.PaymentProviders = new PaymentProvidersAPI.PaymentProviders(
@@ -87,6 +102,7 @@ export class V1 extends APIResource {
 }
 
 V1.Analytics = Analytics;
+V1.Revenue = Revenue;
 V1.Projects = Projects;
 V1.Auth = Auth;
 V1.PaymentProviders = PaymentProviders;
@@ -110,23 +126,37 @@ export declare namespace V1 {
     type RecentEvent as RecentEvent,
     type RecentEventsResponse as RecentEventsResponse,
     type ReturnRateResponse as ReturnRateResponse,
-    type RevenueByUtmResponse as RevenueByUtmResponse,
-    type RevenueTimelineDataPoint as RevenueTimelineDataPoint,
-    type RevenueTimelineResponse as RevenueTimelineResponse,
     type SessionMetricsResponse as SessionMetricsResponse,
     type TopVisitor as TopVisitor,
     type TopVisitorsResponse as TopVisitorsResponse,
     type UniqueVisitorsDataPoint as UniqueVisitorsDataPoint,
     type UniqueVisitorsTimelineResponse as UniqueVisitorsTimelineResponse,
-    type UtmRevenueDataPoint as UtmRevenueDataPoint,
     type VisitorDataPoint as VisitorDataPoint,
     type VisitorEvent as VisitorEvent,
-    type VisitorPayment as VisitorPayment,
     type VisitorProfileResponse as VisitorProfileResponse,
     type VisitorsByCountryResponse as VisitorsByCountryResponse,
     type VisitorsByDeviceResponse as VisitorsByDeviceResponse,
     type VisitorsByOriginResponse as VisitorsByOriginResponse,
     type AnalyticsDashboardParams as AnalyticsDashboardParams,
+  };
+
+  export {
+    Revenue as Revenue,
+    type AttributionByOriginResponse as AttributionByOriginResponse,
+    type AttributionByUtmResponse as AttributionByUtmResponse,
+    type ConversionMetricsResponse as ConversionMetricsResponse,
+    type CustomerProfileResponse as CustomerProfileResponse,
+    type DashboardResponse as DashboardResponse,
+    type OriginAttributionDataPoint as OriginAttributionDataPoint,
+    type Payment as Payment,
+    type RevenueOverTimeDataPoint as RevenueOverTimeDataPoint,
+    type TimelineDataPoint as TimelineDataPoint,
+    type TimelineResponse as TimelineResponse,
+    type TopCustomer as TopCustomer,
+    type TopCustomersResponse as TopCustomersResponse,
+    type UtmAttributionDataPoint as UtmAttributionDataPoint,
+    type RevenueDashboardParams as RevenueDashboardParams,
+    type RevenueTimelineParams as RevenueTimelineParams,
   };
 
   export {

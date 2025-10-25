@@ -10,8 +10,6 @@ import {
   RetentionCohortsParams,
   RetentionReturnRateParams,
 } from './retention';
-import * as RevenueAPI from './revenue';
-import { Revenue, RevenueByUtmParams, RevenueTimelineParams } from './revenue';
 import * as SessionsAPI from './sessions';
 import { SessionBounceRateParams, SessionMetricsParams, Sessions } from './sessions';
 import * as UsersAPI from './users';
@@ -33,7 +31,6 @@ import { RequestOptions } from '../../../internal/request-options';
 export class Analytics extends APIResource {
   visitors: VisitorsAPI.Visitors = new VisitorsAPI.Visitors(this._client);
   events: EventsAPI.Events = new EventsAPI.Events(this._client);
-  revenue: RevenueAPI.Revenue = new RevenueAPI.Revenue(this._client);
   sessions: SessionsAPI.Sessions = new SessionsAPI.Sessions(this._client);
   users: UsersAPI.Users = new UsersAPI.Users(this._client);
   retention: RetentionAPI.Retention = new RetentionAPI.Retention(this._client);
@@ -121,21 +118,6 @@ export interface CountryDataPoint {
 export interface DashboardMetricsResponse {
   avg_pages_per_session?: number;
 
-  /**
-   * Average revenue for identified visitors only (deprecated)
-   */
-  avg_revenue_per_identified_customer?: number;
-
-  /**
-   * 3. Average revenue per unique session
-   */
-  avg_revenue_per_session?: number;
-
-  /**
-   * Average revenue per paying visitor
-   */
-  avg_revenue_per_visitor?: number;
-
   avg_session_duration_seconds?: number;
 
   /**
@@ -144,28 +126,11 @@ export interface DashboardMetricsResponse {
   bounce_rate?: number;
 
   /**
-   * 4. % of unique visitors who made payment
-   */
-  conversion_rate?: number;
-
-  /**
-   * Same as ConversionRate (deprecated, use ConversionRate)
-   */
-  conversion_to_paying?: number;
-
-  currency?: string;
-
-  /**
    * Active users
    */
   dau?: number;
 
   mau?: number;
-
-  /**
-   * Additional revenue metrics (kept for compatibility)
-   */
-  paying_visitors?: number;
 
   return_rate?: number;
 
@@ -178,21 +143,6 @@ export interface DashboardMetricsResponse {
    * Total metrics
    */
   total_events?: number;
-
-  /**
-   * Count of successful payments
-   */
-  total_payments?: number;
-
-  /**
-   * Revenue metrics - 4 key metrics as separate queries
-   */
-  total_revenue?: number;
-
-  /**
-   * 2. Total revenue for identified customers only
-   */
-  total_revenue_identified_customers?: number;
 
   total_sessions_in_period?: number;
 
@@ -251,32 +201,9 @@ export interface ManualIdentifyResponse {
 }
 
 export interface OriginDataPoint {
-  /**
-   * Average revenue per paying visitor
-   */
-  avg_revenue_per_visitor?: number;
-
-  /**
-   * paying_visitors / unique_visitors \* 100
-   */
-  conversion_rate?: number;
-
-  currency?: string;
-
   origin?: string;
 
-  paying_visitors?: number;
-
-  payment_count?: number;
-
   percentage?: number;
-
-  revenue_percentage?: number;
-
-  /**
-   * Revenue in smallest currency unit (cents)
-   */
-  total_revenue?: number;
 
   unique_visitors?: number;
 }
@@ -333,27 +260,6 @@ export interface ReturnRateResponse {
   total_users?: number;
 }
 
-export interface RevenueByUtmResponse {
-  data?: Array<UtmRevenueDataPoint>;
-}
-
-export interface RevenueTimelineDataPoint {
-  currency?: string;
-
-  payment_count?: number;
-
-  timestamp?: string;
-
-  /**
-   * Revenue in smallest currency unit (cents)
-   */
-  total_revenue?: number;
-}
-
-export interface RevenueTimelineResponse {
-  data?: Array<RevenueTimelineDataPoint>;
-}
-
 export interface SessionMetricsResponse {
   average_pages_per_session?: number;
 
@@ -364,8 +270,6 @@ export interface SessionMetricsResponse {
 
 export interface TopVisitor {
   browser_name?: string;
-
-  currency?: string;
 
   device_type?: string;
 
@@ -380,13 +284,6 @@ export interface TopVisitor {
   location_city?: string;
 
   location_country_iso?: string;
-
-  payment_count?: number;
-
-  /**
-   * Total revenue in smallest currency unit (cents)
-   */
-  total_revenue?: number;
 
   user_id?: string;
 
@@ -409,38 +306,6 @@ export interface UniqueVisitorsDataPoint {
 
 export interface UniqueVisitorsTimelineResponse {
   data?: Array<UniqueVisitorsDataPoint>;
-}
-
-export interface UtmRevenueDataPoint {
-  /**
-   * Average revenue per paying visitor
-   */
-  avg_revenue_per_visitor?: number;
-
-  /**
-   * paying_visitors / unique_visitors \* 100
-   */
-  conversion_rate?: number;
-
-  currency?: string;
-
-  paying_visitors?: number;
-
-  payment_count?: number;
-
-  revenue_percentage?: number;
-
-  /**
-   * Revenue in smallest currency unit (cents)
-   */
-  total_revenue?: number;
-
-  unique_visitors?: number;
-
-  /**
-   * The UTM parameter value
-   */
-  utm_value?: string;
 }
 
 export interface VisitorDataPoint {
@@ -469,30 +334,7 @@ export interface VisitorEvent {
   referrer_url?: string;
 }
 
-export interface VisitorPayment {
-  amount?: number;
-
-  currency?: string;
-
-  payment_id?: string;
-
-  payment_timestamp?: string;
-
-  product_name?: string;
-
-  provider_type?: string;
-
-  status?: string;
-}
-
 export interface VisitorProfileResponse {
-  /**
-   * Average payment amount
-   */
-  avg_order_value?: number;
-
-  currency?: string;
-
   custom_traits?: { [key: string]: unknown };
 
   email?: string;
@@ -505,8 +347,6 @@ export interface VisitorProfileResponse {
 
   first_identified_at?: string;
 
-  first_payment_date?: string;
-
   first_referrer_url?: string;
 
   first_seen?: string;
@@ -517,8 +357,6 @@ export interface VisitorProfileResponse {
 
   last_identified_at?: string;
 
-  last_payment_date?: string;
-
   last_seen?: string;
 
   location_city?: string;
@@ -527,18 +365,9 @@ export interface VisitorProfileResponse {
 
   name?: string;
 
-  payment_count?: number;
-
-  payments?: Array<VisitorPayment>;
-
   phone?: string;
 
   total_events?: number;
-
-  /**
-   * Revenue fields
-   */
-  total_revenue?: number;
 
   user_id?: string;
 
@@ -571,7 +400,6 @@ export interface AnalyticsDashboardParams {
 
 Analytics.Visitors = Visitors;
 Analytics.Events = Events;
-Analytics.Revenue = Revenue;
 Analytics.Sessions = Sessions;
 Analytics.Users = Users;
 Analytics.Retention = Retention;
@@ -594,18 +422,13 @@ export declare namespace Analytics {
     type RecentEvent as RecentEvent,
     type RecentEventsResponse as RecentEventsResponse,
     type ReturnRateResponse as ReturnRateResponse,
-    type RevenueByUtmResponse as RevenueByUtmResponse,
-    type RevenueTimelineDataPoint as RevenueTimelineDataPoint,
-    type RevenueTimelineResponse as RevenueTimelineResponse,
     type SessionMetricsResponse as SessionMetricsResponse,
     type TopVisitor as TopVisitor,
     type TopVisitorsResponse as TopVisitorsResponse,
     type UniqueVisitorsDataPoint as UniqueVisitorsDataPoint,
     type UniqueVisitorsTimelineResponse as UniqueVisitorsTimelineResponse,
-    type UtmRevenueDataPoint as UtmRevenueDataPoint,
     type VisitorDataPoint as VisitorDataPoint,
     type VisitorEvent as VisitorEvent,
-    type VisitorPayment as VisitorPayment,
     type VisitorProfileResponse as VisitorProfileResponse,
     type VisitorsByCountryResponse as VisitorsByCountryResponse,
     type VisitorsByDeviceResponse as VisitorsByDeviceResponse,
@@ -628,12 +451,6 @@ export declare namespace Analytics {
     Events as Events,
     type EventFilterOptionsParams as EventFilterOptionsParams,
     type EventRecentParams as EventRecentParams,
-  };
-
-  export {
-    Revenue as Revenue,
-    type RevenueByUtmParams as RevenueByUtmParams,
-    type RevenueTimelineParams as RevenueTimelineParams,
   };
 
   export {
