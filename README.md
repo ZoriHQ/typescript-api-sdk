@@ -26,12 +26,12 @@ const client = new Zoriapi({
   apiKey: process.env['ZORIAPI_API_KEY'], // This is the default and can be omitted
 });
 
-const authResponse = await client.v1.auth.login({
-  email: 'user@example.com',
-  password: 'SecurePassword123!',
+const dashboardMetricsResponse = await client.v1.analytics.dashboard({
+  project_id: 'project_id',
+  time_range: 'last_hour',
 });
 
-console.log(authResponse.access_token);
+console.log(dashboardMetricsResponse.avg_pages_per_session);
 ```
 
 ### Request & Response types
@@ -46,8 +46,10 @@ const client = new Zoriapi({
   apiKey: process.env['ZORIAPI_API_KEY'], // This is the default and can be omitted
 });
 
-const params: Zoriapi.V1.AuthLoginParams = { email: 'user@example.com', password: 'SecurePassword123!' };
-const authResponse: Zoriapi.V1.AuthResponse = await client.v1.auth.login(params);
+const params: Zoriapi.V1.AnalyticsDashboardParams = { project_id: 'project_id', time_range: 'last_hour' };
+const dashboardMetricsResponse: Zoriapi.V1.DashboardMetricsResponse = await client.v1.analytics.dashboard(
+  params,
+);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -60,8 +62,8 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-const authResponse = await client.v1.auth
-  .login({ email: 'user@example.com', password: 'SecurePassword123!' })
+const dashboardMetricsResponse = await client.v1.analytics
+  .dashboard({ project_id: 'project_id', time_range: 'last_hour' })
   .catch(async (err) => {
     if (err instanceof Zoriapi.APIError) {
       console.log(err.status); // 400
@@ -102,7 +104,7 @@ const client = new Zoriapi({
 });
 
 // Or, configure per-request:
-await client.v1.auth.login({ email: 'user@example.com', password: 'SecurePassword123!' }, {
+await client.v1.analytics.dashboard({ project_id: 'project_id', time_range: 'last_hour' }, {
   maxRetries: 5,
 });
 ```
@@ -119,7 +121,7 @@ const client = new Zoriapi({
 });
 
 // Override per-request:
-await client.v1.auth.login({ email: 'user@example.com', password: 'SecurePassword123!' }, {
+await client.v1.analytics.dashboard({ project_id: 'project_id', time_range: 'last_hour' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -142,17 +144,17 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new Zoriapi();
 
-const response = await client.v1.auth
-  .login({ email: 'user@example.com', password: 'SecurePassword123!' })
+const response = await client.v1.analytics
+  .dashboard({ project_id: 'project_id', time_range: 'last_hour' })
   .asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: authResponse, response: raw } = await client.v1.auth
-  .login({ email: 'user@example.com', password: 'SecurePassword123!' })
+const { data: dashboardMetricsResponse, response: raw } = await client.v1.analytics
+  .dashboard({ project_id: 'project_id', time_range: 'last_hour' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(authResponse.access_token);
+console.log(dashboardMetricsResponse.avg_pages_per_session);
 ```
 
 ### Logging
@@ -232,7 +234,7 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.v1.auth.login({
+client.v1.analytics.dashboard({
   // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',

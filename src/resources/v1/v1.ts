@@ -2,19 +2,7 @@
 
 import { APIResource } from '../../core/resource';
 import * as AuthAPI from './auth';
-import {
-  Account,
-  Auth,
-  AuthConfirmPasswordRecoveryParams,
-  AuthLoginParams,
-  AuthLogoutParams,
-  AuthRefreshAccessTokenParams,
-  AuthRegisterAccountParams,
-  AuthRequestPasswordRecoveryParams,
-  AuthResponse,
-  MessageResponse,
-  Organization,
-} from './auth';
+import { Auth } from './auth';
 import * as PaymentProvidersAPI from './payment-providers';
 import {
   CreatePaymentProviderRequest,
@@ -171,19 +159,7 @@ export declare namespace V1 {
     type ProjectUpdateParams as ProjectUpdateParams,
   };
 
-  export {
-    Auth as Auth,
-    type Account as Account,
-    type AuthResponse as AuthResponse,
-    type MessageResponse as MessageResponse,
-    type Organization as Organization,
-    type AuthConfirmPasswordRecoveryParams as AuthConfirmPasswordRecoveryParams,
-    type AuthLoginParams as AuthLoginParams,
-    type AuthLogoutParams as AuthLogoutParams,
-    type AuthRefreshAccessTokenParams as AuthRefreshAccessTokenParams,
-    type AuthRegisterAccountParams as AuthRegisterAccountParams,
-    type AuthRequestPasswordRecoveryParams as AuthRequestPasswordRecoveryParams,
-  };
+  export { Auth as Auth };
 
   export {
     PaymentProviders as PaymentProviders,
