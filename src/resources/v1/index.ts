@@ -31,19 +31,7 @@ export {
   type VisitorsByOriginResponse,
   type AnalyticsDashboardParams,
 } from './analytics/index';
-export {
-  Auth,
-  type Account,
-  type AuthResponse,
-  type MessageResponse,
-  type Organization,
-  type AuthConfirmPasswordRecoveryParams,
-  type AuthLoginParams,
-  type AuthLogoutParams,
-  type AuthRefreshAccessTokenParams,
-  type AuthRegisterAccountParams,
-  type AuthRequestPasswordRecoveryParams,
-} from './auth';
+export { Auth } from './auth';
 export {
   PaymentProviders,
   type CreatePaymentProviderRequest,
