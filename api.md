@@ -138,8 +138,6 @@ Methods:
 - <code title="delete /api/v1/projects/{id}">client.v1.projects.<a href="./src/resources/v1/projects.ts">delete</a>(id) -> ProjectDeleteResponse</code>
 - <code title="get /api/v1/projects/{id}">client.v1.projects.<a href="./src/resources/v1/projects.ts">get</a>(id) -> ProjectResponse</code>
 
-## Auth
-
 ## PaymentProviders
 
 Types:
