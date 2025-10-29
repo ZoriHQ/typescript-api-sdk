@@ -211,6 +211,30 @@ export interface OriginDataPoint {
 export interface RecentEvent {
   browser_name?: string;
 
+  click_element_category?: string;
+
+  click_element_selector?: string;
+
+  /**
+   * Click element details
+   */
+  click_element_tag?: string;
+
+  click_element_text?: string;
+
+  /**
+   * Click element classification
+   */
+  click_element_type?: string;
+
+  click_position_x?: number;
+
+  click_position_y?: number;
+
+  click_screen_height?: number;
+
+  click_screen_width?: number;
+
   client_timestamp_utc?: string;
 
   device_type?: string;
@@ -218,6 +242,14 @@ export interface RecentEvent {
   event_name?: string;
 
   external_id?: string;
+
+  is_cta_click?: boolean;
+
+  is_download_link?: boolean;
+
+  is_external_link?: boolean;
+
+  link_destination?: string;
 
   location_city?: string;
 
@@ -321,11 +353,43 @@ export interface VisitorDataPoint {
 export interface VisitorEvent {
   browser_name?: string;
 
+  click_element_category?: string;
+
+  click_element_selector?: string;
+
+  /**
+   * Click element details
+   */
+  click_element_tag?: string;
+
+  click_element_text?: string;
+
+  /**
+   * Click element classification
+   */
+  click_element_type?: string;
+
+  click_position_x?: number;
+
+  click_position_y?: number;
+
+  click_screen_height?: number;
+
+  click_screen_width?: number;
+
   client_timestamp_utc?: string;
 
   device_type?: string;
 
   event_name?: string;
+
+  is_cta_click?: boolean;
+
+  is_download_link?: boolean;
+
+  is_external_link?: boolean;
+
+  link_destination?: string;
 
   page_path?: string;
 

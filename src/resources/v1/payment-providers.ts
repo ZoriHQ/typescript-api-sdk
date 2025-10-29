@@ -82,6 +82,25 @@ export class PaymentProviders extends APIResource {
   get(id: string, options?: RequestOptions): APIPromise<PaymentProviderResponse> {
     return this._client.get(path`/api/v1/payment-providers/${id}`, options);
   }
+
+  /**
+   * Get instructions for connecting a payment provider (OAuth URL or manual
+   * credentials)
+   *
+   * @example
+   * ```ts
+   * const providerInstructionsResponse =
+   *   await client.v1.paymentProviders.instructions({
+   *     provider_type: 'stripe',
+   *   });
+   * ```
+   */
+  instructions(
+    query: PaymentProviderInstructionsParams,
+    options?: RequestOptions,
+  ): APIPromise<ProviderInstructionsResponse> {
+    return this._client.get('/api/v1/payment-providers/instructions', { query, ...options });
+  }
 }
 
 export interface CreatePaymentProviderRequest {
@@ -116,6 +135,35 @@ export interface PaymentProviderResponse {
   provider_type?: 'stripe' | 'paddle' | 'paypal' | 'lemon_squeezy' | 'square';
 
   updated_at?: string;
+}
+
+export interface ProviderField {
+  help_text?: string;
+
+  label?: string;
+
+  name?: string;
+
+  placeholder?: string;
+
+  required?: boolean;
+
+  type?: string;
+}
+
+export interface ProviderInstructionsResponse {
+  /**
+   * "oauth" or "manual"
+   */
+  connection_method?: string;
+
+  fields?: Array<ProviderField>;
+
+  instructions?: string;
+
+  oauth_url?: string;
+
+  provider_type?: 'stripe' | 'paddle' | 'paypal' | 'lemon_squeezy' | 'square';
 }
 
 export interface UpdatePaymentProviderRequest {
@@ -153,15 +201,25 @@ export interface PaymentProviderListParams {
   project_id?: string;
 }
 
+export interface PaymentProviderInstructionsParams {
+  /**
+   * Provider type
+   */
+  provider_type: 'stripe' | 'paddle' | 'paypal' | 'lemon_squeezy' | 'square';
+}
+
 export declare namespace PaymentProviders {
   export {
     type CreatePaymentProviderRequest as CreatePaymentProviderRequest,
     type ListPaymentProvidersResponse as ListPaymentProvidersResponse,
     type PaymentProviderResponse as PaymentProviderResponse,
+    type ProviderField as ProviderField,
+    type ProviderInstructionsResponse as ProviderInstructionsResponse,
     type UpdatePaymentProviderRequest as UpdatePaymentProviderRequest,
     type PaymentProviderDeleteResponse as PaymentProviderDeleteResponse,
     type PaymentProviderCreateParams as PaymentProviderCreateParams,
     type PaymentProviderUpdateParams as PaymentProviderUpdateParams,
     type PaymentProviderListParams as PaymentProviderListParams,
+    type PaymentProviderInstructionsParams as PaymentProviderInstructionsParams,
   };
 }

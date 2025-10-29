@@ -1,30 +1,19 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../core/resource';
-import * as AuthAPI from './auth';
-import {
-  Account,
-  Auth,
-  AuthConfirmPasswordRecoveryParams,
-  AuthLoginParams,
-  AuthLogoutParams,
-  AuthRefreshAccessTokenParams,
-  AuthRegisterAccountParams,
-  AuthRequestPasswordRecoveryParams,
-  AuthResponse,
-  MessageResponse,
-  Organization,
-} from './auth';
 import * as PaymentProvidersAPI from './payment-providers';
 import {
   CreatePaymentProviderRequest,
   ListPaymentProvidersResponse,
   PaymentProviderCreateParams,
   PaymentProviderDeleteResponse,
+  PaymentProviderInstructionsParams,
   PaymentProviderListParams,
   PaymentProviderResponse,
   PaymentProviderUpdateParams,
   PaymentProviders,
+  ProviderField,
+  ProviderInstructionsResponse,
   UpdatePaymentProviderRequest,
 } from './payment-providers';
 import * as ProjectsAPI from './projects';
@@ -95,7 +84,6 @@ export class V1 extends APIResource {
   analytics: AnalyticsAPI.Analytics = new AnalyticsAPI.Analytics(this._client);
   revenue: RevenueAPI.Revenue = new RevenueAPI.Revenue(this._client);
   projects: ProjectsAPI.Projects = new ProjectsAPI.Projects(this._client);
-  auth: AuthAPI.Auth = new AuthAPI.Auth(this._client);
   paymentProviders: PaymentProvidersAPI.PaymentProviders = new PaymentProvidersAPI.PaymentProviders(
     this._client,
   );
@@ -104,7 +92,6 @@ export class V1 extends APIResource {
 V1.Analytics = Analytics;
 V1.Revenue = Revenue;
 V1.Projects = Projects;
-V1.Auth = Auth;
 V1.PaymentProviders = PaymentProviders;
 
 export declare namespace V1 {
@@ -172,28 +159,17 @@ export declare namespace V1 {
   };
 
   export {
-    Auth as Auth,
-    type Account as Account,
-    type AuthResponse as AuthResponse,
-    type MessageResponse as MessageResponse,
-    type Organization as Organization,
-    type AuthConfirmPasswordRecoveryParams as AuthConfirmPasswordRecoveryParams,
-    type AuthLoginParams as AuthLoginParams,
-    type AuthLogoutParams as AuthLogoutParams,
-    type AuthRefreshAccessTokenParams as AuthRefreshAccessTokenParams,
-    type AuthRegisterAccountParams as AuthRegisterAccountParams,
-    type AuthRequestPasswordRecoveryParams as AuthRequestPasswordRecoveryParams,
-  };
-
-  export {
     PaymentProviders as PaymentProviders,
     type CreatePaymentProviderRequest as CreatePaymentProviderRequest,
     type ListPaymentProvidersResponse as ListPaymentProvidersResponse,
     type PaymentProviderResponse as PaymentProviderResponse,
+    type ProviderField as ProviderField,
+    type ProviderInstructionsResponse as ProviderInstructionsResponse,
     type UpdatePaymentProviderRequest as UpdatePaymentProviderRequest,
     type PaymentProviderDeleteResponse as PaymentProviderDeleteResponse,
     type PaymentProviderCreateParams as PaymentProviderCreateParams,
     type PaymentProviderUpdateParams as PaymentProviderUpdateParams,
     type PaymentProviderListParams as PaymentProviderListParams,
+    type PaymentProviderInstructionsParams as PaymentProviderInstructionsParams,
   };
 }

@@ -1,7 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../core/resource';
-import * as AuthAPI from './auth';
 import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
@@ -101,8 +100,6 @@ export interface Project {
 
   name?: string;
 
-  organization?: AuthAPI.Organization;
-
   organization_id?: string;
 
   project_token?: string;
@@ -122,8 +119,6 @@ export interface ProjectResponse {
   first_event_received_at?: string;
 
   name?: string;
-
-  organization?: AuthAPI.Organization;
 
   organization_id?: string;
 

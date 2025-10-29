@@ -81,9 +81,6 @@ export interface ConversionMetricsResponse {
    */
   repeat_purchase_rate?: number;
 
-  /**
-   * Funnel metrics
-   */
   total_visitors?: number;
 }
 

@@ -138,24 +138,6 @@ Methods:
 - <code title="delete /api/v1/projects/{id}">client.v1.projects.<a href="./src/resources/v1/projects.ts">delete</a>(id) -> ProjectDeleteResponse</code>
 - <code title="get /api/v1/projects/{id}">client.v1.projects.<a href="./src/resources/v1/projects.ts">get</a>(id) -> ProjectResponse</code>
 
-## Auth
-
-Types:
-
-- <code><a href="./src/resources/v1/auth.ts">Account</a></code>
-- <code><a href="./src/resources/v1/auth.ts">AuthResponse</a></code>
-- <code><a href="./src/resources/v1/auth.ts">MessageResponse</a></code>
-- <code><a href="./src/resources/v1/auth.ts">Organization</a></code>
-
-Methods:
-
-- <code title="post /api/v1/auth/recover-confirm">client.v1.auth.<a href="./src/resources/v1/auth.ts">confirmPasswordRecovery</a>({ ...params }) -> MessageResponse</code>
-- <code title="post /api/v1/auth/login">client.v1.auth.<a href="./src/resources/v1/auth.ts">login</a>({ ...params }) -> AuthResponse</code>
-- <code title="post /api/v1/auth/logout">client.v1.auth.<a href="./src/resources/v1/auth.ts">logout</a>({ ...params }) -> MessageResponse</code>
-- <code title="post /api/v1/auth/refresh">client.v1.auth.<a href="./src/resources/v1/auth.ts">refreshAccessToken</a>({ ...params }) -> AuthResponse</code>
-- <code title="post /api/v1/auth/register">client.v1.auth.<a href="./src/resources/v1/auth.ts">registerAccount</a>({ ...params }) -> AuthResponse</code>
-- <code title="post /api/v1/auth/recover">client.v1.auth.<a href="./src/resources/v1/auth.ts">requestPasswordRecovery</a>({ ...params }) -> MessageResponse</code>
-
 ## PaymentProviders
 
 Types:
@@ -163,6 +145,8 @@ Types:
 - <code><a href="./src/resources/v1/payment-providers.ts">CreatePaymentProviderRequest</a></code>
 - <code><a href="./src/resources/v1/payment-providers.ts">ListPaymentProvidersResponse</a></code>
 - <code><a href="./src/resources/v1/payment-providers.ts">PaymentProviderResponse</a></code>
+- <code><a href="./src/resources/v1/payment-providers.ts">ProviderField</a></code>
+- <code><a href="./src/resources/v1/payment-providers.ts">ProviderInstructionsResponse</a></code>
 - <code><a href="./src/resources/v1/payment-providers.ts">UpdatePaymentProviderRequest</a></code>
 - <code><a href="./src/resources/v1/payment-providers.ts">PaymentProviderDeleteResponse</a></code>
 
@@ -173,3 +157,4 @@ Methods:
 - <code title="get /api/v1/payment-providers">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">list</a>({ ...params }) -> ListPaymentProvidersResponse</code>
 - <code title="delete /api/v1/payment-providers/{id}">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">delete</a>(id) -> PaymentProviderDeleteResponse</code>
 - <code title="get /api/v1/payment-providers/{id}">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">get</a>(id) -> PaymentProviderResponse</code>
+- <code title="get /api/v1/payment-providers/instructions">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">instructions</a>({ ...params }) -> ProviderInstructionsResponse</code>
