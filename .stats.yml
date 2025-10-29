@@ -1,4 +1,4 @@
-configured_endpoints: 33
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/zorihq%2Fzoriapi-32757e577d2fcf3d59925be9e14f16d3b7eeb34f2e77b73aaaa9251334a9fa6e.yml
-openapi_spec_hash: 0fc90b7a2fd70e6974a2858a18a804da
-config_hash: b9c1776e78136c24e1f7ccd32b37f13b
+configured_endpoints: 34
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/zorihq%2Fzoriapi-cba54812d08110c3655fafa679640796acf3225fd53f197c7c7dff83a1ea2f79.yml
+openapi_spec_hash: 403395bc7b93451b59b2c278d727aeb9
+config_hash: 67d7110be871b16e62765918532955c1

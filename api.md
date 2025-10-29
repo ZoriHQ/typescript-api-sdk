@@ -145,6 +145,8 @@ Types:
 - <code><a href="./src/resources/v1/payment-providers.ts">CreatePaymentProviderRequest</a></code>
 - <code><a href="./src/resources/v1/payment-providers.ts">ListPaymentProvidersResponse</a></code>
 - <code><a href="./src/resources/v1/payment-providers.ts">PaymentProviderResponse</a></code>
+- <code><a href="./src/resources/v1/payment-providers.ts">ProviderField</a></code>
+- <code><a href="./src/resources/v1/payment-providers.ts">ProviderInstructionsResponse</a></code>
 - <code><a href="./src/resources/v1/payment-providers.ts">UpdatePaymentProviderRequest</a></code>
 - <code><a href="./src/resources/v1/payment-providers.ts">PaymentProviderDeleteResponse</a></code>
 
@@ -155,3 +157,4 @@ Methods:
 - <code title="get /api/v1/payment-providers">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">list</a>({ ...params }) -> ListPaymentProvidersResponse</code>
 - <code title="delete /api/v1/payment-providers/{id}">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">delete</a>(id) -> PaymentProviderDeleteResponse</code>
 - <code title="get /api/v1/payment-providers/{id}">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">get</a>(id) -> PaymentProviderResponse</code>
+- <code title="get /api/v1/payment-providers/instructions">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">instructions</a>({ ...params }) -> ProviderInstructionsResponse</code>

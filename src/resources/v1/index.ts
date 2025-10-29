@@ -36,11 +36,14 @@ export {
   type CreatePaymentProviderRequest,
   type ListPaymentProvidersResponse,
   type PaymentProviderResponse,
+  type ProviderField,
+  type ProviderInstructionsResponse,
   type UpdatePaymentProviderRequest,
   type PaymentProviderDeleteResponse,
   type PaymentProviderCreateParams,
   type PaymentProviderUpdateParams,
   type PaymentProviderListParams,
+  type PaymentProviderInstructionsParams,
 } from './payment-providers';
 export {
   Projects,
