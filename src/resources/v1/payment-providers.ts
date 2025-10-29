@@ -206,6 +206,11 @@ export interface PaymentProviderInstructionsParams {
    * Provider type
    */
   provider_type: 'stripe' | 'paddle' | 'paypal' | 'lemon_squeezy' | 'square';
+
+  /**
+   * Project ID (required for Stripe Connect)
+   */
+  project_id?: string;
 }
 
 export declare namespace PaymentProviders {

@@ -105,6 +105,9 @@ describe('resource paymentProviders', () => {
 
   // Prism tests are disabled
   test.skip('instructions: required and optional params', async () => {
-    const response = await client.v1.paymentProviders.instructions({ provider_type: 'stripe' });
+    const response = await client.v1.paymentProviders.instructions({
+      provider_type: 'stripe',
+      project_id: 'project_id',
+    });
   });
 });
