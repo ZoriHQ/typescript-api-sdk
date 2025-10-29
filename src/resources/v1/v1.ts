@@ -7,10 +7,13 @@ import {
   ListPaymentProvidersResponse,
   PaymentProviderCreateParams,
   PaymentProviderDeleteResponse,
+  PaymentProviderInstructionsParams,
   PaymentProviderListParams,
   PaymentProviderResponse,
   PaymentProviderUpdateParams,
   PaymentProviders,
+  ProviderField,
+  ProviderInstructionsResponse,
   UpdatePaymentProviderRequest,
 } from './payment-providers';
 import * as ProjectsAPI from './projects';
@@ -160,10 +163,13 @@ export declare namespace V1 {
     type CreatePaymentProviderRequest as CreatePaymentProviderRequest,
     type ListPaymentProvidersResponse as ListPaymentProvidersResponse,
     type PaymentProviderResponse as PaymentProviderResponse,
+    type ProviderField as ProviderField,
+    type ProviderInstructionsResponse as ProviderInstructionsResponse,
     type UpdatePaymentProviderRequest as UpdatePaymentProviderRequest,
     type PaymentProviderDeleteResponse as PaymentProviderDeleteResponse,
     type PaymentProviderCreateParams as PaymentProviderCreateParams,
     type PaymentProviderUpdateParams as PaymentProviderUpdateParams,
     type PaymentProviderListParams as PaymentProviderListParams,
+    type PaymentProviderInstructionsParams as PaymentProviderInstructionsParams,
   };
 }
