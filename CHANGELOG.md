@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.11.0 (2025-10-30)
+
+Full Changelog: [v0.10.1...v0.11.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.10.1...v0.11.0)
+
+### Features
+
+* **auth:** added OSS auth endpoint ([3a6d79d](https://github.com/ZoriHQ/typescript-api-sdk/commit/3a6d79df9e517f79200fe08cb83a46b845b76fc4))
+
 ## 0.10.1 (2025-10-29)
 
 Full Changelog: [v0.10.0...v0.10.1](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.10.0...v0.10.1)

@@ -31,6 +31,7 @@ export {
   type VisitorsByOriginResponse,
   type AnalyticsDashboardParams,
 } from './analytics/index';
+export { Auth, type LoginRequest, type LoginResponse, type AuthLoginParams } from './auth';
 export {
   PaymentProviders,
   type CreatePaymentProviderRequest,
