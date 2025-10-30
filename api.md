@@ -1,5 +1,16 @@
 # V1
 
+## Auth
+
+Types:
+
+- <code><a href="./src/resources/v1/auth.ts">LoginRequest</a></code>
+- <code><a href="./src/resources/v1/auth.ts">LoginResponse</a></code>
+
+Methods:
+
+- <code title="post /api/v1/auth/login">client.v1.auth.<a href="./src/resources/v1/auth.ts">login</a>({ ...params }) -> LoginResponse</code>
+
 ## Analytics
 
 Types:

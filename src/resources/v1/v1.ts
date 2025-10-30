@@ -1,6 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../core/resource';
+import * as AuthAPI from './auth';
+import { Auth, AuthLoginParams, LoginRequest, LoginResponse } from './auth';
 import * as PaymentProvidersAPI from './payment-providers';
 import {
   CreatePaymentProviderRequest,
@@ -81,6 +83,7 @@ import {
 } from './revenue/revenue';
 
 export class V1 extends APIResource {
+  auth: AuthAPI.Auth = new AuthAPI.Auth(this._client);
   analytics: AnalyticsAPI.Analytics = new AnalyticsAPI.Analytics(this._client);
   revenue: RevenueAPI.Revenue = new RevenueAPI.Revenue(this._client);
   projects: ProjectsAPI.Projects = new ProjectsAPI.Projects(this._client);
@@ -89,12 +92,20 @@ export class V1 extends APIResource {
   );
 }
 
+V1.Auth = Auth;
 V1.Analytics = Analytics;
 V1.Revenue = Revenue;
 V1.Projects = Projects;
 V1.PaymentProviders = PaymentProviders;
 
 export declare namespace V1 {
+  export {
+    Auth as Auth,
+    type LoginRequest as LoginRequest,
+    type LoginResponse as LoginResponse,
+    type AuthLoginParams as AuthLoginParams,
+  };
+
   export {
     Analytics as Analytics,
     type ActiveUsersResponse as ActiveUsersResponse,
