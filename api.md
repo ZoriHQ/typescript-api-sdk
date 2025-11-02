@@ -130,6 +130,16 @@ Methods:
 
 - <code title="get /api/v1/revenue/conversion/metrics">client.v1.revenue.conversion.<a href="./src/resources/v1/revenue/conversion.ts">metrics</a>({ ...params }) -> ConversionMetricsResponse</code>
 
+### Cohort
+
+Types:
+
+- <code><a href="./src/resources/v1/revenue/cohort.ts">CohortGetMetricsResponse</a></code>
+
+Methods:
+
+- <code title="post /api/v1/revenue/cohort/metrics">client.v1.revenue.cohort.<a href="./src/resources/v1/revenue/cohort.ts">getMetrics</a>({ ...params }) -> CohortGetMetricsResponse</code>
+
 ## Projects
 
 Types:
@@ -153,19 +163,31 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/v1/payment-providers.ts">CreatePaymentProviderRequest</a></code>
-- <code><a href="./src/resources/v1/payment-providers.ts">ListPaymentProvidersResponse</a></code>
-- <code><a href="./src/resources/v1/payment-providers.ts">PaymentProviderResponse</a></code>
-- <code><a href="./src/resources/v1/payment-providers.ts">ProviderField</a></code>
-- <code><a href="./src/resources/v1/payment-providers.ts">ProviderInstructionsResponse</a></code>
-- <code><a href="./src/resources/v1/payment-providers.ts">UpdatePaymentProviderRequest</a></code>
-- <code><a href="./src/resources/v1/payment-providers.ts">PaymentProviderDeleteResponse</a></code>
+- <code><a href="./src/resources/v1/payment-providers/payment-providers.ts">CreatePaymentProviderRequest</a></code>
+- <code><a href="./src/resources/v1/payment-providers/payment-providers.ts">ListPaymentProvidersResponse</a></code>
+- <code><a href="./src/resources/v1/payment-providers/payment-providers.ts">PaymentProviderResponse</a></code>
+- <code><a href="./src/resources/v1/payment-providers/payment-providers.ts">ProviderField</a></code>
+- <code><a href="./src/resources/v1/payment-providers/payment-providers.ts">ProviderInstructionsResponse</a></code>
+- <code><a href="./src/resources/v1/payment-providers/payment-providers.ts">UpdatePaymentProviderRequest</a></code>
+- <code><a href="./src/resources/v1/payment-providers/payment-providers.ts">PaymentProviderDeleteResponse</a></code>
 
 Methods:
 
-- <code title="post /api/v1/payment-providers">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">create</a>({ ...params }) -> PaymentProviderResponse</code>
-- <code title="put /api/v1/payment-providers/{id}">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">update</a>(id, { ...params }) -> PaymentProviderResponse</code>
-- <code title="get /api/v1/payment-providers">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">list</a>({ ...params }) -> ListPaymentProvidersResponse</code>
-- <code title="delete /api/v1/payment-providers/{id}">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">delete</a>(id) -> PaymentProviderDeleteResponse</code>
-- <code title="get /api/v1/payment-providers/{id}">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">get</a>(id) -> PaymentProviderResponse</code>
-- <code title="get /api/v1/payment-providers/instructions">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers.ts">instructions</a>({ ...params }) -> ProviderInstructionsResponse</code>
+- <code title="post /api/v1/payment-providers">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers/payment-providers.ts">create</a>({ ...params }) -> PaymentProviderResponse</code>
+- <code title="put /api/v1/payment-providers/{id}">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers/payment-providers.ts">update</a>(id, { ...params }) -> PaymentProviderResponse</code>
+- <code title="get /api/v1/payment-providers">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers/payment-providers.ts">list</a>({ ...params }) -> ListPaymentProvidersResponse</code>
+- <code title="delete /api/v1/payment-providers/{id}">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers/payment-providers.ts">delete</a>(id) -> PaymentProviderDeleteResponse</code>
+- <code title="get /api/v1/payment-providers/{id}">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers/payment-providers.ts">get</a>(id) -> PaymentProviderResponse</code>
+- <code title="get /api/v1/payment-providers/instructions">client.v1.paymentProviders.<a href="./src/resources/v1/payment-providers/payment-providers.ts">instructions</a>({ ...params }) -> ProviderInstructionsResponse</code>
+
+### Stripe
+
+#### App
+
+Types:
+
+- <code><a href="./src/resources/v1/payment-providers/stripe/app.ts">AppHandleCallbackResponse</a></code>
+
+Methods:
+
+- <code title="get /api/v1/payment-providers/stripe/app/callback">client.v1.paymentProviders.stripe.app.<a href="./src/resources/v1/payment-providers/stripe/app.ts">handleCallback</a>({ ...params }) -> AppHandleCallbackResponse</code>

@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export { Attribution, type AttributionByOriginParams, type AttributionByUtmParams } from './attribution';
+export { Cohort, type CohortGetMetricsResponse, type CohortGetMetricsParams } from './cohort';
 export { Conversion, type ConversionMetricsParams } from './conversion';
 export { Customers, type CustomerProfileParams, type CustomerTopParams } from './customers';
 export {
