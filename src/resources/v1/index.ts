@@ -45,7 +45,7 @@ export {
   type PaymentProviderUpdateParams,
   type PaymentProviderListParams,
   type PaymentProviderInstructionsParams,
-} from './payment-providers';
+} from './payment-providers/index';
 export {
   Projects,
   type CreateProjectRequest,
