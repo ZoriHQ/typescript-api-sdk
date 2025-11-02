@@ -3,6 +3,8 @@
 import { APIResource } from '../../../core/resource';
 import * as AttributionAPI from './attribution';
 import { Attribution, AttributionByOriginParams, AttributionByUtmParams } from './attribution';
+import * as CohortAPI from './cohort';
+import { Cohort, CohortGetMetricsParams, CohortGetMetricsResponse } from './cohort';
 import * as ConversionAPI from './conversion';
 import { Conversion, ConversionMetricsParams } from './conversion';
 import * as CustomersAPI from './customers';
@@ -14,6 +16,7 @@ export class Revenue extends APIResource {
   attribution: AttributionAPI.Attribution = new AttributionAPI.Attribution(this._client);
   customers: CustomersAPI.Customers = new CustomersAPI.Customers(this._client);
   conversion: ConversionAPI.Conversion = new ConversionAPI.Conversion(this._client);
+  cohort: CohortAPI.Cohort = new CohortAPI.Cohort(this._client);
 
   /**
    * Get key revenue metrics including total revenue, conversion rate, and average
@@ -258,6 +261,11 @@ export interface TopCustomer {
 
   currency?: string;
 
+  /**
+   * Resolved customer identity (user_id > external_id > visitor_id)
+   */
+  customer_id?: string;
+
   email?: string;
 
   external_id?: string;
@@ -281,7 +289,15 @@ export interface TopCustomer {
 
   user_id?: string;
 
+  /**
+   * Representative visitor_id for this customer
+   */
   visitor_id?: string;
+
+  /**
+   * All visitor_ids for this customer
+   */
+  visitor_ids?: Array<string>;
 }
 
 export interface TopCustomersResponse {
@@ -346,6 +362,7 @@ export interface RevenueTimelineParams {
 Revenue.Attribution = Attribution;
 Revenue.Customers = Customers;
 Revenue.Conversion = Conversion;
+Revenue.Cohort = Cohort;
 
 export declare namespace Revenue {
   export {
@@ -379,4 +396,10 @@ export declare namespace Revenue {
   };
 
   export { Conversion as Conversion, type ConversionMetricsParams as ConversionMetricsParams };
+
+  export {
+    Cohort as Cohort,
+    type CohortGetMetricsResponse as CohortGetMetricsResponse,
+    type CohortGetMetricsParams as CohortGetMetricsParams,
+  };
 }

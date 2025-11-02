@@ -3,21 +3,6 @@
 import { APIResource } from '../../core/resource';
 import * as AuthAPI from './auth';
 import { Auth, AuthLoginParams, LoginRequest, LoginResponse } from './auth';
-import * as PaymentProvidersAPI from './payment-providers';
-import {
-  CreatePaymentProviderRequest,
-  ListPaymentProvidersResponse,
-  PaymentProviderCreateParams,
-  PaymentProviderDeleteResponse,
-  PaymentProviderInstructionsParams,
-  PaymentProviderListParams,
-  PaymentProviderResponse,
-  PaymentProviderUpdateParams,
-  PaymentProviders,
-  ProviderField,
-  ProviderInstructionsResponse,
-  UpdatePaymentProviderRequest,
-} from './payment-providers';
 import * as ProjectsAPI from './projects';
 import {
   CreateProjectRequest,
@@ -62,6 +47,21 @@ import {
   VisitorsByDeviceResponse,
   VisitorsByOriginResponse,
 } from './analytics/analytics';
+import * as PaymentProvidersAPI from './payment-providers/payment-providers';
+import {
+  CreatePaymentProviderRequest,
+  ListPaymentProvidersResponse,
+  PaymentProviderCreateParams,
+  PaymentProviderDeleteResponse,
+  PaymentProviderInstructionsParams,
+  PaymentProviderListParams,
+  PaymentProviderResponse,
+  PaymentProviderUpdateParams,
+  PaymentProviders,
+  ProviderField,
+  ProviderInstructionsResponse,
+  UpdatePaymentProviderRequest,
+} from './payment-providers/payment-providers';
 import * as RevenueAPI from './revenue/revenue';
 import {
   AttributionByOriginResponse,
