@@ -13,10 +13,8 @@ export class Users extends APIResource {
    * ```ts
    * const activeUsersResponse =
    *   await client.v1.analytics.users.active({
-   *     limit: 1,
-   *     offset: 0,
-   *     projectID: 'projectID',
-   *     timeBoundaries: 'last_hour',
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
    *   });
    * ```
    */
@@ -26,15 +24,15 @@ export class Users extends APIResource {
 }
 
 export interface UserActiveParams {
-  limit: number;
+  project_id: string;
 
-  offset: number;
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
 
-  projectID: string;
+  customer_id?: string;
 
-  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  limit?: number;
 
-  customerID?: string;
+  offset?: number;
 
   referrer?: string;
 
@@ -42,7 +40,7 @@ export interface UserActiveParams {
 
   utmtagValue?: string;
 
-  visitorID?: string;
+  visitor_id?: string;
 }
 
 export declare namespace Users {

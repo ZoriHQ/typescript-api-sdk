@@ -13,10 +13,8 @@ export class Retention extends APIResource {
    * ```ts
    * const churnRateResponse =
    *   await client.v1.analytics.retention.churnRate({
-   *     limit: 1,
-   *     offset: 0,
-   *     projectID: 'projectID',
-   *     timeBoundaries: 'last_hour',
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
    *   });
    * ```
    */
@@ -34,10 +32,8 @@ export class Retention extends APIResource {
    * ```ts
    * const cohortAnalysisResponse =
    *   await client.v1.analytics.retention.cohorts({
-   *     limit: 1,
-   *     offset: 0,
-   *     projectID: 'projectID',
-   *     timeBoundaries: 'last_hour',
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
    *   });
    * ```
    */
@@ -55,10 +51,8 @@ export class Retention extends APIResource {
    * ```ts
    * const returnRateResponse =
    *   await client.v1.analytics.retention.returnRate({
-   *     limit: 1,
-   *     offset: 0,
-   *     projectID: 'projectID',
-   *     timeBoundaries: 'last_hour',
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
    *   });
    * ```
    */
@@ -71,15 +65,15 @@ export class Retention extends APIResource {
 }
 
 export interface RetentionChurnRateParams {
-  limit: number;
+  project_id: string;
 
-  offset: number;
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
 
-  projectID: string;
+  customer_id?: string;
 
-  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  limit?: number;
 
-  customerID?: string;
+  offset?: number;
 
   referrer?: string;
 
@@ -87,19 +81,19 @@ export interface RetentionChurnRateParams {
 
   utmtagValue?: string;
 
-  visitorID?: string;
+  visitor_id?: string;
 }
 
 export interface RetentionCohortsParams {
-  limit: number;
+  project_id: string;
 
-  offset: number;
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
 
-  projectID: string;
+  customer_id?: string;
 
-  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  limit?: number;
 
-  customerID?: string;
+  offset?: number;
 
   referrer?: string;
 
@@ -107,19 +101,19 @@ export interface RetentionCohortsParams {
 
   utmtagValue?: string;
 
-  visitorID?: string;
+  visitor_id?: string;
 }
 
 export interface RetentionReturnRateParams {
-  limit: number;
+  project_id: string;
 
-  offset: number;
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
 
-  projectID: string;
+  customer_id?: string;
 
-  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  limit?: number;
 
-  customerID?: string;
+  offset?: number;
 
   referrer?: string;
 
@@ -127,7 +121,7 @@ export interface RetentionReturnRateParams {
 
   utmtagValue?: string;
 
-  visitorID?: string;
+  visitor_id?: string;
 }
 
 export declare namespace Retention {
