@@ -11,10 +11,8 @@ describe('resource visitors', () => {
   // Prism tests are disabled
   test.skip('byCountry: only required params', async () => {
     const responsePromise = client.v1.analytics.visitors.byCountry({
-      limit: 1,
-      offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
+      project_id: 'project_id',
+      time_range: 'last_hour',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -28,25 +26,23 @@ describe('resource visitors', () => {
   // Prism tests are disabled
   test.skip('byCountry: required and optional params', async () => {
     const response = await client.v1.analytics.visitors.byCountry({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+      customer_id: 'customer_id',
       limit: 1,
       offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
-      customerID: 'customerID',
       referrer: 'referrer',
       utmtag: 'utmtag',
       utmtagValue: 'utmtagValue',
-      visitorID: 'visitorID',
+      visitor_id: 'visitor_id',
     });
   });
 
   // Prism tests are disabled
   test.skip('byDevice: only required params', async () => {
     const responsePromise = client.v1.analytics.visitors.byDevice({
-      limit: 1,
-      offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
+      project_id: 'project_id',
+      time_range: 'last_hour',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -60,25 +56,23 @@ describe('resource visitors', () => {
   // Prism tests are disabled
   test.skip('byDevice: required and optional params', async () => {
     const response = await client.v1.analytics.visitors.byDevice({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+      customer_id: 'customer_id',
       limit: 1,
       offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
-      customerID: 'customerID',
       referrer: 'referrer',
       utmtag: 'utmtag',
       utmtagValue: 'utmtagValue',
-      visitorID: 'visitorID',
+      visitor_id: 'visitor_id',
     });
   });
 
   // Prism tests are disabled
   test.skip('byOrigin: only required params', async () => {
     const responsePromise = client.v1.analytics.visitors.byOrigin({
-      limit: 1,
-      offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
+      project_id: 'project_id',
+      time_range: 'last_hour',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -92,15 +86,15 @@ describe('resource visitors', () => {
   // Prism tests are disabled
   test.skip('byOrigin: required and optional params', async () => {
     const response = await client.v1.analytics.visitors.byOrigin({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+      customer_id: 'customer_id',
       limit: 1,
       offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
-      customerID: 'customerID',
       referrer: 'referrer',
       utmtag: 'utmtag',
       utmtagValue: 'utmtagValue',
-      visitorID: 'visitorID',
+      visitor_id: 'visitor_id',
     });
   });
 
@@ -135,12 +129,7 @@ describe('resource visitors', () => {
 
   // Prism tests are disabled
   test.skip('profile: only required params', async () => {
-    const responsePromise = client.v1.analytics.visitors.profile({
-      limit: 1,
-      offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
-    });
+    const responsePromise = client.v1.analytics.visitors.profile({ project_id: 'project_id' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -153,25 +142,17 @@ describe('resource visitors', () => {
   // Prism tests are disabled
   test.skip('profile: required and optional params', async () => {
     const response = await client.v1.analytics.visitors.profile({
-      limit: 1,
-      offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
-      customerID: 'customerID',
-      referrer: 'referrer',
-      utmtag: 'utmtag',
-      utmtagValue: 'utmtagValue',
-      visitorID: 'visitorID',
+      project_id: 'project_id',
+      customer_id: 'customer_id',
+      visitor_id: 'visitor_id',
     });
   });
 
   // Prism tests are disabled
   test.skip('timeline: only required params', async () => {
     const responsePromise = client.v1.analytics.visitors.timeline({
-      limit: 1,
-      offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
+      project_id: 'project_id',
+      time_range: 'last_hour',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -185,25 +166,23 @@ describe('resource visitors', () => {
   // Prism tests are disabled
   test.skip('timeline: required and optional params', async () => {
     const response = await client.v1.analytics.visitors.timeline({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+      customer_id: 'customer_id',
       limit: 1,
       offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
-      customerID: 'customerID',
       referrer: 'referrer',
       utmtag: 'utmtag',
       utmtagValue: 'utmtagValue',
-      visitorID: 'visitorID',
+      visitor_id: 'visitor_id',
     });
   });
 
   // Prism tests are disabled
   test.skip('top: only required params', async () => {
     const responsePromise = client.v1.analytics.visitors.top({
-      limit: 1,
-      offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
+      project_id: 'project_id',
+      time_range: 'last_hour',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -217,15 +196,15 @@ describe('resource visitors', () => {
   // Prism tests are disabled
   test.skip('top: required and optional params', async () => {
     const response = await client.v1.analytics.visitors.top({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+      customer_id: 'customer_id',
       limit: 1,
       offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
-      customerID: 'customerID',
       referrer: 'referrer',
       utmtag: 'utmtag',
       utmtagValue: 'utmtagValue',
-      visitorID: 'visitorID',
+      visitor_id: 'visitor_id',
     });
   });
 });

@@ -11,10 +11,8 @@ describe('resource events', () => {
   // Prism tests are disabled
   test.skip('filterOptions: only required params', async () => {
     const responsePromise = client.v1.analytics.events.filterOptions({
-      limit: 1,
-      offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
+      project_id: 'project_id',
+      time_range: 'last_hour',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -28,25 +26,23 @@ describe('resource events', () => {
   // Prism tests are disabled
   test.skip('filterOptions: required and optional params', async () => {
     const response = await client.v1.analytics.events.filterOptions({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+      customer_id: 'customer_id',
       limit: 1,
       offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
-      customerID: 'customerID',
       referrer: 'referrer',
       utmtag: 'utmtag',
       utmtagValue: 'utmtagValue',
-      visitorID: 'visitorID',
+      visitor_id: 'visitor_id',
     });
   });
 
   // Prism tests are disabled
   test.skip('recent: only required params', async () => {
     const responsePromise = client.v1.analytics.events.recent({
-      limit: 1,
-      offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
+      project_id: 'project_id',
+      time_range: 'last_hour',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -60,19 +56,19 @@ describe('resource events', () => {
   // Prism tests are disabled
   test.skip('recent: required and optional params', async () => {
     const response = await client.v1.analytics.events.recent({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+      customer_id: 'customer_id',
+      externalID: 'externalID',
       limit: 1,
       offset: 0,
-      projectID: 'projectID',
-      timeBoundaries: 'last_hour',
-      customerID: 'customerID',
-      externalID: 'externalID',
       pagePath: 'pagePath',
       referrer: 'referrer',
       trafficOrigin: 'trafficOrigin',
       userID: 'userID',
       utmtag: 'utmtag',
       utmtagValue: 'utmtagValue',
-      visitorID: 'visitorID',
+      visitor_id: 'visitor_id',
     });
   });
 });

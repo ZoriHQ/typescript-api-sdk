@@ -13,10 +13,8 @@ export class Sessions extends APIResource {
    * ```ts
    * const bounceRateResponse =
    *   await client.v1.analytics.sessions.bounceRate({
-   *     limit: 1,
-   *     offset: 0,
-   *     projectID: 'projectID',
-   *     timeBoundaries: 'last_hour',
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
    *   });
    * ```
    */
@@ -34,10 +32,8 @@ export class Sessions extends APIResource {
    * ```ts
    * const sessionMetricsResponse =
    *   await client.v1.analytics.sessions.metrics({
-   *     limit: 1,
-   *     offset: 0,
-   *     projectID: 'projectID',
-   *     timeBoundaries: 'last_hour',
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
    *   });
    * ```
    */
@@ -50,15 +46,15 @@ export class Sessions extends APIResource {
 }
 
 export interface SessionBounceRateParams {
-  limit: number;
+  project_id: string;
 
-  offset: number;
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
 
-  projectID: string;
+  customer_id?: string;
 
-  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  limit?: number;
 
-  customerID?: string;
+  offset?: number;
 
   referrer?: string;
 
@@ -66,19 +62,19 @@ export interface SessionBounceRateParams {
 
   utmtagValue?: string;
 
-  visitorID?: string;
+  visitor_id?: string;
 }
 
 export interface SessionMetricsParams {
-  limit: number;
+  project_id: string;
 
-  offset: number;
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
 
-  projectID: string;
+  customer_id?: string;
 
-  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  limit?: number;
 
-  customerID?: string;
+  offset?: number;
 
   referrer?: string;
 
@@ -86,7 +82,7 @@ export interface SessionMetricsParams {
 
   utmtagValue?: string;
 
-  visitorID?: string;
+  visitor_id?: string;
 }
 
 export declare namespace Sessions {
