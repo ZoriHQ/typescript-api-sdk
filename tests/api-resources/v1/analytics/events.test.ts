@@ -10,7 +10,12 @@ const client = new Zoriapi({
 describe('resource events', () => {
   // Prism tests are disabled
   test.skip('filterOptions: only required params', async () => {
-    const responsePromise = client.v1.analytics.events.filterOptions({ project_id: 'project_id' });
+    const responsePromise = client.v1.analytics.events.filterOptions({
+      limit: 1,
+      offset: 0,
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,14 +28,26 @@ describe('resource events', () => {
   // Prism tests are disabled
   test.skip('filterOptions: required and optional params', async () => {
     const response = await client.v1.analytics.events.filterOptions({
-      project_id: 'project_id',
-      time_range: 'last_hour',
+      limit: 1,
+      offset: 0,
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
+      customerID: 'customerID',
+      referrer: 'referrer',
+      utmtag: 'utmtag',
+      utmtagValue: 'utmtagValue',
+      visitorID: 'visitorID',
     });
   });
 
   // Prism tests are disabled
   test.skip('recent: only required params', async () => {
-    const responsePromise = client.v1.analytics.events.recent({ project_id: 'project_id' });
+    const responsePromise = client.v1.analytics.events.recent({
+      limit: 1,
+      offset: 0,
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -43,14 +60,19 @@ describe('resource events', () => {
   // Prism tests are disabled
   test.skip('recent: required and optional params', async () => {
     const response = await client.v1.analytics.events.recent({
-      project_id: 'project_id',
-      external_id: 'external_id',
-      limit: 0,
+      limit: 1,
       offset: 0,
-      page_path: 'page_path',
-      traffic_origin: 'traffic_origin',
-      user_id: 'user_id',
-      visitor_id: 'visitor_id',
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
+      customerID: 'customerID',
+      externalID: 'externalID',
+      pagePath: 'pagePath',
+      referrer: 'referrer',
+      trafficOrigin: 'trafficOrigin',
+      userID: 'userID',
+      utmtag: 'utmtag',
+      utmtagValue: 'utmtagValue',
+      visitorID: 'visitorID',
     });
   });
 });

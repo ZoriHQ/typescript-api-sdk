@@ -13,8 +13,10 @@ export class Visitors extends APIResource {
    * ```ts
    * const visitorsByCountryResponse =
    *   await client.v1.analytics.visitors.byCountry({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
+   *     limit: 1,
+   *     offset: 0,
+   *     projectID: 'projectID',
+   *     timeBoundaries: 'last_hour',
    *   });
    * ```
    */
@@ -33,8 +35,10 @@ export class Visitors extends APIResource {
    * ```ts
    * const visitorsByDeviceResponse =
    *   await client.v1.analytics.visitors.byDevice({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
+   *     limit: 1,
+   *     offset: 0,
+   *     projectID: 'projectID',
+   *     timeBoundaries: 'last_hour',
    *   });
    * ```
    */
@@ -52,8 +56,10 @@ export class Visitors extends APIResource {
    * ```ts
    * const visitorsByOriginResponse =
    *   await client.v1.analytics.visitors.byOrigin({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
+   *     limit: 1,
+   *     offset: 0,
+   *     projectID: 'projectID',
+   *     timeBoundaries: 'last_hour',
    *   });
    * ```
    */
@@ -92,8 +98,10 @@ export class Visitors extends APIResource {
    * ```ts
    * const visitorProfileResponse =
    *   await client.v1.analytics.visitors.profile({
-   *     project_id: 'project_id',
-   *     visitor_id: 'visitor_id',
+   *     limit: 1,
+   *     offset: 0,
+   *     projectID: 'projectID',
+   *     timeBoundaries: 'last_hour',
    *   });
    * ```
    */
@@ -112,8 +120,10 @@ export class Visitors extends APIResource {
    * ```ts
    * const uniqueVisitorsTimelineResponse =
    *   await client.v1.analytics.visitors.timeline({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
+   *     limit: 1,
+   *     offset: 0,
+   *     projectID: 'projectID',
+   *     timeBoundaries: 'last_hour',
    *   });
    * ```
    */
@@ -131,8 +141,10 @@ export class Visitors extends APIResource {
    * ```ts
    * const topVisitorsResponse =
    *   await client.v1.analytics.visitors.top({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
+   *     limit: 1,
+   *     offset: 0,
+   *     projectID: 'projectID',
+   *     timeBoundaries: 'last_hour',
    *   });
    * ```
    */
@@ -142,39 +154,63 @@ export class Visitors extends APIResource {
 }
 
 export interface VisitorByCountryParams {
-  /**
-   * Project ID
-   */
-  project_id: string;
+  limit: number;
 
-  /**
-   * Time range
-   */
-  time_range: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  offset: number;
+
+  projectID: string;
+
+  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customerID?: string;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitorID?: string;
 }
 
 export interface VisitorByDeviceParams {
-  /**
-   * Project ID
-   */
-  project_id: string;
+  limit: number;
 
-  /**
-   * Time range
-   */
-  time_range: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  offset: number;
+
+  projectID: string;
+
+  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customerID?: string;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitorID?: string;
 }
 
 export interface VisitorByOriginParams {
-  /**
-   * Project ID
-   */
-  project_id: string;
+  limit: number;
 
-  /**
-   * Time range
-   */
-  time_range: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  offset: number;
+
+  projectID: string;
+
+  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customerID?: string;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitorID?: string;
 }
 
 export interface VisitorIdentifyParams {
@@ -196,44 +232,63 @@ export interface VisitorIdentifyParams {
 }
 
 export interface VisitorProfileParams {
-  /**
-   * Project ID
-   */
-  project_id: string;
+  limit: number;
 
-  /**
-   * Visitor ID
-   */
-  visitor_id: string;
+  offset: number;
+
+  projectID: string;
+
+  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customerID?: string;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitorID?: string;
 }
 
 export interface VisitorTimelineParams {
-  /**
-   * Project ID
-   */
-  project_id: string;
+  limit: number;
 
-  /**
-   * Time range
-   */
-  time_range: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  offset: number;
+
+  projectID: string;
+
+  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customerID?: string;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitorID?: string;
 }
 
 export interface VisitorTopParams {
-  /**
-   * Project ID
-   */
-  project_id: string;
+  limit: number;
 
-  /**
-   * Time range
-   */
-  time_range: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  offset: number;
 
-  /**
-   * Maximum number of visitors to return (default: 50)
-   */
-  limit?: number;
+  projectID: string;
+
+  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customerID?: string;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitorID?: string;
 }
 
 export declare namespace Visitors {

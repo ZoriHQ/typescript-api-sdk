@@ -23,9 +23,6 @@ export class Cohort extends APIResource {
 }
 
 export interface CohortGetMetricsResponse {
-  /**
-   * Customers with only visitor_id
-   */
   anonymous_customers?: number;
 
   avg_order_value?: number;
@@ -36,70 +33,34 @@ export interface CohortGetMetricsResponse {
 
   avg_revenue_per_visitor?: number;
 
-  /**
-   * Time metrics
-   */
   avg_time_to_first_purchase_hours?: number;
 
-  /**
-   * paying_customers / total_customers \* 100
-   */
   conversion_rate?: number;
 
   currency?: string;
 
-  /**
-   * Customer identity mapping
-   */
   identified_customers?: number;
 
-  /**
-   * Median time to first payment
-   */
   median_time_to_first_purchase_hours?: number;
 
-  /**
-   * Unique customer identities who made payments
-   */
   paying_customers?: number;
 
-  /**
-   * Total unique customer identities in cohort
-   */
   total_customers?: number;
 
-  /**
-   * Payment metrics
-   */
   total_payments?: number;
 
-  /**
-   * Revenue metrics
-   */
   total_revenue?: number;
 
-  /**
-   * Cohort size
-   */
   total_visitors?: number;
 
-  /**
-   * paying_customers / total_visitors \* 100
-   */
   visitor_conversion_rate?: number;
 }
 
 export interface CohortGetMetricsParams {
   project_id: string;
 
-  /**
-   * List of visitor IDs to analyze
-   */
   visitor_ids: Array<string>;
 
-  /**
-   * Optional: filter by payment date
-   */
   time_range?: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
 }
 

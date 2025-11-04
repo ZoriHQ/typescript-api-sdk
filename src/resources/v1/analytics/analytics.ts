@@ -43,8 +43,10 @@ export class Analytics extends APIResource {
    * ```ts
    * const dashboardMetricsResponse =
    *   await client.v1.analytics.dashboard({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
+   *     limit: 1,
+   *     offset: 0,
+   *     projectID: 'projectID',
+   *     timeBoundaries: 'last_hour',
    *   });
    * ```
    */
@@ -120,35 +122,20 @@ export interface DashboardMetricsResponse {
 
   avg_session_duration_seconds?: number;
 
-  /**
-   * Engagement metrics
-   */
   bounce_rate?: number;
 
-  /**
-   * Active users
-   */
   dau?: number;
 
   mau?: number;
 
   return_rate?: number;
 
-  /**
-   * Sessions
-   */
   sessions_today?: number;
 
-  /**
-   * Total metrics
-   */
   total_events?: number;
 
   total_sessions_in_period?: number;
 
-  /**
-   * Total unique sessions in period
-   */
   unique_sessions?: number;
 
   unique_visitors?: number;
@@ -157,14 +144,8 @@ export interface DashboardMetricsResponse {
 }
 
 export interface EventFilterOptionsResponse {
-  /**
-   * Unique page paths
-   */
   pages?: Array<string>;
 
-  /**
-   * Unique referrer domains
-   */
   traffic_origins?: Array<string>;
 }
 
@@ -215,16 +196,10 @@ export interface RecentEvent {
 
   click_element_selector?: string;
 
-  /**
-   * Click element details
-   */
   click_element_tag?: string;
 
   click_element_text?: string;
 
-  /**
-   * Click element classification
-   */
   click_element_type?: string;
 
   click_position_x?: number;
@@ -357,16 +332,10 @@ export interface VisitorEvent {
 
   click_element_selector?: string;
 
-  /**
-   * Click element details
-   */
   click_element_tag?: string;
 
   click_element_text?: string;
 
-  /**
-   * Click element classification
-   */
   click_element_type?: string;
 
   click_position_x?: number;
@@ -451,15 +420,23 @@ export interface VisitorsByOriginResponse {
 }
 
 export interface AnalyticsDashboardParams {
-  /**
-   * Project ID
-   */
-  project_id: string;
+  limit: number;
 
-  /**
-   * Time range
-   */
-  time_range: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  offset: number;
+
+  projectID: string;
+
+  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customerID?: string;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitorID?: string;
 }
 
 Analytics.Visitors = Visitors;

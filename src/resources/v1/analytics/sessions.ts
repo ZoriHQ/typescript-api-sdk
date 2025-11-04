@@ -13,8 +13,10 @@ export class Sessions extends APIResource {
    * ```ts
    * const bounceRateResponse =
    *   await client.v1.analytics.sessions.bounceRate({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
+   *     limit: 1,
+   *     offset: 0,
+   *     projectID: 'projectID',
+   *     timeBoundaries: 'last_hour',
    *   });
    * ```
    */
@@ -32,8 +34,10 @@ export class Sessions extends APIResource {
    * ```ts
    * const sessionMetricsResponse =
    *   await client.v1.analytics.sessions.metrics({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
+   *     limit: 1,
+   *     offset: 0,
+   *     projectID: 'projectID',
+   *     timeBoundaries: 'last_hour',
    *   });
    * ```
    */
@@ -46,32 +50,43 @@ export class Sessions extends APIResource {
 }
 
 export interface SessionBounceRateParams {
-  /**
-   * Project ID
-   */
-  project_id: string;
+  limit: number;
 
-  /**
-   * Time range
-   */
-  time_range: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  offset: number;
 
-  /**
-   * Limit for per-page breakdown (default: 20)
-   */
-  limit?: number;
+  projectID: string;
+
+  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customerID?: string;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitorID?: string;
 }
 
 export interface SessionMetricsParams {
-  /**
-   * Project ID
-   */
-  project_id: string;
+  limit: number;
 
-  /**
-   * Time range
-   */
-  time_range: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  offset: number;
+
+  projectID: string;
+
+  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customerID?: string;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitorID?: string;
 }
 
 export declare namespace Sessions {

@@ -156,9 +156,6 @@ export interface ProviderField {
 }
 
 export interface ProviderInstructionsResponse {
-  /**
-   * "oauth" or "manual"
-   */
   connection_method?: string;
 
   fields?: Array<ProviderField>;

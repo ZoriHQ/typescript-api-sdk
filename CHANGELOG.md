@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.12.0 (2025-11-04)
+
+Full Changelog: [v0.11.1...v0.12.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.11.1...v0.12.0)
+
+### Features
+
+* Feat/unified filters ([91d4670](https://github.com/ZoriHQ/typescript-api-sdk/commit/91d46703fd85489d18439dd9b9b0e8e8710efb11))
+
 ## 0.11.1 (2025-11-02)
 
 Full Changelog: [v0.11.0...v0.11.1](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.11.0...v0.11.1)

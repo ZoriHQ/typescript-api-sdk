@@ -11,8 +11,10 @@ describe('resource analytics', () => {
   // Prism tests are disabled
   test.skip('dashboard: only required params', async () => {
     const responsePromise = client.v1.analytics.dashboard({
-      project_id: 'project_id',
-      time_range: 'last_hour',
+      limit: 1,
+      offset: 0,
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -26,8 +28,15 @@ describe('resource analytics', () => {
   // Prism tests are disabled
   test.skip('dashboard: required and optional params', async () => {
     const response = await client.v1.analytics.dashboard({
-      project_id: 'project_id',
-      time_range: 'last_hour',
+      limit: 1,
+      offset: 0,
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
+      customerID: 'customerID',
+      referrer: 'referrer',
+      utmtag: 'utmtag',
+      utmtagValue: 'utmtagValue',
+      visitorID: 'visitorID',
     });
   });
 });
