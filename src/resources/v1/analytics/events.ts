@@ -13,10 +13,8 @@ export class Events extends APIResource {
    * ```ts
    * const eventFilterOptionsResponse =
    *   await client.v1.analytics.events.filterOptions({
-   *     limit: 1,
-   *     offset: 0,
-   *     projectID: 'projectID',
-   *     timeBoundaries: 'last_hour',
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
    *   });
    * ```
    */
@@ -35,10 +33,8 @@ export class Events extends APIResource {
    * ```ts
    * const recentEventsResponse =
    *   await client.v1.analytics.events.recent({
-   *     limit: 1,
-   *     offset: 0,
-   *     projectID: 'projectID',
-   *     timeBoundaries: 'last_hour',
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
    *   });
    * ```
    */
@@ -48,15 +44,15 @@ export class Events extends APIResource {
 }
 
 export interface EventFilterOptionsParams {
-  limit: number;
+  project_id: string;
 
-  offset: number;
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
 
-  projectID: string;
+  customer_id?: string;
 
-  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  limit?: number;
 
-  customerID?: string;
+  offset?: number;
 
   referrer?: string;
 
@@ -64,21 +60,21 @@ export interface EventFilterOptionsParams {
 
   utmtagValue?: string;
 
-  visitorID?: string;
+  visitor_id?: string;
 }
 
 export interface EventRecentParams {
-  limit: number;
+  project_id: string;
 
-  offset: number;
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
 
-  projectID: string;
-
-  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
-
-  customerID?: string;
+  customer_id?: string;
 
   externalID?: string;
+
+  limit?: number;
+
+  offset?: number;
 
   pagePath?: string;
 
@@ -92,7 +88,7 @@ export interface EventRecentParams {
 
   utmtagValue?: string;
 
-  visitorID?: string;
+  visitor_id?: string;
 }
 
 export declare namespace Events {
