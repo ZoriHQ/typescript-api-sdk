@@ -13,7 +13,10 @@ export class Events extends APIResource {
    * ```ts
    * const eventFilterOptionsResponse =
    *   await client.v1.analytics.events.filterOptions({
-   *     project_id: 'project_id',
+   *     limit: 1,
+   *     offset: 0,
+   *     projectID: 'projectID',
+   *     timeBoundaries: 'last_hour',
    *   });
    * ```
    */
@@ -32,7 +35,10 @@ export class Events extends APIResource {
    * ```ts
    * const recentEventsResponse =
    *   await client.v1.analytics.events.recent({
-   *     project_id: 'project_id',
+   *     limit: 1,
+   *     offset: 0,
+   *     projectID: 'projectID',
+   *     timeBoundaries: 'last_hour',
    *   });
    * ```
    */
@@ -42,57 +48,51 @@ export class Events extends APIResource {
 }
 
 export interface EventFilterOptionsParams {
-  /**
-   * Project ID
-   */
-  project_id: string;
+  limit: number;
 
-  /**
-   * Time range
-   */
-  time_range?: 'last_hour' | 'today' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+  offset: number;
+
+  projectID: string;
+
+  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customerID?: string;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitorID?: string;
 }
 
 export interface EventRecentParams {
-  /**
-   * Project ID
-   */
-  project_id: string;
+  limit: number;
 
-  /**
-   * Filter by external ID
-   */
-  external_id?: string;
+  offset: number;
 
-  /**
-   * Maximum number of events to return (default: 15)
-   */
-  limit?: number;
+  projectID: string;
 
-  /**
-   * Offset for pagination (default: 0)
-   */
-  offset?: number;
+  timeBoundaries: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
 
-  /**
-   * Filter by page path
-   */
-  page_path?: string;
+  customerID?: string;
 
-  /**
-   * Filter by traffic origin (referrer domain)
-   */
-  traffic_origin?: string;
+  externalID?: string;
 
-  /**
-   * Filter by user ID
-   */
-  user_id?: string;
+  pagePath?: string;
 
-  /**
-   * Filter by visitor ID
-   */
-  visitor_id?: string;
+  referrer?: string;
+
+  trafficOrigin?: string;
+
+  userID?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitorID?: string;
 }
 
 export declare namespace Events {
