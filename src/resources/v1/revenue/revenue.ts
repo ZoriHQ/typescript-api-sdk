@@ -60,28 +60,16 @@ export interface AttributionByUtmResponse {
 export interface ConversionMetricsResponse {
   avg_purchases_per_customer?: number;
 
-  /**
-   * Time to conversion
-   */
   avg_time_to_first_purchase_hours?: number;
 
-  /**
-   * % of visitors who paid
-   */
   conversion_rate?: number;
 
-  /**
-   * Customer value
-   */
   customer_lifetime_value?: number;
 
   median_time_to_first_purchase_hours?: number;
 
   paying_customers?: number;
 
-  /**
-   * Repeat purchase metrics
-   */
   repeat_purchase_rate?: number;
 
   total_visitors?: number;
@@ -98,9 +86,6 @@ export interface CustomerProfileResponse {
 
   first_payment_date?: string;
 
-  /**
-   * Attribution
-   */
   first_traffic_origin?: string;
 
   first_utm_campaign?: string;
@@ -115,86 +100,44 @@ export interface CustomerProfileResponse {
 
   payment_count?: number;
 
-  /**
-   * Payment history
-   */
   payments?: Array<Payment>;
 
-  /**
-   * Revenue over time (last 90 days)
-   */
   revenue_over_time?: Array<RevenueOverTimeDataPoint>;
 
-  /**
-   * Revenue summary
-   */
   total_revenue?: number;
 
   user_id?: string;
 
-  /**
-   * Identity
-   */
   visitor_id?: string;
 }
 
 export interface DashboardResponse {
-  /**
-   * Average metrics
-   */
   avg_order_value?: number;
 
-  /**
-   * Average revenue per paying customer
-   */
   avg_revenue_per_customer?: number;
 
   avg_revenue_per_identified_customer?: number;
 
-  /**
-   * Average revenue per session
-   */
   avg_revenue_per_session?: number;
 
-  /**
-   * % of visitors who paid
-   */
   conversion_rate?: number;
 
   currency?: string;
 
   identified_customer_revenue?: number;
 
-  /**
-   * Identified customers (have email/user_id)
-   */
   identified_customers?: number;
 
-  /**
-   * Customer metrics
-   */
   paying_customers?: number;
 
-  /**
-   * Count of successful payments
-   */
   total_payments?: number;
 
-  /**
-   * Core revenue metrics
-   */
   total_revenue?: number;
 }
 
 export interface OriginAttributionDataPoint {
-  /**
-   * Average revenue per paying customer
-   */
   avg_revenue_per_customer?: number;
 
-  /**
-   * paying_customers / unique_visitors \* 100
-   */
   conversion_rate?: number;
 
   currency?: string;
@@ -207,9 +150,6 @@ export interface OriginAttributionDataPoint {
 
   revenue_percentage?: number;
 
-  /**
-   * Revenue in smallest currency unit (cents)
-   */
   total_revenue?: number;
 
   unique_visitors?: number;
@@ -246,9 +186,6 @@ export interface TimelineDataPoint {
 
   timestamp?: string;
 
-  /**
-   * Revenue in smallest currency unit (cents)
-   */
   total_revenue?: number;
 }
 
@@ -261,9 +198,6 @@ export interface TopCustomer {
 
   currency?: string;
 
-  /**
-   * Resolved customer identity (user_id > external_id > visitor_id)
-   */
   customer_id?: string;
 
   email?: string;
@@ -282,21 +216,12 @@ export interface TopCustomer {
 
   payment_count?: number;
 
-  /**
-   * Total revenue in smallest currency unit (cents)
-   */
   total_revenue?: number;
 
   user_id?: string;
 
-  /**
-   * Representative visitor_id for this customer
-   */
   visitor_id?: string;
 
-  /**
-   * All visitor_ids for this customer
-   */
   visitor_ids?: Array<string>;
 }
 
@@ -307,14 +232,8 @@ export interface TopCustomersResponse {
 }
 
 export interface UtmAttributionDataPoint {
-  /**
-   * Average revenue per paying customer
-   */
   avg_revenue_per_customer?: number;
 
-  /**
-   * paying_customers / unique_visitors \* 100
-   */
   conversion_rate?: number;
 
   currency?: string;
@@ -325,9 +244,6 @@ export interface UtmAttributionDataPoint {
 
   revenue_percentage?: number;
 
-  /**
-   * Revenue in smallest currency unit (cents)
-   */
   total_revenue?: number;
 
   unique_visitors?: number;

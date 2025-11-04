@@ -11,8 +11,10 @@ describe('resource retention', () => {
   // Prism tests are disabled
   test.skip('churnRate: only required params', async () => {
     const responsePromise = client.v1.analytics.retention.churnRate({
-      project_id: 'project_id',
-      time_range: 'last_hour',
+      limit: 1,
+      offset: 0,
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -26,17 +28,25 @@ describe('resource retention', () => {
   // Prism tests are disabled
   test.skip('churnRate: required and optional params', async () => {
     const response = await client.v1.analytics.retention.churnRate({
-      project_id: 'project_id',
-      time_range: 'last_hour',
-      churn_threshold_days: 0,
+      limit: 1,
+      offset: 0,
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
+      customerID: 'customerID',
+      referrer: 'referrer',
+      utmtag: 'utmtag',
+      utmtagValue: 'utmtagValue',
+      visitorID: 'visitorID',
     });
   });
 
   // Prism tests are disabled
   test.skip('cohorts: only required params', async () => {
     const responsePromise = client.v1.analytics.retention.cohorts({
-      project_id: 'project_id',
-      time_range: 'last_hour',
+      limit: 1,
+      offset: 0,
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -50,16 +60,25 @@ describe('resource retention', () => {
   // Prism tests are disabled
   test.skip('cohorts: required and optional params', async () => {
     const response = await client.v1.analytics.retention.cohorts({
-      project_id: 'project_id',
-      time_range: 'last_hour',
+      limit: 1,
+      offset: 0,
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
+      customerID: 'customerID',
+      referrer: 'referrer',
+      utmtag: 'utmtag',
+      utmtagValue: 'utmtagValue',
+      visitorID: 'visitorID',
     });
   });
 
   // Prism tests are disabled
   test.skip('returnRate: only required params', async () => {
     const responsePromise = client.v1.analytics.retention.returnRate({
-      project_id: 'project_id',
-      time_range: 'last_hour',
+      limit: 1,
+      offset: 0,
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -73,8 +92,15 @@ describe('resource retention', () => {
   // Prism tests are disabled
   test.skip('returnRate: required and optional params', async () => {
     const response = await client.v1.analytics.retention.returnRate({
-      project_id: 'project_id',
-      time_range: 'last_hour',
+      limit: 1,
+      offset: 0,
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
+      customerID: 'customerID',
+      referrer: 'referrer',
+      utmtag: 'utmtag',
+      utmtagValue: 'utmtagValue',
+      visitorID: 'visitorID',
     });
   });
 });

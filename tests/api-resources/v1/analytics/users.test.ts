@@ -10,7 +10,12 @@ const client = new Zoriapi({
 describe('resource users', () => {
   // Prism tests are disabled
   test.skip('active: only required params', async () => {
-    const responsePromise = client.v1.analytics.users.active({ project_id: 'project_id' });
+    const responsePromise = client.v1.analytics.users.active({
+      limit: 1,
+      offset: 0,
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,6 +27,16 @@ describe('resource users', () => {
 
   // Prism tests are disabled
   test.skip('active: required and optional params', async () => {
-    const response = await client.v1.analytics.users.active({ project_id: 'project_id' });
+    const response = await client.v1.analytics.users.active({
+      limit: 1,
+      offset: 0,
+      projectID: 'projectID',
+      timeBoundaries: 'last_hour',
+      customerID: 'customerID',
+      referrer: 'referrer',
+      utmtag: 'utmtag',
+      utmtagValue: 'utmtagValue',
+      visitorID: 'visitorID',
+    });
   });
 });
