@@ -142,6 +142,8 @@ export interface DashboardMetricsResponse {
 }
 
 export interface EventFilterOptionsResponse {
+  event_names?: Array<string>;
+
   pages?: Array<string>;
 
   traffic_origins?: Array<string>;

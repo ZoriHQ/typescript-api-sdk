@@ -7,7 +7,8 @@ import { RequestOptions } from '../../../internal/request-options';
 
 export class Events extends APIResource {
   /**
-   * Get unique traffic origins and page paths to populate filter dropdowns
+   * Get unique traffic origins, page paths, and event names to populate filter
+   * dropdowns
    *
    * @example
    * ```ts
@@ -27,7 +28,7 @@ export class Events extends APIResource {
 
   /**
    * Get a list of recent events with optional filters (visitor_id, user_id,
-   * external_id, traffic_origin, page_path)
+   * external_id, traffic_origin, page_path, event_name)
    *
    * @example
    * ```ts
@@ -70,19 +71,21 @@ export interface EventRecentParams {
 
   customer_id?: string;
 
-  externalID?: string;
+  event_name?: string;
+
+  external_id?: string;
 
   limit?: number;
 
   offset?: number;
 
-  pagePath?: string;
+  page_path?: string;
 
   referrer?: string;
 
-  trafficOrigin?: string;
+  traffic_origin?: string;
 
-  userID?: string;
+  user_id?: string;
 
   utmtag?: string;
 
