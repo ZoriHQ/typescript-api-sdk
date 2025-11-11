@@ -278,13 +278,23 @@ export interface SessionMetricsResponse {
 export interface TopVisitor {
   browser_name?: string;
 
+  currency?: string;
+
   device_type?: string;
+
+  distinct_payments?: number;
+
+  email?: string;
 
   event_count?: number;
 
   external_id?: string;
 
+  first_payment_date?: string;
+
   first_seen?: string;
+
+  is_grouped?: boolean;
 
   last_seen?: string;
 
@@ -292,9 +302,15 @@ export interface TopVisitor {
 
   location_country_iso?: string;
 
+  name?: string;
+
+  time_to_first_purchase_seconds?: number;
+
+  total_revenue?: number;
+
   user_id?: string;
 
-  visitor_id?: string;
+  visitor_ids?: Array<string>;
 }
 
 export interface TopVisitorsResponse {
