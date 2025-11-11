@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.14.0 (2025-11-11)
+
+Full Changelog: [v0.13.0...v0.14.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.13.0...v0.14.0)
+
+### Features
+
+* Feature/top visitors ([1c0abfc](https://github.com/ZoriHQ/typescript-api-sdk/commit/1c0abfc5efba9789fdd7d7d1c20d3f9aa7c11270))
+
 ## 0.13.0 (2025-11-04)
 
 Full Changelog: [v0.12.0...v0.13.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.12.0...v0.13.0)
