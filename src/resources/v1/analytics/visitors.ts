@@ -124,7 +124,9 @@ export class Visitors extends APIResource {
   }
 
   /**
-   * Get a list of the most active visitors ranked by event count
+   * Get top visitors grouped by identified information (user_id, external_id, email)
+   * with payment metrics including revenue, distinct payments, and time to first
+   * purchase
    *
    * @example
    * ```ts
