@@ -302,13 +302,13 @@ describe('instantiate client', () => {
     test('empty env variable', () => {
       process.env['ZORIAPI_BASE_URL'] = ''; // empty
       const client = new Zoriapi({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('/api/v1');
+      expect(client.baseURL).toEqual('https://api.zorihq.com/api/v1');
     });
 
     test('blank env variable', () => {
       process.env['ZORIAPI_BASE_URL'] = '  '; // blank
       const client = new Zoriapi({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('/api/v1');
+      expect(client.baseURL).toEqual('https://api.zorihq.com/api/v1');
     });
 
     test('in request options', () => {

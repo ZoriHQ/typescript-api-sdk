@@ -34,7 +34,7 @@ export interface ClientOptions {
   /**
    * Defaults to process.env['ZORIAPI_API_KEY'].
    */
-  apiKey?: string | undefined;
+  apiKey?: string | null | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
@@ -109,7 +109,7 @@ export interface ClientOptions {
  * API Client for interfacing with the Zoriapi API.
  */
 export class Zoriapi {
-  apiKey: string;
+  apiKey: string | null;
 
   baseURL: string;
   maxRetries: number;
@@ -126,8 +126,8 @@ export class Zoriapi {
   /**
    * API Client for interfacing with the Zoriapi API.
    *
-   * @param {string | undefined} [opts.apiKey=process.env['ZORIAPI_API_KEY'] ?? undefined]
-   * @param {string} [opts.baseURL=process.env['ZORIAPI_BASE_URL'] ?? /api/v1] - Override the default base URL for the API.
+   * @param {string | null | undefined} [opts.apiKey=process.env['ZORIAPI_API_KEY'] ?? null]
+   * @param {string} [opts.baseURL=process.env['ZORIAPI_BASE_URL'] ?? https://api.zorihq.com/api/v1] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -137,19 +137,13 @@ export class Zoriapi {
    */
   constructor({
     baseURL = readEnv('ZORIAPI_BASE_URL'),
-    apiKey = readEnv('ZORIAPI_API_KEY'),
+    apiKey = readEnv('ZORIAPI_API_KEY') ?? null,
     ...opts
   }: ClientOptions = {}) {
-    if (apiKey === undefined) {
-      throw new Errors.ZoriapiError(
-        "The ZORIAPI_API_KEY environment variable is missing or empty; either provide it, or instantiate the Zoriapi client with an apiKey option, like new Zoriapi({ apiKey: 'My API Key' }).",
-      );
-    }
-
     const options: ClientOptions = {
       apiKey,
       ...opts,
-      baseURL: baseURL || `/api/v1`,
+      baseURL: baseURL || `https://api.zorihq.com/api/v1`,
     };
 
     this.baseURL = options.baseURL!;
@@ -195,7 +189,7 @@ export class Zoriapi {
    * Check whether the base URL is set to its default.
    */
   #baseURLOverridden(): boolean {
-    return this.baseURL !== '/api/v1';
+    return this.baseURL !== 'https://api.zorihq.com/api/v1';
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -203,10 +197,22 @@ export class Zoriapi {
   }
 
   protected validateHeaders({ values, nulls }: NullableHeaders) {
-    return;
+    if (this.apiKey && values.get('authorization')) {
+      return;
+    }
+    if (nulls.has('authorization')) {
+      return;
+    }
+
+    throw new Error(
+      'Could not resolve authentication method. Expected the apiKey to be set. Or for the "Authorization" headers to be explicitly omitted',
+    );
   }
 
   protected async authHeaders(opts: FinalRequestOptions): Promise<NullableHeaders | undefined> {
+    if (this.apiKey == null) {
+      return undefined;
+    }
     return buildHeaders([{ Authorization: this.apiKey }]);
   }
 
