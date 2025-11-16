@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.17.0 (2025-11-16)
+
+Full Changelog: [v0.16.0...v0.17.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.16.0...v0.17.0)
+
+### Features
+
+* **api:** manual updates ([1ada899](https://github.com/ZoriHQ/typescript-api-sdk/commit/1ada899e07cd2a3cce7bb50751da5c6746268d5d))
+
 ## 0.16.0 (2025-11-16)
 
 Full Changelog: [v0.15.0...v0.16.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.15.0...v0.16.0)
