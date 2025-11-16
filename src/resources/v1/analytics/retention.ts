@@ -43,25 +43,6 @@ export class Retention extends APIResource {
   ): APIPromise<AnalyticsAPI.CohortAnalysisResponse> {
     return this._client.get('/api/v1/analytics/retention/cohorts', { query, ...options });
   }
-
-  /**
-   * Get metrics about user return rate and time between sessions
-   *
-   * @example
-   * ```ts
-   * const returnRateResponse =
-   *   await client.v1.analytics.retention.returnRate({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
-   *   });
-   * ```
-   */
-  returnRate(
-    query: RetentionReturnRateParams,
-    options?: RequestOptions,
-  ): APIPromise<AnalyticsAPI.ReturnRateResponse> {
-    return this._client.get('/api/v1/analytics/retention/return-rate', { query, ...options });
-  }
 }
 
 export interface RetentionChurnRateParams {
@@ -104,30 +85,9 @@ export interface RetentionCohortsParams {
   visitor_id?: string;
 }
 
-export interface RetentionReturnRateParams {
-  project_id: string;
-
-  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
-
-  customer_id?: string;
-
-  limit?: number;
-
-  offset?: number;
-
-  referrer?: string;
-
-  utmtag?: string;
-
-  utmtagValue?: string;
-
-  visitor_id?: string;
-}
-
 export declare namespace Retention {
   export {
     type RetentionChurnRateParams as RetentionChurnRateParams,
     type RetentionCohortsParams as RetentionCohortsParams,
-    type RetentionReturnRateParams as RetentionReturnRateParams,
   };
 }
