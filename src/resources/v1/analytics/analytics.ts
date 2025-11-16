@@ -35,6 +35,10 @@ import {
   TileGetUniqueVisitorsResponse,
   TileGetWeeklyActiveUsersParams,
   TileGetWeeklyActiveUsersResponse,
+  TileRetrieveVisitorsByBrowserParams,
+  TileRetrieveVisitorsByBrowserResponse,
+  TileRetrieveVisitorsByOsParams,
+  TileRetrieveVisitorsByOsResponse,
   Tiles,
 } from './tiles';
 import * as UsersAPI from './users';
@@ -466,6 +470,8 @@ export declare namespace Analytics {
     type TileGetUniqueSessionsResponse as TileGetUniqueSessionsResponse,
     type TileGetUniqueVisitorsResponse as TileGetUniqueVisitorsResponse,
     type TileGetWeeklyActiveUsersResponse as TileGetWeeklyActiveUsersResponse,
+    type TileRetrieveVisitorsByBrowserResponse as TileRetrieveVisitorsByBrowserResponse,
+    type TileRetrieveVisitorsByOsResponse as TileRetrieveVisitorsByOsResponse,
     type TileGetBounceRateParams as TileGetBounceRateParams,
     type TileGetDailyActiveUsersParams as TileGetDailyActiveUsersParams,
     type TileGetMonthlyActiveUsersParams as TileGetMonthlyActiveUsersParams,
@@ -479,5 +485,7 @@ export declare namespace Analytics {
     type TileGetUniqueSessionsParams as TileGetUniqueSessionsParams,
     type TileGetUniqueVisitorsParams as TileGetUniqueVisitorsParams,
     type TileGetWeeklyActiveUsersParams as TileGetWeeklyActiveUsersParams,
+    type TileRetrieveVisitorsByBrowserParams as TileRetrieveVisitorsByBrowserParams,
+    type TileRetrieveVisitorsByOsParams as TileRetrieveVisitorsByOsParams,
   };
 }

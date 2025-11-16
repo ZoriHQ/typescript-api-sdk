@@ -38,6 +38,8 @@ export {
   type TileGetUniqueSessionsResponse,
   type TileGetUniqueVisitorsResponse,
   type TileGetWeeklyActiveUsersResponse,
+  type TileRetrieveVisitorsByBrowserResponse,
+  type TileRetrieveVisitorsByOsResponse,
   type TileGetBounceRateParams,
   type TileGetDailyActiveUsersParams,
   type TileGetMonthlyActiveUsersParams,
@@ -51,6 +53,8 @@ export {
   type TileGetUniqueSessionsParams,
   type TileGetUniqueVisitorsParams,
   type TileGetWeeklyActiveUsersParams,
+  type TileRetrieveVisitorsByBrowserParams,
+  type TileRetrieveVisitorsByOsParams,
 } from './tiles';
 export { Users } from './users';
 export {
