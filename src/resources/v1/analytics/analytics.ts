@@ -4,24 +4,46 @@ import { APIResource } from '../../../core/resource';
 import * as EventsAPI from './events';
 import { EventFilterOptionsParams, EventRecentParams, Events } from './events';
 import * as RetentionAPI from './retention';
-import {
-  Retention,
-  RetentionChurnRateParams,
-  RetentionCohortsParams,
-  RetentionReturnRateParams,
-} from './retention';
+import { Retention, RetentionChurnRateParams, RetentionCohortsParams } from './retention';
 import * as SessionsAPI from './sessions';
-import { SessionBounceRateParams, SessionMetricsParams, Sessions } from './sessions';
+import { Sessions } from './sessions';
+import * as TilesAPI from './tiles';
+import {
+  TileGetBounceRateParams,
+  TileGetBounceRateResponse,
+  TileGetDailyActiveUsersParams,
+  TileGetDailyActiveUsersResponse,
+  TileGetMonthlyActiveUsersParams,
+  TileGetMonthlyActiveUsersResponse,
+  TileGetPagesPerSessionParams,
+  TileGetPagesPerSessionResponse,
+  TileGetReturnRateParams,
+  TileGetReturnRateResponse,
+  TileGetSessionDurationParams,
+  TileGetSessionDurationResponse,
+  TileGetTimeBetweenVisitsParams,
+  TileGetTimeBetweenVisitsResponse,
+  TileGetTrafficByCountryParams,
+  TileGetTrafficByCountryResponse,
+  TileGetTrafficByRefererParams,
+  TileGetTrafficByRefererResponse,
+  TileGetTrafficByUtmParams,
+  TileGetTrafficByUtmResponse,
+  TileGetUniqueSessionsParams,
+  TileGetUniqueSessionsResponse,
+  TileGetUniqueVisitorsParams,
+  TileGetUniqueVisitorsResponse,
+  TileGetWeeklyActiveUsersParams,
+  TileGetWeeklyActiveUsersResponse,
+  Tiles,
+} from './tiles';
 import * as UsersAPI from './users';
-import { UserActiveParams, Users } from './users';
+import { Users } from './users';
 import * as VisitorsAPI from './visitors';
 import {
-  VisitorByCountryParams,
   VisitorByDeviceParams,
-  VisitorByOriginParams,
   VisitorIdentifyParams,
   VisitorProfileParams,
-  VisitorTimelineParams,
   VisitorTopParams,
   Visitors,
 } from './visitors';
@@ -34,45 +56,25 @@ export class Analytics extends APIResource {
   sessions: SessionsAPI.Sessions = new SessionsAPI.Sessions(this._client);
   users: UsersAPI.Users = new UsersAPI.Users(this._client);
   retention: RetentionAPI.Retention = new RetentionAPI.Retention(this._client);
+  tiles: TilesAPI.Tiles = new TilesAPI.Tiles(this._client);
 
   /**
-   * Get combined key metrics including sessions, active users, bounce rate, and
-   * retention for dashboard display
+   * Get unique visitor counts over time, split by mobile and desktop devices for
+   * chart visualization
    *
    * @example
    * ```ts
-   * const dashboardMetricsResponse =
-   *   await client.v1.analytics.dashboard({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
-   *   });
+   * const response = await client.v1.analytics.retrieveTimeline(
+   *   { project_id: 'project_id', time_range: 'last_hour' },
+   * );
    * ```
    */
-  dashboard(query: AnalyticsDashboardParams, options?: RequestOptions): APIPromise<DashboardMetricsResponse> {
-    return this._client.get('/api/v1/analytics/dashboard', { query, ...options });
+  retrieveTimeline(
+    query: AnalyticsRetrieveTimelineParams,
+    options?: RequestOptions,
+  ): APIPromise<AnalyticsRetrieveTimelineResponse> {
+    return this._client.get('/api/v1/analytics/timeline', { query, ...options });
   }
-}
-
-export interface ActiveUsersResponse {
-  dau?: number;
-
-  mau?: number;
-
-  wau?: number;
-}
-
-export interface BounceRateByPageMetric {
-  bounce_rate?: number;
-
-  page?: string;
-
-  sessions?: number;
-}
-
-export interface BounceRateResponse {
-  by_page?: Array<BounceRateByPageMetric>;
-
-  overall_bounce_rate?: number;
 }
 
 export interface ChurnRateResponse {
@@ -105,40 +107,6 @@ export interface CohortData {
   week_2_retention?: number;
 
   week_4_retention?: number;
-}
-
-export interface CountryDataPoint {
-  country_code?: string;
-
-  percentage?: number;
-
-  unique_visitors?: number;
-}
-
-export interface DashboardMetricsResponse {
-  avg_pages_per_session?: number;
-
-  avg_session_duration_seconds?: number;
-
-  bounce_rate?: number;
-
-  dau?: number;
-
-  mau?: number;
-
-  return_rate?: number;
-
-  sessions_today?: number;
-
-  total_events?: number;
-
-  total_sessions_in_period?: number;
-
-  unique_sessions?: number;
-
-  unique_visitors?: number;
-
-  wau?: number;
 }
 
 export interface EventFilterOptionsResponse {
@@ -179,14 +147,6 @@ export interface ManualIdentifyResponse {
   success?: boolean;
 
   visitor_id?: string;
-}
-
-export interface OriginDataPoint {
-  origin?: string;
-
-  percentage?: number;
-
-  unique_visitors?: number;
 }
 
 export interface RecentEvent {
@@ -257,24 +217,6 @@ export interface RecentEventsResponse {
   total?: number;
 }
 
-export interface ReturnRateResponse {
-  avg_time_between_sessions_hours?: number;
-
-  return_rate_percent?: number;
-
-  returning_users?: number;
-
-  total_users?: number;
-}
-
-export interface SessionMetricsResponse {
-  average_pages_per_session?: number;
-
-  average_session_duration_seconds?: number;
-
-  total_sessions?: number;
-}
-
 export interface TopVisitor {
   browser_name?: string;
 
@@ -317,18 +259,6 @@ export interface TopVisitorsResponse {
   total?: number;
 
   visitors?: Array<TopVisitor>;
-}
-
-export interface UniqueVisitorsDataPoint {
-  desktop?: number;
-
-  mobile?: number;
-
-  timestamp?: string;
-}
-
-export interface UniqueVisitorsTimelineResponse {
-  data?: Array<UniqueVisitorsDataPoint>;
 }
 
 export interface VisitorDataPoint {
@@ -423,19 +353,33 @@ export interface VisitorProfileResponse {
   visitor_id?: string;
 }
 
-export interface VisitorsByCountryResponse {
-  data?: Array<CountryDataPoint>;
-}
-
 export interface VisitorsByDeviceResponse {
   data?: Array<VisitorDataPoint>;
 }
 
-export interface VisitorsByOriginResponse {
-  data?: Array<OriginDataPoint>;
+export interface AnalyticsRetrieveTimelineResponse {
+  data?: Array<AnalyticsRetrieveTimelineResponse.Data>;
+
+  precision?: 'minutes' | 'hourly' | 'daily' | 'weekly' | 'monthly';
+
+  total_visits?: number;
 }
 
-export interface AnalyticsDashboardParams {
+export namespace AnalyticsRetrieveTimelineResponse {
+  export interface Data {
+    num_desktop_visits?: number;
+
+    num_mobile_visits?: number;
+
+    num_revenue?: number;
+
+    num_unknown_visits?: number;
+
+    time_bucket?: string;
+  }
+}
+
+export interface AnalyticsRetrieveTimelineParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -460,47 +404,34 @@ Analytics.Events = Events;
 Analytics.Sessions = Sessions;
 Analytics.Users = Users;
 Analytics.Retention = Retention;
+Analytics.Tiles = Tiles;
 
 export declare namespace Analytics {
   export {
-    type ActiveUsersResponse as ActiveUsersResponse,
-    type BounceRateByPageMetric as BounceRateByPageMetric,
-    type BounceRateResponse as BounceRateResponse,
     type ChurnRateResponse as ChurnRateResponse,
     type CohortAnalysisResponse as CohortAnalysisResponse,
     type CohortData as CohortData,
-    type CountryDataPoint as CountryDataPoint,
-    type DashboardMetricsResponse as DashboardMetricsResponse,
     type EventFilterOptionsResponse as EventFilterOptionsResponse,
     type EventsOverTimeDataPoint as EventsOverTimeDataPoint,
     type ManualIdentifyRequest as ManualIdentifyRequest,
     type ManualIdentifyResponse as ManualIdentifyResponse,
-    type OriginDataPoint as OriginDataPoint,
     type RecentEvent as RecentEvent,
     type RecentEventsResponse as RecentEventsResponse,
-    type ReturnRateResponse as ReturnRateResponse,
-    type SessionMetricsResponse as SessionMetricsResponse,
     type TopVisitor as TopVisitor,
     type TopVisitorsResponse as TopVisitorsResponse,
-    type UniqueVisitorsDataPoint as UniqueVisitorsDataPoint,
-    type UniqueVisitorsTimelineResponse as UniqueVisitorsTimelineResponse,
     type VisitorDataPoint as VisitorDataPoint,
     type VisitorEvent as VisitorEvent,
     type VisitorProfileResponse as VisitorProfileResponse,
-    type VisitorsByCountryResponse as VisitorsByCountryResponse,
     type VisitorsByDeviceResponse as VisitorsByDeviceResponse,
-    type VisitorsByOriginResponse as VisitorsByOriginResponse,
-    type AnalyticsDashboardParams as AnalyticsDashboardParams,
+    type AnalyticsRetrieveTimelineResponse as AnalyticsRetrieveTimelineResponse,
+    type AnalyticsRetrieveTimelineParams as AnalyticsRetrieveTimelineParams,
   };
 
   export {
     Visitors as Visitors,
-    type VisitorByCountryParams as VisitorByCountryParams,
     type VisitorByDeviceParams as VisitorByDeviceParams,
-    type VisitorByOriginParams as VisitorByOriginParams,
     type VisitorIdentifyParams as VisitorIdentifyParams,
     type VisitorProfileParams as VisitorProfileParams,
-    type VisitorTimelineParams as VisitorTimelineParams,
     type VisitorTopParams as VisitorTopParams,
   };
 
@@ -510,18 +441,43 @@ export declare namespace Analytics {
     type EventRecentParams as EventRecentParams,
   };
 
-  export {
-    Sessions as Sessions,
-    type SessionBounceRateParams as SessionBounceRateParams,
-    type SessionMetricsParams as SessionMetricsParams,
-  };
+  export { Sessions as Sessions };
 
-  export { Users as Users, type UserActiveParams as UserActiveParams };
+  export { Users as Users };
 
   export {
     Retention as Retention,
     type RetentionChurnRateParams as RetentionChurnRateParams,
     type RetentionCohortsParams as RetentionCohortsParams,
-    type RetentionReturnRateParams as RetentionReturnRateParams,
+  };
+
+  export {
+    Tiles as Tiles,
+    type TileGetBounceRateResponse as TileGetBounceRateResponse,
+    type TileGetDailyActiveUsersResponse as TileGetDailyActiveUsersResponse,
+    type TileGetMonthlyActiveUsersResponse as TileGetMonthlyActiveUsersResponse,
+    type TileGetPagesPerSessionResponse as TileGetPagesPerSessionResponse,
+    type TileGetReturnRateResponse as TileGetReturnRateResponse,
+    type TileGetSessionDurationResponse as TileGetSessionDurationResponse,
+    type TileGetTimeBetweenVisitsResponse as TileGetTimeBetweenVisitsResponse,
+    type TileGetTrafficByCountryResponse as TileGetTrafficByCountryResponse,
+    type TileGetTrafficByRefererResponse as TileGetTrafficByRefererResponse,
+    type TileGetTrafficByUtmResponse as TileGetTrafficByUtmResponse,
+    type TileGetUniqueSessionsResponse as TileGetUniqueSessionsResponse,
+    type TileGetUniqueVisitorsResponse as TileGetUniqueVisitorsResponse,
+    type TileGetWeeklyActiveUsersResponse as TileGetWeeklyActiveUsersResponse,
+    type TileGetBounceRateParams as TileGetBounceRateParams,
+    type TileGetDailyActiveUsersParams as TileGetDailyActiveUsersParams,
+    type TileGetMonthlyActiveUsersParams as TileGetMonthlyActiveUsersParams,
+    type TileGetPagesPerSessionParams as TileGetPagesPerSessionParams,
+    type TileGetReturnRateParams as TileGetReturnRateParams,
+    type TileGetSessionDurationParams as TileGetSessionDurationParams,
+    type TileGetTimeBetweenVisitsParams as TileGetTimeBetweenVisitsParams,
+    type TileGetTrafficByCountryParams as TileGetTrafficByCountryParams,
+    type TileGetTrafficByRefererParams as TileGetTrafficByRefererParams,
+    type TileGetTrafficByUtmParams as TileGetTrafficByUtmParams,
+    type TileGetUniqueSessionsParams as TileGetUniqueSessionsParams,
+    type TileGetUniqueVisitorsParams as TileGetUniqueVisitorsParams,
+    type TileGetWeeklyActiveUsersParams as TileGetWeeklyActiveUsersParams,
   };
 }

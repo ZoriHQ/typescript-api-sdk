@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.15.0 (2025-11-16)
+
+Full Changelog: [v0.14.0...v0.15.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.14.0...v0.15.0)
+
+### Features
+
+* Feature/card for dashboard ([f8989c4](https://github.com/ZoriHQ/typescript-api-sdk/commit/f8989c4295e01744d25849b2d094a81728ede5ce))
+
 ## 0.14.0 (2025-11-11)
 
 Full Changelog: [v0.13.0...v0.14.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.13.0...v0.14.0)

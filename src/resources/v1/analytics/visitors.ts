@@ -7,25 +7,6 @@ import { RequestOptions } from '../../../internal/request-options';
 
 export class Visitors extends APIResource {
   /**
-   * Get unique visitor counts grouped by country code
-   *
-   * @example
-   * ```ts
-   * const visitorsByCountryResponse =
-   *   await client.v1.analytics.visitors.byCountry({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
-   *   });
-   * ```
-   */
-  byCountry(
-    query: VisitorByCountryParams,
-    options?: RequestOptions,
-  ): APIPromise<AnalyticsAPI.VisitorsByCountryResponse> {
-    return this._client.get('/api/v1/analytics/visitors/country', { query, ...options });
-  }
-
-  /**
    * Get visitor counts grouped by device type (mobile, desktop, tablet) over a
    * specified time range
    *
@@ -43,25 +24,6 @@ export class Visitors extends APIResource {
     options?: RequestOptions,
   ): APIPromise<AnalyticsAPI.VisitorsByDeviceResponse> {
     return this._client.get('/api/v1/analytics/visitors/device', { query, ...options });
-  }
-
-  /**
-   * Get unique visitor counts grouped by referrer domain (traffic source)
-   *
-   * @example
-   * ```ts
-   * const visitorsByOriginResponse =
-   *   await client.v1.analytics.visitors.byOrigin({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
-   *   });
-   * ```
-   */
-  byOrigin(
-    query: VisitorByOriginParams,
-    options?: RequestOptions,
-  ): APIPromise<AnalyticsAPI.VisitorsByOriginResponse> {
-    return this._client.get('/api/v1/analytics/visitors/origin', { query, ...options });
   }
 
   /**
@@ -104,26 +66,6 @@ export class Visitors extends APIResource {
   }
 
   /**
-   * Get unique visitor counts over time, split by mobile and desktop devices for
-   * chart visualization
-   *
-   * @example
-   * ```ts
-   * const uniqueVisitorsTimelineResponse =
-   *   await client.v1.analytics.visitors.timeline({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
-   *   });
-   * ```
-   */
-  timeline(
-    query: VisitorTimelineParams,
-    options?: RequestOptions,
-  ): APIPromise<AnalyticsAPI.UniqueVisitorsTimelineResponse> {
-    return this._client.get('/api/v1/analytics/visitors/timeline', { query, ...options });
-  }
-
-  /**
    * Get top visitors grouped by identified information (user_id, external_id, email)
    * with payment metrics including revenue, distinct payments, and time to first
    * purchase
@@ -142,47 +84,7 @@ export class Visitors extends APIResource {
   }
 }
 
-export interface VisitorByCountryParams {
-  project_id: string;
-
-  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
-
-  customer_id?: string;
-
-  limit?: number;
-
-  offset?: number;
-
-  referrer?: string;
-
-  utmtag?: string;
-
-  utmtagValue?: string;
-
-  visitor_id?: string;
-}
-
 export interface VisitorByDeviceParams {
-  project_id: string;
-
-  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
-
-  customer_id?: string;
-
-  limit?: number;
-
-  offset?: number;
-
-  referrer?: string;
-
-  utmtag?: string;
-
-  utmtagValue?: string;
-
-  visitor_id?: string;
-}
-
-export interface VisitorByOriginParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -228,26 +130,6 @@ export interface VisitorProfileParams {
   visitor_id?: string;
 }
 
-export interface VisitorTimelineParams {
-  project_id: string;
-
-  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
-
-  customer_id?: string;
-
-  limit?: number;
-
-  offset?: number;
-
-  referrer?: string;
-
-  utmtag?: string;
-
-  utmtagValue?: string;
-
-  visitor_id?: string;
-}
-
 export interface VisitorTopParams {
   project_id: string;
 
@@ -270,12 +152,9 @@ export interface VisitorTopParams {
 
 export declare namespace Visitors {
   export {
-    type VisitorByCountryParams as VisitorByCountryParams,
     type VisitorByDeviceParams as VisitorByDeviceParams,
-    type VisitorByOriginParams as VisitorByOriginParams,
     type VisitorIdentifyParams as VisitorIdentifyParams,
     type VisitorProfileParams as VisitorProfileParams,
-    type VisitorTimelineParams as VisitorTimelineParams,
     type VisitorTopParams as VisitorTopParams,
   };
 }

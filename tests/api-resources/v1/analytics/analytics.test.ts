@@ -9,8 +9,8 @@ const client = new Zoriapi({
 
 describe('resource analytics', () => {
   // Prism tests are disabled
-  test.skip('dashboard: only required params', async () => {
-    const responsePromise = client.v1.analytics.dashboard({
+  test.skip('retrieveTimeline: only required params', async () => {
+    const responsePromise = client.v1.analytics.retrieveTimeline({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -24,8 +24,8 @@ describe('resource analytics', () => {
   });
 
   // Prism tests are disabled
-  test.skip('dashboard: required and optional params', async () => {
-    const response = await client.v1.analytics.dashboard({
+  test.skip('retrieveTimeline: required and optional params', async () => {
+    const response = await client.v1.analytics.retrieveTimeline({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
