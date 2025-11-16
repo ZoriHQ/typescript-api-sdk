@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../../core/resource';
+import * as AnalyticsAPI from './analytics';
 import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 
@@ -10,17 +11,17 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.getBounceRate({
+   * const bounceRateResponse =
+   *   await client.v1.analytics.tiles.bounceRate({
    *     project_id: 'project_id',
    *     time_range: 'last_hour',
    *   });
    * ```
    */
-  getBounceRate(
-    query: TileGetBounceRateParams,
+  bounceRate(
+    query: TileBounceRateParams,
     options?: RequestOptions,
-  ): APIPromise<TileGetBounceRateResponse> {
+  ): APIPromise<AnalyticsAPI.BounceRateResponse> {
     return this._client.get('/api/v1/analytics/tiles/bounce-rate', { query, ...options });
   }
 
@@ -29,17 +30,13 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.getDailyActiveUsers({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
-   *   });
+   * const dauResponse = await client.v1.analytics.tiles.dau({
+   *   project_id: 'project_id',
+   *   time_range: 'last_hour',
+   * });
    * ```
    */
-  getDailyActiveUsers(
-    query: TileGetDailyActiveUsersParams,
-    options?: RequestOptions,
-  ): APIPromise<TileGetDailyActiveUsersResponse> {
+  dau(query: TileDauParams, options?: RequestOptions): APIPromise<AnalyticsAPI.DauResponse> {
     return this._client.get('/api/v1/analytics/tiles/dau', { query, ...options });
   }
 
@@ -48,17 +45,13 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.getMonthlyActiveUsers({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
-   *   });
+   * const mauResponse = await client.v1.analytics.tiles.mau({
+   *   project_id: 'project_id',
+   *   time_range: 'last_hour',
+   * });
    * ```
    */
-  getMonthlyActiveUsers(
-    query: TileGetMonthlyActiveUsersParams,
-    options?: RequestOptions,
-  ): APIPromise<TileGetMonthlyActiveUsersResponse> {
+  mau(query: TileMauParams, options?: RequestOptions): APIPromise<AnalyticsAPI.MauResponse> {
     return this._client.get('/api/v1/analytics/tiles/mau', { query, ...options });
   }
 
@@ -68,17 +61,17 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.getPagesPerSession({
+   * const pagesPerSessionResponse =
+   *   await client.v1.analytics.tiles.pagesPerSession({
    *     project_id: 'project_id',
    *     time_range: 'last_hour',
    *   });
    * ```
    */
-  getPagesPerSession(
-    query: TileGetPagesPerSessionParams,
+  pagesPerSession(
+    query: TilePagesPerSessionParams,
     options?: RequestOptions,
-  ): APIPromise<TileGetPagesPerSessionResponse> {
+  ): APIPromise<AnalyticsAPI.PagesPerSessionResponse> {
     return this._client.get('/api/v1/analytics/tiles/pages-per-session', { query, ...options });
   }
 
@@ -88,17 +81,17 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.getReturnRate({
+   * const returnRateResponse =
+   *   await client.v1.analytics.tiles.returnRate({
    *     project_id: 'project_id',
    *     time_range: 'last_hour',
    *   });
    * ```
    */
-  getReturnRate(
-    query: TileGetReturnRateParams,
+  returnRate(
+    query: TileReturnRateParams,
     options?: RequestOptions,
-  ): APIPromise<TileGetReturnRateResponse> {
+  ): APIPromise<AnalyticsAPI.ReturnRateResponse> {
     return this._client.get('/api/v1/analytics/tiles/return-rate', { query, ...options });
   }
 
@@ -108,17 +101,17 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.getSessionDuration({
+   * const sessionDurationResponse =
+   *   await client.v1.analytics.tiles.sessionDuration({
    *     project_id: 'project_id',
    *     time_range: 'last_hour',
    *   });
    * ```
    */
-  getSessionDuration(
-    query: TileGetSessionDurationParams,
+  sessionDuration(
+    query: TileSessionDurationParams,
     options?: RequestOptions,
-  ): APIPromise<TileGetSessionDurationResponse> {
+  ): APIPromise<AnalyticsAPI.SessionDurationResponse> {
     return this._client.get('/api/v1/analytics/tiles/session-duration', { query, ...options });
   }
 
@@ -128,17 +121,17 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.getTimeBetweenVisits({
+   * const timeBetweenVisitsResponse =
+   *   await client.v1.analytics.tiles.timeBetweenVisits({
    *     project_id: 'project_id',
    *     time_range: 'last_hour',
    *   });
    * ```
    */
-  getTimeBetweenVisits(
-    query: TileGetTimeBetweenVisitsParams,
+  timeBetweenVisits(
+    query: TileTimeBetweenVisitsParams,
     options?: RequestOptions,
-  ): APIPromise<TileGetTimeBetweenVisitsResponse> {
+  ): APIPromise<AnalyticsAPI.TimeBetweenVisitsResponse> {
     return this._client.get('/api/v1/analytics/tiles/time-between-visits', { query, ...options });
   }
 
@@ -147,17 +140,17 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.getTrafficByCountry({
+   * const countryTrafficSourceResponse =
+   *   await client.v1.analytics.tiles.trafficByCountry({
    *     project_id: 'project_id',
    *     time_range: 'last_hour',
    *   });
    * ```
    */
-  getTrafficByCountry(
-    query: TileGetTrafficByCountryParams,
+  trafficByCountry(
+    query: TileTrafficByCountryParams,
     options?: RequestOptions,
-  ): APIPromise<TileGetTrafficByCountryResponse> {
+  ): APIPromise<AnalyticsAPI.CountryTrafficSourceResponse> {
     return this._client.get('/api/v1/analytics/tiles/traffic-by-country', { query, ...options });
   }
 
@@ -166,17 +159,17 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.getTrafficByReferer({
+   * const refererTrafficSourceResponse =
+   *   await client.v1.analytics.tiles.trafficByReferer({
    *     project_id: 'project_id',
    *     time_range: 'last_hour',
    *   });
    * ```
    */
-  getTrafficByReferer(
-    query: TileGetTrafficByRefererParams,
+  trafficByReferer(
+    query: TileTrafficByRefererParams,
     options?: RequestOptions,
-  ): APIPromise<TileGetTrafficByRefererResponse> {
+  ): APIPromise<AnalyticsAPI.RefererTrafficSourceResponse> {
     return this._client.get('/api/v1/analytics/tiles/traffic-by-referer', { query, ...options });
   }
 
@@ -185,17 +178,17 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.getTrafficByUtm({
+   * const utmTrafficSourceResponse =
+   *   await client.v1.analytics.tiles.trafficByUtm({
    *     project_id: 'project_id',
    *     time_range: 'last_hour',
    *   });
    * ```
    */
-  getTrafficByUtm(
-    query: TileGetTrafficByUtmParams,
+  trafficByUtm(
+    query: TileTrafficByUtmParams,
     options?: RequestOptions,
-  ): APIPromise<TileGetTrafficByUtmResponse> {
+  ): APIPromise<AnalyticsAPI.UtmTrafficSourceResponse> {
     return this._client.get('/api/v1/analytics/tiles/traffic-by-utm', { query, ...options });
   }
 
@@ -204,17 +197,17 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.getUniqueSessions({
+   * const uniqueSessionsResponse =
+   *   await client.v1.analytics.tiles.uniqueSessions({
    *     project_id: 'project_id',
    *     time_range: 'last_hour',
    *   });
    * ```
    */
-  getUniqueSessions(
-    query: TileGetUniqueSessionsParams,
+  uniqueSessions(
+    query: TileUniqueSessionsParams,
     options?: RequestOptions,
-  ): APIPromise<TileGetUniqueSessionsResponse> {
+  ): APIPromise<AnalyticsAPI.UniqueSessionsResponse> {
     return this._client.get('/api/v1/analytics/tiles/unique-sessions', { query, ...options });
   }
 
@@ -223,37 +216,18 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.getUniqueVisitors({
+   * const uniqueVisitorsResponse =
+   *   await client.v1.analytics.tiles.uniqueVisitors({
    *     project_id: 'project_id',
    *     time_range: 'last_hour',
    *   });
    * ```
    */
-  getUniqueVisitors(
-    query: TileGetUniqueVisitorsParams,
+  uniqueVisitors(
+    query: TileUniqueVisitorsParams,
     options?: RequestOptions,
-  ): APIPromise<TileGetUniqueVisitorsResponse> {
+  ): APIPromise<AnalyticsAPI.UniqueVisitorsResponse> {
     return this._client.get('/api/v1/analytics/tiles/unique-visitors', { query, ...options });
-  }
-
-  /**
-   * Get weekly active user count (last 7 days) compared to the previous week
-   *
-   * @example
-   * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.getWeeklyActiveUsers({
-   *     project_id: 'project_id',
-   *     time_range: 'last_hour',
-   *   });
-   * ```
-   */
-  getWeeklyActiveUsers(
-    query: TileGetWeeklyActiveUsersParams,
-    options?: RequestOptions,
-  ): APIPromise<TileGetWeeklyActiveUsersResponse> {
-    return this._client.get('/api/v1/analytics/tiles/wau', { query, ...options });
   }
 
   /**
@@ -262,16 +236,17 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.retrieveVisitorsByBrowser(
-   *     { project_id: 'project_id', time_range: 'last_hour' },
-   *   );
+   * const visitorsByBrowserResponse =
+   *   await client.v1.analytics.tiles.visitorsByBrowser({
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
+   *   });
    * ```
    */
-  retrieveVisitorsByBrowser(
-    query: TileRetrieveVisitorsByBrowserParams,
+  visitorsByBrowser(
+    query: TileVisitorsByBrowserParams,
     options?: RequestOptions,
-  ): APIPromise<TileRetrieveVisitorsByBrowserResponse> {
+  ): APIPromise<AnalyticsAPI.VisitorsByBrowserResponse> {
     return this._client.get('/api/v1/analytics/tiles/visitors-by-browser', { query, ...options });
   }
 
@@ -280,164 +255,37 @@ export class Tiles extends APIResource {
    *
    * @example
    * ```ts
-   * const response =
-   *   await client.v1.analytics.tiles.retrieveVisitorsByOs({
+   * const visitorsByOsResponse =
+   *   await client.v1.analytics.tiles.visitorsByOs({
    *     project_id: 'project_id',
    *     time_range: 'last_hour',
    *   });
    * ```
    */
-  retrieveVisitorsByOs(
-    query: TileRetrieveVisitorsByOsParams,
+  visitorsByOs(
+    query: TileVisitorsByOsParams,
     options?: RequestOptions,
-  ): APIPromise<TileRetrieveVisitorsByOsResponse> {
+  ): APIPromise<AnalyticsAPI.VisitorsByOsResponse> {
     return this._client.get('/api/v1/analytics/tiles/visitors-by-os', { query, ...options });
   }
-}
 
-export interface TileGetBounceRateResponse {
-  previous_rate?: number;
-
-  rate?: number;
-}
-
-export interface TileGetDailyActiveUsersResponse {
-  count?: number;
-
-  previous_count?: number;
-}
-
-export interface TileGetMonthlyActiveUsersResponse {
-  count?: number;
-
-  previous_count?: number;
-}
-
-export interface TileGetPagesPerSessionResponse {
-  avg_pages?: number;
-
-  previous_avg_pages?: number;
-}
-
-export interface TileGetReturnRateResponse {
-  previous_rate?: number;
-
-  rate?: number;
-}
-
-export interface TileGetSessionDurationResponse {
-  avg_duration?: number;
-
-  previous_avg_duration?: number;
-}
-
-export interface TileGetTimeBetweenVisitsResponse {
-  avg_hours?: number;
-
-  previous_avg_hours?: number;
-}
-
-export interface TileGetTrafficByCountryResponse {
-  data?: Array<TileGetTrafficByCountryResponse.Data>;
-}
-
-export namespace TileGetTrafficByCountryResponse {
-  export interface Data {
-    count?: number;
-
-    country?: string;
-
-    previous_count?: number;
+  /**
+   * Get weekly active user count (last 7 days) compared to the previous week
+   *
+   * @example
+   * ```ts
+   * const wauResponse = await client.v1.analytics.tiles.wau({
+   *   project_id: 'project_id',
+   *   time_range: 'last_hour',
+   * });
+   * ```
+   */
+  wau(query: TileWauParams, options?: RequestOptions): APIPromise<AnalyticsAPI.WauResponse> {
+    return this._client.get('/api/v1/analytics/tiles/wau', { query, ...options });
   }
 }
 
-export interface TileGetTrafficByRefererResponse {
-  data?: Array<TileGetTrafficByRefererResponse.Data>;
-}
-
-export namespace TileGetTrafficByRefererResponse {
-  export interface Data {
-    count?: number;
-
-    previous_count?: number;
-
-    previous_revenue?: number;
-
-    referer_url?: string;
-
-    revenue?: number;
-  }
-}
-
-export interface TileGetTrafficByUtmResponse {
-  data?: Array<TileGetTrafficByUtmResponse.Data>;
-}
-
-export namespace TileGetTrafficByUtmResponse {
-  export interface Data {
-    count?: number;
-
-    previous_count?: number;
-
-    previous_revenue?: number;
-
-    revenue?: number;
-
-    utm_campaign?: string;
-
-    utm_medium?: string;
-
-    utm_source?: string;
-  }
-}
-
-export interface TileGetUniqueSessionsResponse {
-  count?: number;
-
-  previous_count?: number;
-}
-
-export interface TileGetUniqueVisitorsResponse {
-  count?: number;
-
-  previous_count?: number;
-}
-
-export interface TileGetWeeklyActiveUsersResponse {
-  count?: number;
-
-  previous_count?: number;
-}
-
-export interface TileRetrieveVisitorsByBrowserResponse {
-  data?: Array<TileRetrieveVisitorsByBrowserResponse.Data>;
-}
-
-export namespace TileRetrieveVisitorsByBrowserResponse {
-  export interface Data {
-    browser_name?: string;
-
-    count?: number;
-
-    previous_count?: number;
-  }
-}
-
-export interface TileRetrieveVisitorsByOsResponse {
-  data?: Array<TileRetrieveVisitorsByOsResponse.Data>;
-}
-
-export namespace TileRetrieveVisitorsByOsResponse {
-  export interface Data {
-    browser_name?: string;
-
-    count?: number;
-
-    previous_count?: number;
-  }
-}
-
-export interface TileGetBounceRateParams {
+export interface TileBounceRateParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -457,7 +305,7 @@ export interface TileGetBounceRateParams {
   visitor_id?: string;
 }
 
-export interface TileGetDailyActiveUsersParams {
+export interface TileDauParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -477,7 +325,7 @@ export interface TileGetDailyActiveUsersParams {
   visitor_id?: string;
 }
 
-export interface TileGetMonthlyActiveUsersParams {
+export interface TileMauParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -497,7 +345,7 @@ export interface TileGetMonthlyActiveUsersParams {
   visitor_id?: string;
 }
 
-export interface TileGetPagesPerSessionParams {
+export interface TilePagesPerSessionParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -517,7 +365,7 @@ export interface TileGetPagesPerSessionParams {
   visitor_id?: string;
 }
 
-export interface TileGetReturnRateParams {
+export interface TileReturnRateParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -537,7 +385,7 @@ export interface TileGetReturnRateParams {
   visitor_id?: string;
 }
 
-export interface TileGetSessionDurationParams {
+export interface TileSessionDurationParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -557,7 +405,7 @@ export interface TileGetSessionDurationParams {
   visitor_id?: string;
 }
 
-export interface TileGetTimeBetweenVisitsParams {
+export interface TileTimeBetweenVisitsParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -577,7 +425,7 @@ export interface TileGetTimeBetweenVisitsParams {
   visitor_id?: string;
 }
 
-export interface TileGetTrafficByCountryParams {
+export interface TileTrafficByCountryParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -597,7 +445,7 @@ export interface TileGetTrafficByCountryParams {
   visitor_id?: string;
 }
 
-export interface TileGetTrafficByRefererParams {
+export interface TileTrafficByRefererParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -617,7 +465,7 @@ export interface TileGetTrafficByRefererParams {
   visitor_id?: string;
 }
 
-export interface TileGetTrafficByUtmParams {
+export interface TileTrafficByUtmParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -637,7 +485,7 @@ export interface TileGetTrafficByUtmParams {
   visitor_id?: string;
 }
 
-export interface TileGetUniqueSessionsParams {
+export interface TileUniqueSessionsParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -657,7 +505,7 @@ export interface TileGetUniqueSessionsParams {
   visitor_id?: string;
 }
 
-export interface TileGetUniqueVisitorsParams {
+export interface TileUniqueVisitorsParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -677,7 +525,7 @@ export interface TileGetUniqueVisitorsParams {
   visitor_id?: string;
 }
 
-export interface TileGetWeeklyActiveUsersParams {
+export interface TileVisitorsByBrowserParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -697,7 +545,7 @@ export interface TileGetWeeklyActiveUsersParams {
   visitor_id?: string;
 }
 
-export interface TileRetrieveVisitorsByBrowserParams {
+export interface TileVisitorsByOsParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -717,7 +565,7 @@ export interface TileRetrieveVisitorsByBrowserParams {
   visitor_id?: string;
 }
 
-export interface TileRetrieveVisitorsByOsParams {
+export interface TileWauParams {
   project_id: string;
 
   time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
@@ -739,35 +587,20 @@ export interface TileRetrieveVisitorsByOsParams {
 
 export declare namespace Tiles {
   export {
-    type TileGetBounceRateResponse as TileGetBounceRateResponse,
-    type TileGetDailyActiveUsersResponse as TileGetDailyActiveUsersResponse,
-    type TileGetMonthlyActiveUsersResponse as TileGetMonthlyActiveUsersResponse,
-    type TileGetPagesPerSessionResponse as TileGetPagesPerSessionResponse,
-    type TileGetReturnRateResponse as TileGetReturnRateResponse,
-    type TileGetSessionDurationResponse as TileGetSessionDurationResponse,
-    type TileGetTimeBetweenVisitsResponse as TileGetTimeBetweenVisitsResponse,
-    type TileGetTrafficByCountryResponse as TileGetTrafficByCountryResponse,
-    type TileGetTrafficByRefererResponse as TileGetTrafficByRefererResponse,
-    type TileGetTrafficByUtmResponse as TileGetTrafficByUtmResponse,
-    type TileGetUniqueSessionsResponse as TileGetUniqueSessionsResponse,
-    type TileGetUniqueVisitorsResponse as TileGetUniqueVisitorsResponse,
-    type TileGetWeeklyActiveUsersResponse as TileGetWeeklyActiveUsersResponse,
-    type TileRetrieveVisitorsByBrowserResponse as TileRetrieveVisitorsByBrowserResponse,
-    type TileRetrieveVisitorsByOsResponse as TileRetrieveVisitorsByOsResponse,
-    type TileGetBounceRateParams as TileGetBounceRateParams,
-    type TileGetDailyActiveUsersParams as TileGetDailyActiveUsersParams,
-    type TileGetMonthlyActiveUsersParams as TileGetMonthlyActiveUsersParams,
-    type TileGetPagesPerSessionParams as TileGetPagesPerSessionParams,
-    type TileGetReturnRateParams as TileGetReturnRateParams,
-    type TileGetSessionDurationParams as TileGetSessionDurationParams,
-    type TileGetTimeBetweenVisitsParams as TileGetTimeBetweenVisitsParams,
-    type TileGetTrafficByCountryParams as TileGetTrafficByCountryParams,
-    type TileGetTrafficByRefererParams as TileGetTrafficByRefererParams,
-    type TileGetTrafficByUtmParams as TileGetTrafficByUtmParams,
-    type TileGetUniqueSessionsParams as TileGetUniqueSessionsParams,
-    type TileGetUniqueVisitorsParams as TileGetUniqueVisitorsParams,
-    type TileGetWeeklyActiveUsersParams as TileGetWeeklyActiveUsersParams,
-    type TileRetrieveVisitorsByBrowserParams as TileRetrieveVisitorsByBrowserParams,
-    type TileRetrieveVisitorsByOsParams as TileRetrieveVisitorsByOsParams,
+    type TileBounceRateParams as TileBounceRateParams,
+    type TileDauParams as TileDauParams,
+    type TileMauParams as TileMauParams,
+    type TilePagesPerSessionParams as TilePagesPerSessionParams,
+    type TileReturnRateParams as TileReturnRateParams,
+    type TileSessionDurationParams as TileSessionDurationParams,
+    type TileTimeBetweenVisitsParams as TileTimeBetweenVisitsParams,
+    type TileTrafficByCountryParams as TileTrafficByCountryParams,
+    type TileTrafficByRefererParams as TileTrafficByRefererParams,
+    type TileTrafficByUtmParams as TileTrafficByUtmParams,
+    type TileUniqueSessionsParams as TileUniqueSessionsParams,
+    type TileUniqueVisitorsParams as TileUniqueVisitorsParams,
+    type TileVisitorsByBrowserParams as TileVisitorsByBrowserParams,
+    type TileVisitorsByOsParams as TileVisitorsByOsParams,
+    type TileWauParams as TileWauParams,
   };
 }

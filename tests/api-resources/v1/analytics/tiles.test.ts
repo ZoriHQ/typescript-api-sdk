@@ -9,8 +9,8 @@ const client = new Zoriapi({
 
 describe('resource tiles', () => {
   // Prism tests are disabled
-  test.skip('getBounceRate: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.getBounceRate({
+  test.skip('bounceRate: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.bounceRate({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -24,8 +24,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getBounceRate: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.getBounceRate({
+  test.skip('bounceRate: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.bounceRate({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -39,8 +39,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getDailyActiveUsers: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.getDailyActiveUsers({
+  test.skip('dau: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.dau({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -54,8 +54,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getDailyActiveUsers: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.getDailyActiveUsers({
+  test.skip('dau: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.dau({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -69,8 +69,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getMonthlyActiveUsers: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.getMonthlyActiveUsers({
+  test.skip('mau: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.mau({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -84,8 +84,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getMonthlyActiveUsers: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.getMonthlyActiveUsers({
+  test.skip('mau: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.mau({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -99,8 +99,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getPagesPerSession: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.getPagesPerSession({
+  test.skip('pagesPerSession: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.pagesPerSession({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -114,8 +114,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getPagesPerSession: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.getPagesPerSession({
+  test.skip('pagesPerSession: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.pagesPerSession({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -129,8 +129,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getReturnRate: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.getReturnRate({
+  test.skip('returnRate: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.returnRate({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -144,8 +144,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getReturnRate: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.getReturnRate({
+  test.skip('returnRate: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.returnRate({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -159,8 +159,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getSessionDuration: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.getSessionDuration({
+  test.skip('sessionDuration: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.sessionDuration({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -174,8 +174,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getSessionDuration: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.getSessionDuration({
+  test.skip('sessionDuration: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.sessionDuration({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -189,8 +189,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getTimeBetweenVisits: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.getTimeBetweenVisits({
+  test.skip('timeBetweenVisits: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.timeBetweenVisits({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -204,8 +204,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getTimeBetweenVisits: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.getTimeBetweenVisits({
+  test.skip('timeBetweenVisits: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.timeBetweenVisits({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -219,8 +219,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getTrafficByCountry: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.getTrafficByCountry({
+  test.skip('trafficByCountry: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.trafficByCountry({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -234,8 +234,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getTrafficByCountry: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.getTrafficByCountry({
+  test.skip('trafficByCountry: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.trafficByCountry({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -249,8 +249,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getTrafficByReferer: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.getTrafficByReferer({
+  test.skip('trafficByReferer: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.trafficByReferer({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -264,8 +264,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getTrafficByReferer: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.getTrafficByReferer({
+  test.skip('trafficByReferer: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.trafficByReferer({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -279,8 +279,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getTrafficByUtm: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.getTrafficByUtm({
+  test.skip('trafficByUtm: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.trafficByUtm({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -294,8 +294,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getTrafficByUtm: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.getTrafficByUtm({
+  test.skip('trafficByUtm: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.trafficByUtm({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -309,8 +309,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getUniqueSessions: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.getUniqueSessions({
+  test.skip('uniqueSessions: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.uniqueSessions({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -324,8 +324,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getUniqueSessions: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.getUniqueSessions({
+  test.skip('uniqueSessions: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.uniqueSessions({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -339,8 +339,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getUniqueVisitors: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.getUniqueVisitors({
+  test.skip('uniqueVisitors: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.uniqueVisitors({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -354,8 +354,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getUniqueVisitors: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.getUniqueVisitors({
+  test.skip('uniqueVisitors: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.uniqueVisitors({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -369,8 +369,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getWeeklyActiveUsers: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.getWeeklyActiveUsers({
+  test.skip('visitorsByBrowser: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.visitorsByBrowser({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -384,8 +384,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('getWeeklyActiveUsers: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.getWeeklyActiveUsers({
+  test.skip('visitorsByBrowser: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.visitorsByBrowser({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -399,8 +399,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('retrieveVisitorsByBrowser: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.retrieveVisitorsByBrowser({
+  test.skip('visitorsByOs: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.visitorsByOs({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -414,8 +414,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('retrieveVisitorsByBrowser: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.retrieveVisitorsByBrowser({
+  test.skip('visitorsByOs: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.visitorsByOs({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',
@@ -429,8 +429,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('retrieveVisitorsByOs: only required params', async () => {
-    const responsePromise = client.v1.analytics.tiles.retrieveVisitorsByOs({
+  test.skip('wau: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.wau({
       project_id: 'project_id',
       time_range: 'last_hour',
     });
@@ -444,8 +444,8 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
-  test.skip('retrieveVisitorsByOs: required and optional params', async () => {
-    const response = await client.v1.analytics.tiles.retrieveVisitorsByOs({
+  test.skip('wau: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.wau({
       project_id: 'project_id',
       time_range: 'last_hour',
       customer_id: 'customer_id',

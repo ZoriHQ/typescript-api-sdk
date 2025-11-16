@@ -15,26 +15,45 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/v1/analytics/analytics.ts">BounceRateResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">CardPrecision</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ChurnRateResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">CohortAnalysisResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">CohortData</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">CountryTrafficSourceData</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">CountryTrafficSourceResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">DauResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">EventFilterOptionsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">EventsOverTimeDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ManualIdentifyRequest</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ManualIdentifyResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">MauResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">PagesPerSessionResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEvent</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEventsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">RefererTrafficSourceData</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">RefererTrafficSourceResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">ReturnRateResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">SessionDurationResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">TimeBetweenVisitsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">TimelineTileData</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">TimelineTileResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">TopVisitor</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">TopVisitorsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">UniqueSessionsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">UniqueVisitorsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">UtmTrafficSourceResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorEvent</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorProfileResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByBrowserResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByDeviceResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">AnalyticsRetrieveTimelineResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByOsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">WauResponse</a></code>
 
 Methods:
 
-- <code title="get /api/v1/analytics/timeline">client.v1.analytics.<a href="./src/resources/v1/analytics/analytics.ts">retrieveTimeline</a>({ ...params }) -> AnalyticsRetrieveTimelineResponse</code>
+- <code title="get /api/v1/analytics/timeline">client.v1.analytics.<a href="./src/resources/v1/analytics/analytics.ts">timeline</a>({ ...params }) -> TimelineTileResponse</code>
 
 ### Visitors
 
@@ -52,9 +71,25 @@ Methods:
 - <code title="get /api/v1/analytics/events/filter-options">client.v1.analytics.events.<a href="./src/resources/v1/analytics/events.ts">filterOptions</a>({ ...params }) -> EventFilterOptionsResponse</code>
 - <code title="get /api/v1/analytics/events/recent">client.v1.analytics.events.<a href="./src/resources/v1/analytics/events.ts">recent</a>({ ...params }) -> RecentEventsResponse</code>
 
-### Sessions
+### Tiles
 
-### Users
+Methods:
+
+- <code title="get /api/v1/analytics/tiles/bounce-rate">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">bounceRate</a>({ ...params }) -> BounceRateResponse</code>
+- <code title="get /api/v1/analytics/tiles/dau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">dau</a>({ ...params }) -> DauResponse</code>
+- <code title="get /api/v1/analytics/tiles/mau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">mau</a>({ ...params }) -> MauResponse</code>
+- <code title="get /api/v1/analytics/tiles/pages-per-session">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">pagesPerSession</a>({ ...params }) -> PagesPerSessionResponse</code>
+- <code title="get /api/v1/analytics/tiles/return-rate">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">returnRate</a>({ ...params }) -> ReturnRateResponse</code>
+- <code title="get /api/v1/analytics/tiles/session-duration">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">sessionDuration</a>({ ...params }) -> SessionDurationResponse</code>
+- <code title="get /api/v1/analytics/tiles/time-between-visits">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">timeBetweenVisits</a>({ ...params }) -> TimeBetweenVisitsResponse</code>
+- <code title="get /api/v1/analytics/tiles/traffic-by-country">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">trafficByCountry</a>({ ...params }) -> CountryTrafficSourceResponse</code>
+- <code title="get /api/v1/analytics/tiles/traffic-by-referer">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">trafficByReferer</a>({ ...params }) -> RefererTrafficSourceResponse</code>
+- <code title="get /api/v1/analytics/tiles/traffic-by-utm">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">trafficByUtm</a>({ ...params }) -> UtmTrafficSourceResponse</code>
+- <code title="get /api/v1/analytics/tiles/unique-sessions">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">uniqueSessions</a>({ ...params }) -> UniqueSessionsResponse</code>
+- <code title="get /api/v1/analytics/tiles/unique-visitors">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">uniqueVisitors</a>({ ...params }) -> UniqueVisitorsResponse</code>
+- <code title="get /api/v1/analytics/tiles/visitors-by-browser">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">visitorsByBrowser</a>({ ...params }) -> VisitorsByBrowserResponse</code>
+- <code title="get /api/v1/analytics/tiles/visitors-by-os">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">visitorsByOs</a>({ ...params }) -> VisitorsByOsResponse</code>
+- <code title="get /api/v1/analytics/tiles/wau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">wau</a>({ ...params }) -> WauResponse</code>
 
 ### Retention
 
@@ -62,44 +97,6 @@ Methods:
 
 - <code title="get /api/v1/analytics/retention/churn-rate">client.v1.analytics.retention.<a href="./src/resources/v1/analytics/retention.ts">churnRate</a>({ ...params }) -> ChurnRateResponse</code>
 - <code title="get /api/v1/analytics/retention/cohorts">client.v1.analytics.retention.<a href="./src/resources/v1/analytics/retention.ts">cohorts</a>({ ...params }) -> CohortAnalysisResponse</code>
-
-### Tiles
-
-Types:
-
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetBounceRateResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetDailyActiveUsersResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetMonthlyActiveUsersResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetPagesPerSessionResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetReturnRateResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetSessionDurationResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetTimeBetweenVisitsResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetTrafficByCountryResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetTrafficByRefererResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetTrafficByUtmResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetUniqueSessionsResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetUniqueVisitorsResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetWeeklyActiveUsersResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileRetrieveVisitorsByBrowserResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/tiles.ts">TileRetrieveVisitorsByOsResponse</a></code>
-
-Methods:
-
-- <code title="get /api/v1/analytics/tiles/bounce-rate">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getBounceRate</a>({ ...params }) -> TileGetBounceRateResponse</code>
-- <code title="get /api/v1/analytics/tiles/dau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getDailyActiveUsers</a>({ ...params }) -> TileGetDailyActiveUsersResponse</code>
-- <code title="get /api/v1/analytics/tiles/mau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getMonthlyActiveUsers</a>({ ...params }) -> TileGetMonthlyActiveUsersResponse</code>
-- <code title="get /api/v1/analytics/tiles/pages-per-session">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getPagesPerSession</a>({ ...params }) -> TileGetPagesPerSessionResponse</code>
-- <code title="get /api/v1/analytics/tiles/return-rate">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getReturnRate</a>({ ...params }) -> TileGetReturnRateResponse</code>
-- <code title="get /api/v1/analytics/tiles/session-duration">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getSessionDuration</a>({ ...params }) -> TileGetSessionDurationResponse</code>
-- <code title="get /api/v1/analytics/tiles/time-between-visits">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getTimeBetweenVisits</a>({ ...params }) -> TileGetTimeBetweenVisitsResponse</code>
-- <code title="get /api/v1/analytics/tiles/traffic-by-country">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getTrafficByCountry</a>({ ...params }) -> TileGetTrafficByCountryResponse</code>
-- <code title="get /api/v1/analytics/tiles/traffic-by-referer">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getTrafficByReferer</a>({ ...params }) -> TileGetTrafficByRefererResponse</code>
-- <code title="get /api/v1/analytics/tiles/traffic-by-utm">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getTrafficByUtm</a>({ ...params }) -> TileGetTrafficByUtmResponse</code>
-- <code title="get /api/v1/analytics/tiles/unique-sessions">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getUniqueSessions</a>({ ...params }) -> TileGetUniqueSessionsResponse</code>
-- <code title="get /api/v1/analytics/tiles/unique-visitors">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getUniqueVisitors</a>({ ...params }) -> TileGetUniqueVisitorsResponse</code>
-- <code title="get /api/v1/analytics/tiles/wau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getWeeklyActiveUsers</a>({ ...params }) -> TileGetWeeklyActiveUsersResponse</code>
-- <code title="get /api/v1/analytics/tiles/visitors-by-browser">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">retrieveVisitorsByBrowser</a>({ ...params }) -> TileRetrieveVisitorsByBrowserResponse</code>
-- <code title="get /api/v1/analytics/tiles/visitors-by-os">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">retrieveVisitorsByOs</a>({ ...params }) -> TileRetrieveVisitorsByOsResponse</code>
 
 ## Revenue
 
