@@ -15,48 +15,34 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/v1/analytics/analytics.ts">ActiveUsersResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">BounceRateByPageMetric</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">BounceRateResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ChurnRateResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">CohortAnalysisResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">CohortData</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">CountryDataPoint</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">DashboardMetricsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">EventFilterOptionsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">EventsOverTimeDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ManualIdentifyRequest</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ManualIdentifyResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">OriginDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEvent</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">RecentEventsResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">ReturnRateResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">SessionMetricsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">TopVisitor</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">TopVisitorsResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">UniqueVisitorsDataPoint</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">UniqueVisitorsTimelineResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorEvent</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorProfileResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByCountryResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByDeviceResponse</a></code>
-- <code><a href="./src/resources/v1/analytics/analytics.ts">VisitorsByOriginResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">AnalyticsRetrieveTimelineResponse</a></code>
 
 Methods:
 
-- <code title="get /api/v1/analytics/dashboard">client.v1.analytics.<a href="./src/resources/v1/analytics/analytics.ts">dashboard</a>({ ...params }) -> DashboardMetricsResponse</code>
+- <code title="get /api/v1/analytics/timeline">client.v1.analytics.<a href="./src/resources/v1/analytics/analytics.ts">retrieveTimeline</a>({ ...params }) -> AnalyticsRetrieveTimelineResponse</code>
 
 ### Visitors
 
 Methods:
 
-- <code title="get /api/v1/analytics/visitors/country">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">byCountry</a>({ ...params }) -> VisitorsByCountryResponse</code>
 - <code title="get /api/v1/analytics/visitors/device">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">byDevice</a>({ ...params }) -> VisitorsByDeviceResponse</code>
-- <code title="get /api/v1/analytics/visitors/origin">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">byOrigin</a>({ ...params }) -> VisitorsByOriginResponse</code>
 - <code title="post /api/v1/analytics/visitors/identify">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">identify</a>({ ...params }) -> ManualIdentifyResponse</code>
 - <code title="get /api/v1/analytics/visitors/profile">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">profile</a>({ ...params }) -> VisitorProfileResponse</code>
-- <code title="get /api/v1/analytics/visitors/timeline">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">timeline</a>({ ...params }) -> UniqueVisitorsTimelineResponse</code>
 - <code title="get /api/v1/analytics/visitors/top">client.v1.analytics.visitors.<a href="./src/resources/v1/analytics/visitors.ts">top</a>({ ...params }) -> TopVisitorsResponse</code>
 
 ### Events
@@ -68,16 +54,7 @@ Methods:
 
 ### Sessions
 
-Methods:
-
-- <code title="get /api/v1/analytics/sessions/bounce-rate">client.v1.analytics.sessions.<a href="./src/resources/v1/analytics/sessions.ts">bounceRate</a>({ ...params }) -> BounceRateResponse</code>
-- <code title="get /api/v1/analytics/sessions/metrics">client.v1.analytics.sessions.<a href="./src/resources/v1/analytics/sessions.ts">metrics</a>({ ...params }) -> SessionMetricsResponse</code>
-
 ### Users
-
-Methods:
-
-- <code title="get /api/v1/analytics/users/active">client.v1.analytics.users.<a href="./src/resources/v1/analytics/users.ts">active</a>({ ...params }) -> ActiveUsersResponse</code>
 
 ### Retention
 
@@ -85,7 +62,40 @@ Methods:
 
 - <code title="get /api/v1/analytics/retention/churn-rate">client.v1.analytics.retention.<a href="./src/resources/v1/analytics/retention.ts">churnRate</a>({ ...params }) -> ChurnRateResponse</code>
 - <code title="get /api/v1/analytics/retention/cohorts">client.v1.analytics.retention.<a href="./src/resources/v1/analytics/retention.ts">cohorts</a>({ ...params }) -> CohortAnalysisResponse</code>
-- <code title="get /api/v1/analytics/retention/return-rate">client.v1.analytics.retention.<a href="./src/resources/v1/analytics/retention.ts">returnRate</a>({ ...params }) -> ReturnRateResponse</code>
+
+### Tiles
+
+Types:
+
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetBounceRateResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetDailyActiveUsersResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetMonthlyActiveUsersResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetPagesPerSessionResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetReturnRateResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetSessionDurationResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetTimeBetweenVisitsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetTrafficByCountryResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetTrafficByRefererResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetTrafficByUtmResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetUniqueSessionsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetUniqueVisitorsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetWeeklyActiveUsersResponse</a></code>
+
+Methods:
+
+- <code title="get /api/v1/analytics/tiles/bounce-rate">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getBounceRate</a>({ ...params }) -> TileGetBounceRateResponse</code>
+- <code title="get /api/v1/analytics/tiles/dau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getDailyActiveUsers</a>({ ...params }) -> TileGetDailyActiveUsersResponse</code>
+- <code title="get /api/v1/analytics/tiles/mau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getMonthlyActiveUsers</a>({ ...params }) -> TileGetMonthlyActiveUsersResponse</code>
+- <code title="get /api/v1/analytics/tiles/pages-per-session">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getPagesPerSession</a>({ ...params }) -> TileGetPagesPerSessionResponse</code>
+- <code title="get /api/v1/analytics/tiles/return-rate">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getReturnRate</a>({ ...params }) -> TileGetReturnRateResponse</code>
+- <code title="get /api/v1/analytics/tiles/session-duration">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getSessionDuration</a>({ ...params }) -> TileGetSessionDurationResponse</code>
+- <code title="get /api/v1/analytics/tiles/time-between-visits">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getTimeBetweenVisits</a>({ ...params }) -> TileGetTimeBetweenVisitsResponse</code>
+- <code title="get /api/v1/analytics/tiles/traffic-by-country">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getTrafficByCountry</a>({ ...params }) -> TileGetTrafficByCountryResponse</code>
+- <code title="get /api/v1/analytics/tiles/traffic-by-referer">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getTrafficByReferer</a>({ ...params }) -> TileGetTrafficByRefererResponse</code>
+- <code title="get /api/v1/analytics/tiles/traffic-by-utm">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getTrafficByUtm</a>({ ...params }) -> TileGetTrafficByUtmResponse</code>
+- <code title="get /api/v1/analytics/tiles/unique-sessions">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getUniqueSessions</a>({ ...params }) -> TileGetUniqueSessionsResponse</code>
+- <code title="get /api/v1/analytics/tiles/unique-visitors">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getUniqueVisitors</a>({ ...params }) -> TileGetUniqueVisitorsResponse</code>
+- <code title="get /api/v1/analytics/tiles/wau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getWeeklyActiveUsers</a>({ ...params }) -> TileGetWeeklyActiveUsersResponse</code>
 
 ## Revenue
 
