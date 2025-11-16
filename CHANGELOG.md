@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.16.0 (2025-11-16)
+
+Full Changelog: [v0.15.0...v0.16.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.15.0...v0.16.0)
+
+### Features
+
+* Feature/more analytics tiles ([6428012](https://github.com/ZoriHQ/typescript-api-sdk/commit/6428012b694554c6464187087de24172b19d7b81))
+
 ## 0.15.0 (2025-11-16)
 
 Full Changelog: [v0.14.0...v0.15.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.14.0...v0.15.0)
