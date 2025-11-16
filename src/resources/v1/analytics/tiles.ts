@@ -255,6 +255,44 @@ export class Tiles extends APIResource {
   ): APIPromise<TileGetWeeklyActiveUsersResponse> {
     return this._client.get('/api/v1/analytics/tiles/wau', { query, ...options });
   }
+
+  /**
+   * Get number of visitors by browser for current period compared to the previous
+   * period
+   *
+   * @example
+   * ```ts
+   * const response =
+   *   await client.v1.analytics.tiles.retrieveVisitorsByBrowser(
+   *     { project_id: 'project_id', time_range: 'last_hour' },
+   *   );
+   * ```
+   */
+  retrieveVisitorsByBrowser(
+    query: TileRetrieveVisitorsByBrowserParams,
+    options?: RequestOptions,
+  ): APIPromise<TileRetrieveVisitorsByBrowserResponse> {
+    return this._client.get('/api/v1/analytics/tiles/visitors-by-browser', { query, ...options });
+  }
+
+  /**
+   * Get number of visitors by OS for current period compared to the previous period
+   *
+   * @example
+   * ```ts
+   * const response =
+   *   await client.v1.analytics.tiles.retrieveVisitorsByOs({
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
+   *   });
+   * ```
+   */
+  retrieveVisitorsByOs(
+    query: TileRetrieveVisitorsByOsParams,
+    options?: RequestOptions,
+  ): APIPromise<TileRetrieveVisitorsByOsResponse> {
+    return this._client.get('/api/v1/analytics/tiles/visitors-by-os', { query, ...options });
+  }
 }
 
 export interface TileGetBounceRateResponse {
@@ -369,6 +407,34 @@ export interface TileGetWeeklyActiveUsersResponse {
   count?: number;
 
   previous_count?: number;
+}
+
+export interface TileRetrieveVisitorsByBrowserResponse {
+  data?: Array<TileRetrieveVisitorsByBrowserResponse.Data>;
+}
+
+export namespace TileRetrieveVisitorsByBrowserResponse {
+  export interface Data {
+    browser_name?: string;
+
+    count?: number;
+
+    previous_count?: number;
+  }
+}
+
+export interface TileRetrieveVisitorsByOsResponse {
+  data?: Array<TileRetrieveVisitorsByOsResponse.Data>;
+}
+
+export namespace TileRetrieveVisitorsByOsResponse {
+  export interface Data {
+    browser_name?: string;
+
+    count?: number;
+
+    previous_count?: number;
+  }
 }
 
 export interface TileGetBounceRateParams {
@@ -631,6 +697,46 @@ export interface TileGetWeeklyActiveUsersParams {
   visitor_id?: string;
 }
 
+export interface TileRetrieveVisitorsByBrowserParams {
+  project_id: string;
+
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customer_id?: string;
+
+  limit?: number;
+
+  offset?: number;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitor_id?: string;
+}
+
+export interface TileRetrieveVisitorsByOsParams {
+  project_id: string;
+
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customer_id?: string;
+
+  limit?: number;
+
+  offset?: number;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitor_id?: string;
+}
+
 export declare namespace Tiles {
   export {
     type TileGetBounceRateResponse as TileGetBounceRateResponse,
@@ -646,6 +752,8 @@ export declare namespace Tiles {
     type TileGetUniqueSessionsResponse as TileGetUniqueSessionsResponse,
     type TileGetUniqueVisitorsResponse as TileGetUniqueVisitorsResponse,
     type TileGetWeeklyActiveUsersResponse as TileGetWeeklyActiveUsersResponse,
+    type TileRetrieveVisitorsByBrowserResponse as TileRetrieveVisitorsByBrowserResponse,
+    type TileRetrieveVisitorsByOsResponse as TileRetrieveVisitorsByOsResponse,
     type TileGetBounceRateParams as TileGetBounceRateParams,
     type TileGetDailyActiveUsersParams as TileGetDailyActiveUsersParams,
     type TileGetMonthlyActiveUsersParams as TileGetMonthlyActiveUsersParams,
@@ -659,5 +767,7 @@ export declare namespace Tiles {
     type TileGetUniqueSessionsParams as TileGetUniqueSessionsParams,
     type TileGetUniqueVisitorsParams as TileGetUniqueVisitorsParams,
     type TileGetWeeklyActiveUsersParams as TileGetWeeklyActiveUsersParams,
+    type TileRetrieveVisitorsByBrowserParams as TileRetrieveVisitorsByBrowserParams,
+    type TileRetrieveVisitorsByOsParams as TileRetrieveVisitorsByOsParams,
   };
 }

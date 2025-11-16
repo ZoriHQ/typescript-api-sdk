@@ -80,6 +80,8 @@ Types:
 - <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetUniqueSessionsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetUniqueVisitorsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/tiles.ts">TileGetWeeklyActiveUsersResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileRetrieveVisitorsByBrowserResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/tiles.ts">TileRetrieveVisitorsByOsResponse</a></code>
 
 Methods:
 
@@ -96,6 +98,8 @@ Methods:
 - <code title="get /api/v1/analytics/tiles/unique-sessions">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getUniqueSessions</a>({ ...params }) -> TileGetUniqueSessionsResponse</code>
 - <code title="get /api/v1/analytics/tiles/unique-visitors">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getUniqueVisitors</a>({ ...params }) -> TileGetUniqueVisitorsResponse</code>
 - <code title="get /api/v1/analytics/tiles/wau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">getWeeklyActiveUsers</a>({ ...params }) -> TileGetWeeklyActiveUsersResponse</code>
+- <code title="get /api/v1/analytics/tiles/visitors-by-browser">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">retrieveVisitorsByBrowser</a>({ ...params }) -> TileRetrieveVisitorsByBrowserResponse</code>
+- <code title="get /api/v1/analytics/tiles/visitors-by-os">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">retrieveVisitorsByOs</a>({ ...params }) -> TileRetrieveVisitorsByOsResponse</code>
 
 ## Revenue
 
