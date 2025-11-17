@@ -9,6 +9,8 @@ import * as TilesAPI from './tiles';
 import {
   TileBounceRateParams,
   TileDauParams,
+  TileEntryPagesParams,
+  TileExitPagesParams,
   TileMauParams,
   TilePagesPerSessionParams,
   TileReturnRateParams,
@@ -117,6 +119,18 @@ export interface DauResponse {
   previous_count?: number;
 }
 
+export interface EntryPagesData {
+  count?: number;
+
+  page?: string;
+
+  previous_count?: number;
+}
+
+export interface EntryPagesResponse {
+  data?: Array<EntryPagesData>;
+}
+
 export interface EventFilterOptionsResponse {
   event_names?: Array<string>;
 
@@ -129,6 +143,18 @@ export interface EventsOverTimeDataPoint {
   event_count?: number;
 
   timestamp?: string;
+}
+
+export interface ExitPagesData {
+  count?: number;
+
+  page?: string;
+
+  previous_count?: number;
+}
+
+export interface ExitPagesResponse {
+  data?: Array<ExitPagesData>;
 }
 
 export interface ManualIdentifyRequest {
@@ -485,9 +511,9 @@ export interface VisitorsByOsResponse {
 
 export namespace VisitorsByOsResponse {
   export interface Data {
-    browser_name?: string;
-
     count?: number;
+
+    os_name?: string;
 
     previous_count?: number;
   }
@@ -534,8 +560,12 @@ export declare namespace Analytics {
     type CountryTrafficSourceData as CountryTrafficSourceData,
     type CountryTrafficSourceResponse as CountryTrafficSourceResponse,
     type DauResponse as DauResponse,
+    type EntryPagesData as EntryPagesData,
+    type EntryPagesResponse as EntryPagesResponse,
     type EventFilterOptionsResponse as EventFilterOptionsResponse,
     type EventsOverTimeDataPoint as EventsOverTimeDataPoint,
+    type ExitPagesData as ExitPagesData,
+    type ExitPagesResponse as ExitPagesResponse,
     type ManualIdentifyRequest as ManualIdentifyRequest,
     type ManualIdentifyResponse as ManualIdentifyResponse,
     type MauResponse as MauResponse,
@@ -582,6 +612,8 @@ export declare namespace Analytics {
     Tiles as Tiles,
     type TileBounceRateParams as TileBounceRateParams,
     type TileDauParams as TileDauParams,
+    type TileEntryPagesParams as TileEntryPagesParams,
+    type TileExitPagesParams as TileExitPagesParams,
     type TileMauParams as TileMauParams,
     type TilePagesPerSessionParams as TilePagesPerSessionParams,
     type TileReturnRateParams as TileReturnRateParams,
