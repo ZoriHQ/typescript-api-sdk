@@ -69,6 +69,66 @@ describe('resource tiles', () => {
   });
 
   // Prism tests are disabled
+  test.skip('entryPages: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.entryPages({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('entryPages: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.entryPages({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+      customer_id: 'customer_id',
+      limit: 1,
+      offset: 0,
+      referrer: 'referrer',
+      utmtag: 'utmtag',
+      utmtagValue: 'utmtagValue',
+      visitor_id: 'visitor_id',
+    });
+  });
+
+  // Prism tests are disabled
+  test.skip('exitPages: only required params', async () => {
+    const responsePromise = client.v1.analytics.tiles.exitPages({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('exitPages: required and optional params', async () => {
+    const response = await client.v1.analytics.tiles.exitPages({
+      project_id: 'project_id',
+      time_range: 'last_hour',
+      customer_id: 'customer_id',
+      limit: 1,
+      offset: 0,
+      referrer: 'referrer',
+      utmtag: 'utmtag',
+      utmtagValue: 'utmtagValue',
+      visitor_id: 'visitor_id',
+    });
+  });
+
+  // Prism tests are disabled
   test.skip('mau: only required params', async () => {
     const responsePromise = client.v1.analytics.tiles.mau({
       project_id: 'project_id',

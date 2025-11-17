@@ -41,6 +41,46 @@ export class Tiles extends APIResource {
   }
 
   /**
+   * Get top entry pages where new visitors first land for current period compared to
+   * the previous period
+   *
+   * @example
+   * ```ts
+   * const entryPagesResponse =
+   *   await client.v1.analytics.tiles.entryPages({
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
+   *   });
+   * ```
+   */
+  entryPages(
+    query: TileEntryPagesParams,
+    options?: RequestOptions,
+  ): APIPromise<AnalyticsAPI.EntryPagesResponse> {
+    return this._client.get('/api/v1/analytics/tiles/entry-pages', { query, ...options });
+  }
+
+  /**
+   * Get top exit pages where sessions end for current period compared to the
+   * previous period
+   *
+   * @example
+   * ```ts
+   * const exitPagesResponse =
+   *   await client.v1.analytics.tiles.exitPages({
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
+   *   });
+   * ```
+   */
+  exitPages(
+    query: TileExitPagesParams,
+    options?: RequestOptions,
+  ): APIPromise<AnalyticsAPI.ExitPagesResponse> {
+    return this._client.get('/api/v1/analytics/tiles/exit-pages', { query, ...options });
+  }
+
+  /**
    * Get monthly active user count (last 30 days) compared to the previous month
    *
    * @example
@@ -325,6 +365,46 @@ export interface TileDauParams {
   visitor_id?: string;
 }
 
+export interface TileEntryPagesParams {
+  project_id: string;
+
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customer_id?: string;
+
+  limit?: number;
+
+  offset?: number;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitor_id?: string;
+}
+
+export interface TileExitPagesParams {
+  project_id: string;
+
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customer_id?: string;
+
+  limit?: number;
+
+  offset?: number;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitor_id?: string;
+}
+
 export interface TileMauParams {
   project_id: string;
 
@@ -589,6 +669,8 @@ export declare namespace Tiles {
   export {
     type TileBounceRateParams as TileBounceRateParams,
     type TileDauParams as TileDauParams,
+    type TileEntryPagesParams as TileEntryPagesParams,
+    type TileExitPagesParams as TileExitPagesParams,
     type TileMauParams as TileMauParams,
     type TilePagesPerSessionParams as TilePagesPerSessionParams,
     type TileReturnRateParams as TileReturnRateParams,

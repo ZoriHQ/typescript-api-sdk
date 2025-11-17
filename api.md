@@ -23,8 +23,12 @@ Types:
 - <code><a href="./src/resources/v1/analytics/analytics.ts">CountryTrafficSourceData</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">CountryTrafficSourceResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">DauResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">EntryPagesData</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">EntryPagesResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">EventFilterOptionsResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">EventsOverTimeDataPoint</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">ExitPagesData</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">ExitPagesResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ManualIdentifyRequest</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ManualIdentifyResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">MauResponse</a></code>
@@ -77,6 +81,8 @@ Methods:
 
 - <code title="get /api/v1/analytics/tiles/bounce-rate">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">bounceRate</a>({ ...params }) -> BounceRateResponse</code>
 - <code title="get /api/v1/analytics/tiles/dau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">dau</a>({ ...params }) -> DauResponse</code>
+- <code title="get /api/v1/analytics/tiles/entry-pages">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">entryPages</a>({ ...params }) -> EntryPagesResponse</code>
+- <code title="get /api/v1/analytics/tiles/exit-pages">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">exitPages</a>({ ...params }) -> ExitPagesResponse</code>
 - <code title="get /api/v1/analytics/tiles/mau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">mau</a>({ ...params }) -> MauResponse</code>
 - <code title="get /api/v1/analytics/tiles/pages-per-session">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">pagesPerSession</a>({ ...params }) -> PagesPerSessionResponse</code>
 - <code title="get /api/v1/analytics/tiles/return-rate">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">returnRate</a>({ ...params }) -> ReturnRateResponse</code>
