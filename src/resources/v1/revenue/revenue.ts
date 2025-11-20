@@ -208,6 +208,12 @@ export interface TopCustomer {
 
   first_traffic_origin?: string;
 
+  first_utm_campaign?: string;
+
+  first_utm_medium?: string;
+
+  first_utm_source?: string;
+
   last_payment_date?: string;
 
   location_country_iso?: string;
