@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.19.1 (2025-12-03)
+
+Full Changelog: [v0.19.0...v0.19.1](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.19.0...v0.19.1)
+
+### Chores
+
+* **client:** fix logger property type ([567963f](https://github.com/ZoriHQ/typescript-api-sdk/commit/567963f5cee8462b940bf863b174cc437b1bd72d))
+* **internal:** upgrade eslint ([69dfdc3](https://github.com/ZoriHQ/typescript-api-sdk/commit/69dfdc3df3b41d4db6ce0043a64b55f79bd86993))
+
 ## 0.19.0 (2025-11-19)
 
 Full Changelog: [v0.18.0...v0.19.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.18.0...v0.19.0)
