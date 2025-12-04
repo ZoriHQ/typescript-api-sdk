@@ -7,17 +7,18 @@ import { path } from '../../internal/utils/path';
 
 export class Projects extends APIResource {
   /**
-   * Create a new project for the authenticated user's organization
+   * Create a new project for the authenticated user's organization. The response
+   * includes Langfuse API keys for LLM trace ingestion.
    *
    * @example
    * ```ts
-   * const projectResponse = await client.v1.projects.create({
+   * const project = await client.v1.projects.create({
    *   name: 'My Awesome Project',
    *   website_url: 'https://example.com',
    * });
    * ```
    */
-  create(body: ProjectCreateParams, options?: RequestOptions): APIPromise<ProjectResponse> {
+  create(body: ProjectCreateParams, options?: RequestOptions): APIPromise<ProjectCreateResponse> {
     return this._client.post('/api/v1/projects', { body, ...options });
   }
 
@@ -98,6 +99,14 @@ export interface Project {
 
   first_event_received_at?: string;
 
+  /**
+   * Langfuse-compatible API keys for LLM trace ingestion (used to accept OpenRouter
+   * traces)
+   */
+  langfuse_public_key?: string;
+
+  langfuse_secret_key?: string;
+
   name?: string;
 
   organization_id?: string;
@@ -118,6 +127,14 @@ export interface ProjectResponse {
 
   first_event_received_at?: string;
 
+  /**
+   * Langfuse-compatible API keys for LLM trace ingestion (used to accept OpenRouter
+   * traces)
+   */
+  langfuse_public_key?: string;
+
+  langfuse_secret_key?: string;
+
   name?: string;
 
   organization_id?: string;
@@ -133,6 +150,34 @@ export interface UpdateProjectRequest {
   name?: string;
 
   website_url?: string;
+}
+
+export interface ProjectCreateResponse {
+  id?: string;
+
+  allow_local_host?: boolean;
+
+  created_at?: string;
+
+  domain?: string;
+
+  first_event_received_at?: string;
+
+  /**
+   * Langfuse-compatible API keys for LLM trace ingestion (used to accept OpenRouter
+   * traces)
+   */
+  langfuse_public_key?: string;
+
+  langfuse_secret_key?: string;
+
+  name?: string;
+
+  organization_id?: string;
+
+  project_token?: string;
+
+  updated_at?: string;
 }
 
 export type ProjectDeleteResponse = { [key: string]: string };
@@ -160,6 +205,7 @@ export declare namespace Projects {
     type Project as Project,
     type ProjectResponse as ProjectResponse,
     type UpdateProjectRequest as UpdateProjectRequest,
+    type ProjectCreateResponse as ProjectCreateResponse,
     type ProjectDeleteResponse as ProjectDeleteResponse,
     type ProjectCreateParams as ProjectCreateParams,
     type ProjectUpdateParams as ProjectUpdateParams,
