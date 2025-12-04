@@ -65,6 +65,7 @@ export {
   type Project,
   type ProjectResponse,
   type UpdateProjectRequest,
+  type ProjectCreateResponse,
   type ProjectDeleteResponse,
   type ProjectCreateParams,
   type ProjectUpdateParams,
