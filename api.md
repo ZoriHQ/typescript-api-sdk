@@ -166,11 +166,12 @@ Types:
 - <code><a href="./src/resources/v1/projects.ts">Project</a></code>
 - <code><a href="./src/resources/v1/projects.ts">ProjectResponse</a></code>
 - <code><a href="./src/resources/v1/projects.ts">UpdateProjectRequest</a></code>
+- <code><a href="./src/resources/v1/projects.ts">ProjectCreateResponse</a></code>
 - <code><a href="./src/resources/v1/projects.ts">ProjectDeleteResponse</a></code>
 
 Methods:
 
-- <code title="post /api/v1/projects">client.v1.projects.<a href="./src/resources/v1/projects.ts">create</a>({ ...params }) -> ProjectResponse</code>
+- <code title="post /api/v1/projects">client.v1.projects.<a href="./src/resources/v1/projects.ts">create</a>({ ...params }) -> ProjectCreateResponse</code>
 - <code title="put /api/v1/projects/{id}">client.v1.projects.<a href="./src/resources/v1/projects.ts">update</a>(id, { ...params }) -> ProjectResponse</code>
 - <code title="get /api/v1/projects/list">client.v1.projects.<a href="./src/resources/v1/projects.ts">list</a>() -> ListProjectsResponse</code>
 - <code title="delete /api/v1/projects/{id}">client.v1.projects.<a href="./src/resources/v1/projects.ts">delete</a>(id) -> ProjectDeleteResponse</code>
