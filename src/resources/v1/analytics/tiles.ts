@@ -81,6 +81,42 @@ export class Tiles extends APIResource {
   }
 
   /**
+   * Get total LLM cost for current period compared to the previous period
+   *
+   * @example
+   * ```ts
+   * const llmCostResponse =
+   *   await client.v1.analytics.tiles.llmCost({
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
+   *   });
+   * ```
+   */
+  llmCost(query: TileLlmCostParams, options?: RequestOptions): APIPromise<AnalyticsAPI.LlmCostResponse> {
+    return this._client.get('/api/v1/analytics/tiles/llm-cost', { query, ...options });
+  }
+
+  /**
+   * Get top 3 most expensive LLM models for current period compared to the previous
+   * period
+   *
+   * @example
+   * ```ts
+   * const llmTopModelsCostResponse =
+   *   await client.v1.analytics.tiles.llmTopModelsCost({
+   *     project_id: 'project_id',
+   *     time_range: 'last_hour',
+   *   });
+   * ```
+   */
+  llmTopModelsCost(
+    query: TileLlmTopModelsCostParams,
+    options?: RequestOptions,
+  ): APIPromise<AnalyticsAPI.LlmTopModelsCostResponse> {
+    return this._client.get('/api/v1/analytics/tiles/llm-top-models-cost', { query, ...options });
+  }
+
+  /**
    * Get monthly active user count (last 30 days) compared to the previous month
    *
    * @example
@@ -405,6 +441,46 @@ export interface TileExitPagesParams {
   visitor_id?: string;
 }
 
+export interface TileLlmCostParams {
+  project_id: string;
+
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customer_id?: string;
+
+  limit?: number;
+
+  offset?: number;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitor_id?: string;
+}
+
+export interface TileLlmTopModelsCostParams {
+  project_id: string;
+
+  time_range: 'last_hour' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_90_days';
+
+  customer_id?: string;
+
+  limit?: number;
+
+  offset?: number;
+
+  referrer?: string;
+
+  utmtag?: string;
+
+  utmtagValue?: string;
+
+  visitor_id?: string;
+}
+
 export interface TileMauParams {
   project_id: string;
 
@@ -671,6 +747,8 @@ export declare namespace Tiles {
     type TileDauParams as TileDauParams,
     type TileEntryPagesParams as TileEntryPagesParams,
     type TileExitPagesParams as TileExitPagesParams,
+    type TileLlmCostParams as TileLlmCostParams,
+    type TileLlmTopModelsCostParams as TileLlmTopModelsCostParams,
     type TileMauParams as TileMauParams,
     type TilePagesPerSessionParams as TilePagesPerSessionParams,
     type TileReturnRateParams as TileReturnRateParams,

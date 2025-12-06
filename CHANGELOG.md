@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.21.0 (2025-12-06)
+
+Full Changelog: [v0.20.0...v0.21.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.20.0...v0.21.0)
+
+### Features
+
+* **traces:** added llm traces endpoints ([f1074f7](https://github.com/ZoriHQ/typescript-api-sdk/commit/f1074f71a1dd3801c4df41417ebfd981b0c18754))
+
 ## 0.20.0 (2025-12-06)
 
 Full Changelog: [v0.19.1...v0.20.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.19.1...v0.20.0)
