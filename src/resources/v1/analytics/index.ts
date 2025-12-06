@@ -16,6 +16,12 @@ export {
   type EventsOverTimeDataPoint,
   type ExitPagesData,
   type ExitPagesResponse,
+  type LlmCostResponse,
+  type LlmModelCostData,
+  type LlmTopModelsCostResponse,
+  type LlmTraceFilterOptionsResponse,
+  type LlmTraceItem,
+  type LlmTracesListResponse,
   type ManualIdentifyRequest,
   type ManualIdentifyResponse,
   type MauResponse,
@@ -44,6 +50,7 @@ export {
   type AnalyticsTimelineParams,
 } from './analytics';
 export { Events, type EventFilterOptionsParams, type EventRecentParams } from './events';
+export { Llm, type LlmTracesParams, type LlmTracesFilterOptionsParams } from './llm';
 export { Retention, type RetentionChurnRateParams, type RetentionCohortsParams } from './retention';
 export {
   Tiles,
@@ -51,6 +58,8 @@ export {
   type TileDauParams,
   type TileEntryPagesParams,
   type TileExitPagesParams,
+  type TileLlmCostParams,
+  type TileLlmTopModelsCostParams,
   type TileMauParams,
   type TilePagesPerSessionParams,
   type TileReturnRateParams,

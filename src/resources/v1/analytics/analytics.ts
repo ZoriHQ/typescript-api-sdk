@@ -3,6 +3,8 @@
 import { APIResource } from '../../../core/resource';
 import * as EventsAPI from './events';
 import { EventFilterOptionsParams, EventRecentParams, Events } from './events';
+import * as LlmAPI from './llm';
+import { Llm, LlmTracesFilterOptionsParams, LlmTracesParams } from './llm';
 import * as RetentionAPI from './retention';
 import { Retention, RetentionChurnRateParams, RetentionCohortsParams } from './retention';
 import * as TilesAPI from './tiles';
@@ -11,6 +13,8 @@ import {
   TileDauParams,
   TileEntryPagesParams,
   TileExitPagesParams,
+  TileLlmCostParams,
+  TileLlmTopModelsCostParams,
   TileMauParams,
   TilePagesPerSessionParams,
   TileReturnRateParams,
@@ -40,6 +44,7 @@ import { RequestOptions } from '../../../internal/request-options';
 export class Analytics extends APIResource {
   visitors: VisitorsAPI.Visitors = new VisitorsAPI.Visitors(this._client);
   events: EventsAPI.Events = new EventsAPI.Events(this._client);
+  llm: LlmAPI.Llm = new LlmAPI.Llm(this._client);
   tiles: TilesAPI.Tiles = new TilesAPI.Tiles(this._client);
   retention: RetentionAPI.Retention = new RetentionAPI.Retention(this._client);
 
@@ -155,6 +160,88 @@ export interface ExitPagesData {
 
 export interface ExitPagesResponse {
   data?: Array<ExitPagesData>;
+}
+
+export interface LlmCostResponse {
+  cost?: number;
+
+  previous_cost?: number;
+}
+
+export interface LlmModelCostData {
+  cost?: number;
+
+  model?: string;
+
+  previous_cost?: number;
+}
+
+export interface LlmTopModelsCostResponse {
+  data?: Array<LlmModelCostData>;
+}
+
+export interface LlmTraceFilterOptionsResponse {
+  models?: Array<string>;
+
+  names?: Array<string>;
+
+  session_ids?: Array<string>;
+
+  user_ids?: Array<string>;
+}
+
+export interface LlmTraceItem {
+  avg_latency_ms?: number;
+
+  created_at?: string;
+
+  generation_count?: number;
+
+  input?: string;
+
+  input_tokens?: number;
+
+  metadata?: string;
+
+  models?: Array<string>;
+
+  name?: string;
+
+  output?: string;
+
+  output_tokens?: number;
+
+  public?: boolean;
+
+  release?: string;
+
+  session_id?: string;
+
+  tags?: Array<string>;
+
+  timestamp?: string;
+
+  total_cost?: number;
+
+  total_tokens?: number;
+
+  trace_id?: string;
+
+  updated_at?: string;
+
+  user_id?: string;
+
+  version?: string;
+}
+
+export interface LlmTracesListResponse {
+  limit?: number;
+
+  offset?: number;
+
+  total?: number;
+
+  traces?: Array<LlmTraceItem>;
 }
 
 export interface ManualIdentifyRequest {
@@ -547,6 +634,7 @@ export interface AnalyticsTimelineParams {
 
 Analytics.Visitors = Visitors;
 Analytics.Events = Events;
+Analytics.Llm = Llm;
 Analytics.Tiles = Tiles;
 Analytics.Retention = Retention;
 
@@ -566,6 +654,12 @@ export declare namespace Analytics {
     type EventsOverTimeDataPoint as EventsOverTimeDataPoint,
     type ExitPagesData as ExitPagesData,
     type ExitPagesResponse as ExitPagesResponse,
+    type LlmCostResponse as LlmCostResponse,
+    type LlmModelCostData as LlmModelCostData,
+    type LlmTopModelsCostResponse as LlmTopModelsCostResponse,
+    type LlmTraceFilterOptionsResponse as LlmTraceFilterOptionsResponse,
+    type LlmTraceItem as LlmTraceItem,
+    type LlmTracesListResponse as LlmTracesListResponse,
     type ManualIdentifyRequest as ManualIdentifyRequest,
     type ManualIdentifyResponse as ManualIdentifyResponse,
     type MauResponse as MauResponse,
@@ -609,11 +703,19 @@ export declare namespace Analytics {
   };
 
   export {
+    Llm as Llm,
+    type LlmTracesParams as LlmTracesParams,
+    type LlmTracesFilterOptionsParams as LlmTracesFilterOptionsParams,
+  };
+
+  export {
     Tiles as Tiles,
     type TileBounceRateParams as TileBounceRateParams,
     type TileDauParams as TileDauParams,
     type TileEntryPagesParams as TileEntryPagesParams,
     type TileExitPagesParams as TileExitPagesParams,
+    type TileLlmCostParams as TileLlmCostParams,
+    type TileLlmTopModelsCostParams as TileLlmTopModelsCostParams,
     type TileMauParams as TileMauParams,
     type TilePagesPerSessionParams as TilePagesPerSessionParams,
     type TileReturnRateParams as TileReturnRateParams,
