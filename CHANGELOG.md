@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.20.0 (2025-12-06)
+
+Full Changelog: [v0.19.1...v0.20.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.19.1...v0.20.0)
+
+### Features
+
+* **traces:** added ability to ingest traces from open router ([30e02f4](https://github.com/ZoriHQ/typescript-api-sdk/commit/30e02f4fe76f43785d10961275632f7d6d60f98d))
+
+
+### Bug Fixes
+
+* **mcp:** correct code tool API endpoint ([2b00ab2](https://github.com/ZoriHQ/typescript-api-sdk/commit/2b00ab2c1b61c991e53353f9eed687fe4578539d))
+* **mcp:** return correct lines on typescript errors ([d0e8311](https://github.com/ZoriHQ/typescript-api-sdk/commit/d0e83119c65c16983b90301d2267e4ecd3f3b73e))
+
+
+### Chores
+
+* **internal:** codegen related update ([c295b47](https://github.com/ZoriHQ/typescript-api-sdk/commit/c295b47a6ac41fe5d89f7b6ffc99f987f186843f))
+* **internal:** codegen related update ([e483c4b](https://github.com/ZoriHQ/typescript-api-sdk/commit/e483c4b8aecd9e062c06d4707a36f73dc2eba63c))
+
 ## 0.19.1 (2025-12-03)
 
 Full Changelog: [v0.19.0...v0.19.1](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.19.0...v0.19.1)
