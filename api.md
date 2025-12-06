@@ -29,6 +29,12 @@ Types:
 - <code><a href="./src/resources/v1/analytics/analytics.ts">EventsOverTimeDataPoint</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ExitPagesData</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ExitPagesResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">LlmCostResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">LlmModelCostData</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">LlmTopModelsCostResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">LlmTraceFilterOptionsResponse</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">LlmTraceItem</a></code>
+- <code><a href="./src/resources/v1/analytics/analytics.ts">LlmTracesListResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ManualIdentifyRequest</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">ManualIdentifyResponse</a></code>
 - <code><a href="./src/resources/v1/analytics/analytics.ts">MauResponse</a></code>
@@ -75,6 +81,13 @@ Methods:
 - <code title="get /api/v1/analytics/events/filter-options">client.v1.analytics.events.<a href="./src/resources/v1/analytics/events.ts">filterOptions</a>({ ...params }) -> EventFilterOptionsResponse</code>
 - <code title="get /api/v1/analytics/events/recent">client.v1.analytics.events.<a href="./src/resources/v1/analytics/events.ts">recent</a>({ ...params }) -> RecentEventsResponse</code>
 
+### Llm
+
+Methods:
+
+- <code title="get /api/v1/analytics/llm/traces">client.v1.analytics.llm.<a href="./src/resources/v1/analytics/llm.ts">traces</a>({ ...params }) -> LlmTracesListResponse</code>
+- <code title="get /api/v1/analytics/llm/traces/filter-options">client.v1.analytics.llm.<a href="./src/resources/v1/analytics/llm.ts">tracesFilterOptions</a>({ ...params }) -> LlmTraceFilterOptionsResponse</code>
+
 ### Tiles
 
 Methods:
@@ -83,6 +96,8 @@ Methods:
 - <code title="get /api/v1/analytics/tiles/dau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">dau</a>({ ...params }) -> DauResponse</code>
 - <code title="get /api/v1/analytics/tiles/entry-pages">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">entryPages</a>({ ...params }) -> EntryPagesResponse</code>
 - <code title="get /api/v1/analytics/tiles/exit-pages">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">exitPages</a>({ ...params }) -> ExitPagesResponse</code>
+- <code title="get /api/v1/analytics/tiles/llm-cost">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">llmCost</a>({ ...params }) -> LlmCostResponse</code>
+- <code title="get /api/v1/analytics/tiles/llm-top-models-cost">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">llmTopModelsCost</a>({ ...params }) -> LlmTopModelsCostResponse</code>
 - <code title="get /api/v1/analytics/tiles/mau">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">mau</a>({ ...params }) -> MauResponse</code>
 - <code title="get /api/v1/analytics/tiles/pages-per-session">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">pagesPerSession</a>({ ...params }) -> PagesPerSessionResponse</code>
 - <code title="get /api/v1/analytics/tiles/return-rate">client.v1.analytics.tiles.<a href="./src/resources/v1/analytics/tiles.ts">returnRate</a>({ ...params }) -> ReturnRateResponse</code>
