@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.22.0 (2025-12-08)
+
+Full Changelog: [v0.21.0...v0.22.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.21.0...v0.22.0)
+
+### Features
+
+* **api:** new types for events ([9fa0fbc](https://github.com/ZoriHQ/typescript-api-sdk/commit/9fa0fbc6a2cc873b12561cf058e397443ca533d3))
+
 ## 0.21.0 (2025-12-06)
 
 Full Changelog: [v0.20.0...v0.21.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.20.0...v0.21.0)
