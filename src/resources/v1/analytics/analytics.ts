@@ -305,11 +305,18 @@ export interface RecentEvent {
 
   client_timestamp_utc?: string;
 
+  /**
+   * Custom properties sent with the event
+   */
+  custom_properties?: { [key: string]: unknown };
+
   device_type?: string;
 
   event_name?: string;
 
   external_id?: string;
+
+  host?: string;
 
   is_cta_click?: boolean;
 
@@ -327,6 +334,8 @@ export interface RecentEvent {
 
   location_longitude?: number;
 
+  os_name?: string;
+
   page_path?: string;
 
   page_url?: string;
@@ -335,7 +344,18 @@ export interface RecentEvent {
 
   referrer_url?: string;
 
+  session_id?: string;
+
   user_id?: string;
+
+  utm_campaign?: string;
+
+  utm_medium?: string;
+
+  /**
+   * UTM parameters for campaign attribution
+   */
+  utm_source?: string;
 
   visitor_id?: string;
 }
