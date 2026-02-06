@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.22.1 (2026-02-06)
+
+Full Changelog: [v0.22.0...v0.22.1](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.22.0...v0.22.1)
+
+### Bug Fixes
+
+* **client:** avoid memory leak with abort signals ([b396469](https://github.com/ZoriHQ/typescript-api-sdk/commit/b396469b91bbb976d25f9d1f8aaae1b1dec75b4a))
+* **client:** avoid removing abort listener too early ([13d1580](https://github.com/ZoriHQ/typescript-api-sdk/commit/13d158066b35eb0fac9c7fb641ccdb4c18210fb9))
+
+
+### Chores
+
+* break long lines in snippets into multiline ([f85789d](https://github.com/ZoriHQ/typescript-api-sdk/commit/f85789d01d922f9057d91184fa84ac794c2b19dc))
+* **ci:** upgrade `actions/github-script` ([86354b9](https://github.com/ZoriHQ/typescript-api-sdk/commit/86354b97179e2baff126ef082b97e0f8a6a85167))
+* **client:** do not parse responses with empty content-length ([b84b54f](https://github.com/ZoriHQ/typescript-api-sdk/commit/b84b54f6a499c264529cdd2ee081905fdfb3e641))
+* **client:** restructure abort controller binding ([ab480be](https://github.com/ZoriHQ/typescript-api-sdk/commit/ab480be2f117f230bdca77535e34aaadfb2476ce))
+* **internal:** codegen related update ([63fc931](https://github.com/ZoriHQ/typescript-api-sdk/commit/63fc9315660b9c7589191dd80ca471dae26d574b))
+* **internal:** update `actions/checkout` version ([04e5e52](https://github.com/ZoriHQ/typescript-api-sdk/commit/04e5e52fdae1d4af94e7d481b3f0ad5114e27c9b))
+* **internal:** upgrade babel, qs, js-yaml ([af1ea44](https://github.com/ZoriHQ/typescript-api-sdk/commit/af1ea44c69a1944f7230beb21aa07009b3bad083))
+
 ## 0.22.0 (2025-12-08)
 
 Full Changelog: [v0.21.0...v0.22.0](https://github.com/ZoriHQ/typescript-api-sdk/compare/v0.21.0...v0.22.0)

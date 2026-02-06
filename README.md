@@ -139,7 +139,9 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new Zoriapi();
 
-const response = await client.v1.auth.login({ password: 'password', username: 'username' }).asResponse();
+const response = await client.v1.auth
+  .login({ password: 'password', username: 'username' })
+  .asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
